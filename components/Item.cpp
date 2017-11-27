@@ -56,5 +56,4 @@ namespace game{
     Item::~Item(){
         SDL_DestroyTexture(itemTexture);
     }
-
 }

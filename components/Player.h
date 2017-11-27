@@ -9,9 +9,6 @@ namespace game {
         static Player* getInstance(SDL_Rect);
         void tick(const Uint8*, GameEngine&);
         bool collision(Sprite*);
-//        void mouseButtonDown(const SDL_Event&);
-//        void mouseButtonUp(const SDL_Event&);
-//        void mouseMotion(const SDL_Event);
         void draw();
         ~Player();
 

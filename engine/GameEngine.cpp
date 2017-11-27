@@ -5,13 +5,6 @@
 #include <SDL2/SDL_image.h>
 #define FPS 60
 
-//const int frameDelay = 1000/FPS - How long a frame is meant to take, max time between frames
-//Uint32 frameStart; - The game time and how long it'll be running (Uint32 är en unsigned, megastor, Integer)
-//int frameTime;
-//början av while-loop: frameStart = SDL_GetTicks(); - current running time in millisec. Hur många millisec som gått sen SDL blev initilasierat
-//slutet av while-loop: frameTime = SDL_GetTicks - framestart; - får reda på hur lång tid det tagit att hantera våra events i loop
-//checka om delay behövs: if(frameDelay > frameTime){ SDL_Delay(frameDelay - frameTime ); }
-
 using namespace std;
 
 namespace game {

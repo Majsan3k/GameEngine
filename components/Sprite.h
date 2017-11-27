@@ -10,9 +10,6 @@ namespace game{
         virtual void draw() = 0;
         virtual void tick(const Uint8 *, GameEngine &) = 0;
         virtual bool collision(Sprite*) = 0;
-//        virtual void mouseButtonDown(const SDL_Event&);
-//        virtual void mouseButtonUp(const SDL_Event&);
-//        virtual void mouseMotion(const SDL_Event&);
         const SDL_Rect& getSpriteRect() const { return spriteRect; }
         virtual ~Sprite();
 
