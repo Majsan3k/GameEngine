@@ -56,6 +56,30 @@ SDL2/SDL_ttf.h
 Sprite.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
 
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Movable.cpp
+iostream
+-
+SDL2/SDL.h
+-
+SDL2/SDL_image.h
+-
+Movable.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Movable.h
+../frame/Frame.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.h
+../engine/GameEngine.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
+Item.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Item.h
+
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Movable.h
+SDL2/SDL_system.h
+-
+Sprite.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
+Label.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.h
+
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Player.cpp
 iostream
 -
@@ -88,6 +112,8 @@ Sprite.h
 SDL2/SDL_rect.h
 -
 SDL2/SDL_events.h
+-
+SDL2/SDL_render.h
 -
 
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.cpp
@@ -128,18 +154,18 @@ Frame.h
 SDL2/SDL_render.h
 -
 
-/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/main.cpp
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/main.cpp
 iostream
 -
-engine/GameEngine.h
+../engine/GameEngine.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
-components/Player.h
+../components/Player.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Player.h
-components/Item.h
+../components/Item.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Item.h
-components/Button.h
+../components/Button.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Button.h
-components/Label.h
+../components/Label.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.h
 
 C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL.h

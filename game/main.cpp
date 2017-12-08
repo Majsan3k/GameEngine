@@ -1,10 +1,10 @@
 #define SDL_MAIN_HANDLED
 #include <iostream>
-#include "engine/GameEngine.h"
-#include "components/Player.h"
-#include "components/Item.h"
-#include "components/Button.h"
-#include "components/Label.h"
+#include "../engine/GameEngine.h"
+#include "../components/Player.h"
+#include "../components/Item.h"
+#include "../components/Button.h"
+#include "../components/Label.h"
 
 using namespace std;
 using namespace game;

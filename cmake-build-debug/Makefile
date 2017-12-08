@@ -204,6 +204,33 @@ components/Label.cpp.s:
 	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/components/Label.cpp.s
 .PHONY : components/Label.cpp.s
 
+components/Movable.o: components/Movable.cpp.o
+
+.PHONY : components/Movable.o
+
+# target to build an object file
+components/Movable.cpp.o:
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/components/Movable.cpp.o
+.PHONY : components/Movable.cpp.o
+
+components/Movable.i: components/Movable.cpp.i
+
+.PHONY : components/Movable.i
+
+# target to preprocess a source file
+components/Movable.cpp.i:
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/components/Movable.cpp.i
+.PHONY : components/Movable.cpp.i
+
+components/Movable.s: components/Movable.cpp.s
+
+.PHONY : components/Movable.s
+
+# target to generate assembly for a file
+components/Movable.cpp.s:
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/components/Movable.cpp.s
+.PHONY : components/Movable.cpp.s
+
 components/Player.o: components/Player.cpp.o
 
 .PHONY : components/Player.o
@@ -312,32 +339,32 @@ frame/Frame.cpp.s:
 	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/frame/Frame.cpp.s
 .PHONY : frame/Frame.cpp.s
 
-main.o: main.cpp.o
+game/main.o: game/main.cpp.o
 
-.PHONY : main.o
+.PHONY : game/main.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/main.cpp.o
-.PHONY : main.cpp.o
+game/main.cpp.o:
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/game/main.cpp.o
+.PHONY : game/main.cpp.o
 
-main.i: main.cpp.i
+game/main.i: game/main.cpp.i
 
-.PHONY : main.i
+.PHONY : game/main.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/main.cpp.i
-.PHONY : main.cpp.i
+game/main.cpp.i:
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/game/main.cpp.i
+.PHONY : game/main.cpp.i
 
-main.s: main.cpp.s
+game/main.s: game/main.cpp.s
 
-.PHONY : main.s
+.PHONY : game/main.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/main.cpp.s
-.PHONY : main.cpp.s
+game/main.cpp.s:
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/game/main.cpp.s
+.PHONY : game/main.cpp.s
 
 # Help Target
 help:
@@ -357,6 +384,9 @@ help:
 	@echo "... components/Label.o"
 	@echo "... components/Label.i"
 	@echo "... components/Label.s"
+	@echo "... components/Movable.o"
+	@echo "... components/Movable.i"
+	@echo "... components/Movable.s"
 	@echo "... components/Player.o"
 	@echo "... components/Player.i"
 	@echo "... components/Player.s"
@@ -369,9 +399,9 @@ help:
 	@echo "... frame/Frame.o"
 	@echo "... frame/Frame.i"
 	@echo "... frame/Frame.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... game/main.o"
+	@echo "... game/main.i"
+	@echo "... game/main.s"
 .PHONY : help
 
 
