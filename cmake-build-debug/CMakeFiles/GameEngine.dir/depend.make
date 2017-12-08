@@ -288,6 +288,7 @@ CMakeFiles/GameEngine.dir/game/Item.cpp.o: ../components/Sprite.h
 CMakeFiles/GameEngine.dir/game/Item.cpp.o: ../engine/GameEngine.h
 CMakeFiles/GameEngine.dir/game/Item.cpp.o: ../frame/Frame.h
 CMakeFiles/GameEngine.dir/game/Item.cpp.o: ../game/Item.cpp
+CMakeFiles/GameEngine.dir/game/Item.cpp.o: ../game/Item.h
 CMakeFiles/GameEngine.dir/game/Item.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL.h
 CMakeFiles/GameEngine.dir/game/Item.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_assert.h
 CMakeFiles/GameEngine.dir/game/Item.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_atomic.h
@@ -339,9 +340,9 @@ CMakeFiles/GameEngine.dir/game/Player.cpp.o: ../components/Label.h
 CMakeFiles/GameEngine.dir/game/Player.cpp.o: ../components/Movable.h
 CMakeFiles/GameEngine.dir/game/Player.cpp.o: ../components/Sprite.h
 CMakeFiles/GameEngine.dir/game/Player.cpp.o: ../engine/GameEngine.h
-CMakeFiles/GameEngine.dir/game/Player.cpp.o: ../frame/Frame.h
-CMakeFiles/GameEngine.dir/game/Player.cpp.o: ../game/Item.cpp
+CMakeFiles/GameEngine.dir/game/Player.cpp.o: ../game/Item.h
 CMakeFiles/GameEngine.dir/game/Player.cpp.o: ../game/Player.cpp
+CMakeFiles/GameEngine.dir/game/Player.cpp.o: ../game/Player.h
 CMakeFiles/GameEngine.dir/game/Player.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL.h
 CMakeFiles/GameEngine.dir/game/Player.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_assert.h
 CMakeFiles/GameEngine.dir/game/Player.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_atomic.h
@@ -358,7 +359,6 @@ CMakeFiles/GameEngine.dir/game/Player.cpp.o: C:/Users/majal/Documents/Prog3/SDL2
 CMakeFiles/GameEngine.dir/game/Player.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_gesture.h
 CMakeFiles/GameEngine.dir/game/Player.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_haptic.h
 CMakeFiles/GameEngine.dir/game/Player.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_hints.h
-CMakeFiles/GameEngine.dir/game/Player.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_image.h
 CMakeFiles/GameEngine.dir/game/Player.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_joystick.h
 CMakeFiles/GameEngine.dir/game/Player.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_keyboard.h
 CMakeFiles/GameEngine.dir/game/Player.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_keycode.h
@@ -394,9 +394,8 @@ CMakeFiles/GameEngine.dir/game/main.cpp.o: ../components/Label.h
 CMakeFiles/GameEngine.dir/game/main.cpp.o: ../components/Movable.h
 CMakeFiles/GameEngine.dir/game/main.cpp.o: ../components/Sprite.h
 CMakeFiles/GameEngine.dir/game/main.cpp.o: ../engine/GameEngine.h
-CMakeFiles/GameEngine.dir/game/main.cpp.o: ../frame/Frame.h
-CMakeFiles/GameEngine.dir/game/main.cpp.o: ../game/Item.cpp
-CMakeFiles/GameEngine.dir/game/main.cpp.o: ../game/Player.cpp
+CMakeFiles/GameEngine.dir/game/main.cpp.o: ../game/Item.h
+CMakeFiles/GameEngine.dir/game/main.cpp.o: ../game/Player.h
 CMakeFiles/GameEngine.dir/game/main.cpp.o: ../game/main.cpp
 CMakeFiles/GameEngine.dir/game/main.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL.h
 CMakeFiles/GameEngine.dir/game/main.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_assert.h
@@ -414,7 +413,6 @@ CMakeFiles/GameEngine.dir/game/main.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/i
 CMakeFiles/GameEngine.dir/game/main.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_gesture.h
 CMakeFiles/GameEngine.dir/game/main.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_haptic.h
 CMakeFiles/GameEngine.dir/game/main.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_hints.h
-CMakeFiles/GameEngine.dir/game/main.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_image.h
 CMakeFiles/GameEngine.dir/game/main.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_joystick.h
 CMakeFiles/GameEngine.dir/game/main.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_keyboard.h
 CMakeFiles/GameEngine.dir/game/main.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_keycode.h

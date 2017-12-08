@@ -41,5 +41,4 @@ namespace gameEngine {
         SDL_DestroyTexture(labelTexture);
         TTF_Quit();
     }
-
 }

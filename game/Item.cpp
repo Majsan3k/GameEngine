@@ -2,17 +2,24 @@
 #include "../frame/Frame.h"
 #include "../engine/GameEngine.h"
 #include "../components/Movable.h"
+#include "Item.h"
 
 using namespace gameEngine;
 using namespace std;
 
 namespace myGame{
-    class Item : public Movable {
+        Item* Item::getInstance(SDL_Rect rect, const char* pictureSrc) {
+            return new Item(rect, pictureSrc);
+        }
+        Item::Item(SDL_Rect rect, const char* pictureSrc) : Movable(rect, pictureSrc) {}
 
-    public:
-        Item(SDL_Rect rect) : Movable(rect) {}
-        void changeState(const Uint8 *state, GameEngine &engine) override {
+        void Item::changeState(const Uint8 *state, GameEngine &engine) {
             spriteRect.y++;
         }
-    };
+
+        void Item::collisionOtherSprite(Sprite* otherSprite, GameEngine& engine){
+//            if(dynamic_cast<Player*>(otherSprite)){
+//                engine.updateItemsToRemove(this);
+//            }
+        }
 }

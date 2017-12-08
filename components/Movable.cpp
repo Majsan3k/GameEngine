@@ -10,12 +10,8 @@ using namespace std;
 
 namespace gameEngine {
 
-    Movable* Movable::getInstance(SDL_Rect picture) {
-        return new Movable(picture);
-    }
-
-    Movable::Movable(SDL_Rect& spritePicture) : Sprite(spritePicture) {
-        SDL_Surface* picture = IMG_Load("C:/Users/majal/Documents/Prog3/Inlupp/hat.png");
+    Movable::Movable(SDL_Rect& spritePicture, const char* pictureSrc) : Sprite(spritePicture) {
+        SDL_Surface* picture = IMG_Load(pictureSrc);
         Uint32 white = SDL_MapRGB(picture->format, 255, 255, 255);
         SDL_SetColorKey(picture, SDL_ENABLE, white);
 

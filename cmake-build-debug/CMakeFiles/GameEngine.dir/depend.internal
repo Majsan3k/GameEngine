@@ -289,6 +289,7 @@ CMakeFiles/GameEngine.dir/game/Item.cpp.o
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Item.cpp
+ /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Item.h
  C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL.h
  C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_assert.h
  C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_atomic.h
@@ -340,9 +341,9 @@ CMakeFiles/GameEngine.dir/game/Player.cpp.o
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Movable.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
- /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.h
- /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Item.cpp
+ /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Item.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Player.cpp
+ /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Player.h
  C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL.h
  C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_assert.h
  C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_atomic.h
@@ -359,7 +360,6 @@ CMakeFiles/GameEngine.dir/game/Player.cpp.o
  C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_gesture.h
  C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_haptic.h
  C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_hints.h
- C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_image.h
  C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_joystick.h
  C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_keyboard.h
  C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_keycode.h
@@ -395,9 +395,8 @@ CMakeFiles/GameEngine.dir/game/main.cpp.o
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Movable.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
- /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.h
- /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Item.cpp
- /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Player.cpp
+ /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Item.h
+ /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Player.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/main.cpp
  C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL.h
  C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_assert.h
@@ -415,7 +414,6 @@ CMakeFiles/GameEngine.dir/game/main.cpp.o
  C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_gesture.h
  C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_haptic.h
  C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_hints.h
- C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_image.h
  C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_joystick.h
  C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_keyboard.h
  C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_keycode.h

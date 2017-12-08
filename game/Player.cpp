@@ -1,44 +1,41 @@
 #include <iostream>
 #include "../components/Movable.h"
-#include "Item.cpp"
+#include "Player.h"
+#include "Item.h"
+#include "../engine/GameEngine.h"
 
 using namespace gameEngine;
 using namespace std;
 
 namespace myGame {
-    class Player : public Movable {
-    public:
-        static Player* getInstance(SDL_Rect picture, Label& lbl){
-            return new Player(picture, lbl);
-        }
 
-        void changeState(const Uint8 *state, GameEngine &engine) override {
-            if (state[SDL_SCANCODE_RIGHT]) {
-                spriteRect.x += 5;
-            }
-            if (state[SDL_SCANCODE_LEFT]) {
-                spriteRect.x -= 5;
-            }
-            if (state[SDL_SCANCODE_DOWN]) {
-                spriteRect.y += 5;
-            }
-            if (state[SDL_SCANCODE_UP]) {
-                spriteRect.y -= 5;
-            }
-        }
+    Player* Player::getInstance(SDL_Rect picture, Label& lbl, const char* pictureSrc){
+        return new Player(picture, lbl, pictureSrc);
+    }
 
-        void collisionOtherSprite(Sprite *otherSprite, GameEngine &engine) {
-            if (otherSprite != this && dynamic_cast<Item *>(otherSprite)) {
-                point++;
-                pointLabel.setText(to_string(point));
-                engine.updateItemsToRemove(otherSprite);
-            }
+    Player::Player(SDL_Rect picture, Label& lbl, const char* pictureSrc) : pointLabel(lbl), Movable(picture, pictureSrc){}
+
+    void Player::changeState(const Uint8 *state, GameEngine &engine) {
+        if (state[SDL_SCANCODE_RIGHT]) {
+            spriteRect.x += 5;
         }
-    protected:
-        Player(SDL_Rect picture, Label& lbl) : pointLabel(lbl), Movable(picture){}
-    private:
-        Label& pointLabel;
-        int point;
-    };
+        if (state[SDL_SCANCODE_LEFT]) {
+            spriteRect.x -= 5;
+        }
+        if (state[SDL_SCANCODE_DOWN]) {
+            spriteRect.y += 5;
+        }
+        if (state[SDL_SCANCODE_UP]) {
+            spriteRect.y -= 5;
+        }
+    }
+
+    void Player::collisionOtherSprite(Sprite *otherSprite, GameEngine &engine) {
+        if (otherSprite != this && dynamic_cast<Item *>(otherSprite)) {
+            point++;
+            pointLabel.setText(to_string(point));
+            engine.updateItemsToRemove(otherSprite);
+        }
+    }
 }
 

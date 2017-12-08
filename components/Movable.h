@@ -7,7 +7,6 @@
 namespace gameEngine {
     class Movable : public Sprite {
     public:
-        static Movable* getInstance(SDL_Rect);
         virtual void changeState(const Uint8*, GameEngine&){}
         virtual void collisionOtherSprite(Sprite *, GameEngine &){}
         void tick(const Uint8*, GameEngine&);
@@ -15,7 +14,7 @@ namespace gameEngine {
         ~Movable();
 
     protected:
-        Movable(SDL_Rect&);
+        Movable(SDL_Rect&, const char*);
     private:
         SDL_Texture* texture;
     };
