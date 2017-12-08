@@ -1,6 +1,6 @@
 #include <iostream>
 #include "../components/Movable.h"
-#include "../components/Item.h"
+#include "Item.cpp"
 
 using namespace game;
 using namespace std;
@@ -8,7 +8,7 @@ using namespace std;
 namespace gameImpl {
     class Player : public Movable {
     public:
-        Player(SDL_Rect rect) : Movable(rect) {}
+        Player(SDL_Rect rect, Label& label) : Movable(rect), pointLabel(label) {}
 
         void changeState(const Uint8 *state, GameEngine &engine) override {
             if (state[SDL_SCANCODE_RIGHT]) {
@@ -28,10 +28,15 @@ namespace gameImpl {
         void collisionOtherSprite(Sprite *otherSprite, GameEngine &engine) {
 
             if (otherSprite != this && dynamic_cast<Item *>(otherSprite)) {
-                //TODO: Uppdatera poäng
+                point++;
+                pointLabel.setText(to_string(point));
                 engine.updateItemsToRemove(otherSprite);
             }
         }
+
+    private:
+        Label& pointLabel;
+        int point;
     };
 }
 

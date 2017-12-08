@@ -2,8 +2,6 @@
 
 namespace game{
 
-    //TODO: Flytta över kollisionshanteringen hit.
-
     Sprite::Sprite(SDL_Rect& spritePicture):spriteRect(spritePicture) {
     }
 

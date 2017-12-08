@@ -88,12 +88,6 @@
 		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Button.h">
 			<Option target="GameEngine"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Item.cpp">
-			<Option target="GameEngine"/>
-		</Unit>
-		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Item.h">
-			<Option target="GameEngine"/>
-		</Unit>
 		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.cpp">
 			<Option target="GameEngine"/>
 		</Unit>
@@ -122,6 +116,9 @@
 			<Option target="GameEngine"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.h">
+			<Option target="GameEngine"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Item.cpp">
 			<Option target="GameEngine"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Player.cpp">

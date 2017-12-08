@@ -150,33 +150,6 @@ components/Button.cpp.s:
 	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/components/Button.cpp.s
 .PHONY : components/Button.cpp.s
 
-components/Item.o: components/Item.cpp.o
-
-.PHONY : components/Item.o
-
-# target to build an object file
-components/Item.cpp.o:
-	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/components/Item.cpp.o
-.PHONY : components/Item.cpp.o
-
-components/Item.i: components/Item.cpp.i
-
-.PHONY : components/Item.i
-
-# target to preprocess a source file
-components/Item.cpp.i:
-	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/components/Item.cpp.i
-.PHONY : components/Item.cpp.i
-
-components/Item.s: components/Item.cpp.s
-
-.PHONY : components/Item.s
-
-# target to generate assembly for a file
-components/Item.cpp.s:
-	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/components/Item.cpp.s
-.PHONY : components/Item.cpp.s
-
 components/Label.o: components/Label.cpp.o
 
 .PHONY : components/Label.o
@@ -312,6 +285,33 @@ frame/Frame.cpp.s:
 	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/frame/Frame.cpp.s
 .PHONY : frame/Frame.cpp.s
 
+game/Item.o: game/Item.cpp.o
+
+.PHONY : game/Item.o
+
+# target to build an object file
+game/Item.cpp.o:
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/game/Item.cpp.o
+.PHONY : game/Item.cpp.o
+
+game/Item.i: game/Item.cpp.i
+
+.PHONY : game/Item.i
+
+# target to preprocess a source file
+game/Item.cpp.i:
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/game/Item.cpp.i
+.PHONY : game/Item.cpp.i
+
+game/Item.s: game/Item.cpp.s
+
+.PHONY : game/Item.s
+
+# target to generate assembly for a file
+game/Item.cpp.s:
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/game/Item.cpp.s
+.PHONY : game/Item.cpp.s
+
 game/Player.o: game/Player.cpp.o
 
 .PHONY : game/Player.o
@@ -378,9 +378,6 @@ help:
 	@echo "... components/Button.o"
 	@echo "... components/Button.i"
 	@echo "... components/Button.s"
-	@echo "... components/Item.o"
-	@echo "... components/Item.i"
-	@echo "... components/Item.s"
 	@echo "... components/Label.o"
 	@echo "... components/Label.i"
 	@echo "... components/Label.s"
@@ -396,6 +393,9 @@ help:
 	@echo "... frame/Frame.o"
 	@echo "... frame/Frame.i"
 	@echo "... frame/Frame.s"
+	@echo "... game/Item.o"
+	@echo "... game/Item.i"
+	@echo "... game/Item.s"
 	@echo "... game/Player.o"
 	@echo "... game/Player.i"
 	@echo "... game/Player.s"
