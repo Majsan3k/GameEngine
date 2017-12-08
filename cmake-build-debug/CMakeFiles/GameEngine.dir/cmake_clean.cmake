@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/GameEngine.dir/components/Player.cpp.o"
   "CMakeFiles/GameEngine.dir/frame/Frame.cpp.o"
   "CMakeFiles/GameEngine.dir/components/Item.cpp.o"
+  "CMakeFiles/GameEngine.dir/components/Button.cpp.o"
+  "CMakeFiles/GameEngine.dir/components/Label.cpp.o"
   "GameEngine.pdb"
   "GameEngine.exe"
   "libGameEngine.dll.a"

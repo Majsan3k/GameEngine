@@ -82,10 +82,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Button.cpp">
+			<Option target="GameEngine"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Button.h">
+			<Option target="GameEngine"/>
+		</Unit>
 		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Item.cpp">
 			<Option target="GameEngine"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Item.h">
+			<Option target="GameEngine"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.cpp">
+			<Option target="GameEngine"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.h">
 			<Option target="GameEngine"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Player.cpp">

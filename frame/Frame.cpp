@@ -11,7 +11,7 @@ namespace game {
             throw std::runtime_error(string("Unexpected problem with SDL init. ") + SDL_GetError());
         }
 
-        window = SDL_CreateWindow("Game map", 100, 100, 500, 400, SDL_WINDOW_RESIZABLE);
+        window = SDL_CreateWindow("Game map", 100, 100, 500, 400, 0);
         if (window == nullptr) {
             throw std::runtime_error(string("Problem with SDL_Window. ") + SDL_GetError());
         }

@@ -6,6 +6,20 @@
 
 #IncludeRegexTransform: 
 
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Button.cpp
+SDL2/SDL_image.h
+-
+Button.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Button.h
+../frame/Frame.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.h
+iostream
+-
+
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Button.h
+../engine/GameEngine.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
+
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Item.cpp
 SDL2/SDL_image.h
 -
@@ -13,12 +27,32 @@ Item.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Item.h
 ../frame/Frame.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.h
+iostream
+-
 
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Item.h
-SDL2/SDL_quit.h
--
 ../engine/GameEngine.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
+Sprite.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
+
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.cpp
+Label.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.h
+../frame/Frame.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.h
+SDL2/SDL_ttf.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/SDL2/SDL_ttf.h
+iostream
+-
+
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.h
+string
+-
+SDL2/SDL_render.h
+-
+SDL2/SDL_ttf.h
+-
 Sprite.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
 
@@ -35,12 +69,16 @@ Player.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.h
 ../engine/GameEngine.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
+Item.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Item.h
 
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Player.h
 SDL2/SDL_system.h
 -
 Sprite.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
+Label.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.h
 
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.cpp
 Sprite.h
@@ -59,9 +97,13 @@ GameEngine.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
 ../frame/Frame.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.h
+../components/Button.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Button.h
 SDL2/SDL.h
 -
 SDL2/SDL_image.h
+-
+SDL2/SDL_mixer.h
 -
 
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
@@ -95,6 +137,10 @@ components/Player.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Player.h
 components/Item.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Item.h
+components/Button.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Button.h
+components/Label.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.h
 
 C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL.h
 SDL_main.h
@@ -416,6 +462,22 @@ C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/begin_code.h
 close_code.h
 C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/close_code.h
 
+C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_mixer.h
+SDL_stdinc.h
+C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_stdinc.h
+SDL_rwops.h
+C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_rwops.h
+SDL_audio.h
+C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_audio.h
+SDL_endian.h
+C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_endian.h
+SDL_version.h
+C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_version.h
+begin_code.h
+C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/begin_code.h
+close_code.h
+C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/close_code.h
+
 C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_mouse.h
 SDL_stdinc.h
 C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_stdinc.h
@@ -653,6 +715,14 @@ SDL_error.h
 C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_error.h
 SDL_video.h
 C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_video.h
+begin_code.h
+C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/begin_code.h
+close_code.h
+C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/close_code.h
+
+C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_ttf.h
+SDL.h
+C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL.h
 begin_code.h
 C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/begin_code.h
 close_code.h

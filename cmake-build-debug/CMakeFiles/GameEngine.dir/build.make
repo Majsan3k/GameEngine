@@ -201,6 +201,54 @@ CMakeFiles/GameEngine.dir/components/Item.cpp.o.provides: CMakeFiles/GameEngine.
 CMakeFiles/GameEngine.dir/components/Item.cpp.o.provides.build: CMakeFiles/GameEngine.dir/components/Item.cpp.o
 
 
+CMakeFiles/GameEngine.dir/components/Button.cpp.o: CMakeFiles/GameEngine.dir/flags.make
+CMakeFiles/GameEngine.dir/components/Button.cpp.o: ../components/Button.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/GameEngine.dir/components/Button.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GameEngine.dir/components/Button.cpp.o -c /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Button.cpp
+
+CMakeFiles/GameEngine.dir/components/Button.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GameEngine.dir/components/Button.cpp.i"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Button.cpp > CMakeFiles/GameEngine.dir/components/Button.cpp.i
+
+CMakeFiles/GameEngine.dir/components/Button.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GameEngine.dir/components/Button.cpp.s"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Button.cpp -o CMakeFiles/GameEngine.dir/components/Button.cpp.s
+
+CMakeFiles/GameEngine.dir/components/Button.cpp.o.requires:
+
+.PHONY : CMakeFiles/GameEngine.dir/components/Button.cpp.o.requires
+
+CMakeFiles/GameEngine.dir/components/Button.cpp.o.provides: CMakeFiles/GameEngine.dir/components/Button.cpp.o.requires
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/components/Button.cpp.o.provides.build
+.PHONY : CMakeFiles/GameEngine.dir/components/Button.cpp.o.provides
+
+CMakeFiles/GameEngine.dir/components/Button.cpp.o.provides.build: CMakeFiles/GameEngine.dir/components/Button.cpp.o
+
+
+CMakeFiles/GameEngine.dir/components/Label.cpp.o: CMakeFiles/GameEngine.dir/flags.make
+CMakeFiles/GameEngine.dir/components/Label.cpp.o: ../components/Label.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/GameEngine.dir/components/Label.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GameEngine.dir/components/Label.cpp.o -c /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.cpp
+
+CMakeFiles/GameEngine.dir/components/Label.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GameEngine.dir/components/Label.cpp.i"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.cpp > CMakeFiles/GameEngine.dir/components/Label.cpp.i
+
+CMakeFiles/GameEngine.dir/components/Label.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GameEngine.dir/components/Label.cpp.s"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.cpp -o CMakeFiles/GameEngine.dir/components/Label.cpp.s
+
+CMakeFiles/GameEngine.dir/components/Label.cpp.o.requires:
+
+.PHONY : CMakeFiles/GameEngine.dir/components/Label.cpp.o.requires
+
+CMakeFiles/GameEngine.dir/components/Label.cpp.o.provides: CMakeFiles/GameEngine.dir/components/Label.cpp.o.requires
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/components/Label.cpp.o.provides.build
+.PHONY : CMakeFiles/GameEngine.dir/components/Label.cpp.o.provides
+
+CMakeFiles/GameEngine.dir/components/Label.cpp.o.provides.build: CMakeFiles/GameEngine.dir/components/Label.cpp.o
+
+
 # Object files for target GameEngine
 GameEngine_OBJECTS = \
 "CMakeFiles/GameEngine.dir/main.cpp.o" \
@@ -208,7 +256,9 @@ GameEngine_OBJECTS = \
 "CMakeFiles/GameEngine.dir/components/Sprite.cpp.o" \
 "CMakeFiles/GameEngine.dir/components/Player.cpp.o" \
 "CMakeFiles/GameEngine.dir/frame/Frame.cpp.o" \
-"CMakeFiles/GameEngine.dir/components/Item.cpp.o"
+"CMakeFiles/GameEngine.dir/components/Item.cpp.o" \
+"CMakeFiles/GameEngine.dir/components/Button.cpp.o" \
+"CMakeFiles/GameEngine.dir/components/Label.cpp.o"
 
 # External object files for target GameEngine
 GameEngine_EXTERNAL_OBJECTS =
@@ -219,9 +269,11 @@ GameEngine.exe: CMakeFiles/GameEngine.dir/components/Sprite.cpp.o
 GameEngine.exe: CMakeFiles/GameEngine.dir/components/Player.cpp.o
 GameEngine.exe: CMakeFiles/GameEngine.dir/frame/Frame.cpp.o
 GameEngine.exe: CMakeFiles/GameEngine.dir/components/Item.cpp.o
+GameEngine.exe: CMakeFiles/GameEngine.dir/components/Button.cpp.o
+GameEngine.exe: CMakeFiles/GameEngine.dir/components/Label.cpp.o
 GameEngine.exe: CMakeFiles/GameEngine.dir/build.make
 GameEngine.exe: CMakeFiles/GameEngine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable GameEngine.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable GameEngine.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GameEngine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -235,6 +287,8 @@ CMakeFiles/GameEngine.dir/requires: CMakeFiles/GameEngine.dir/components/Sprite.
 CMakeFiles/GameEngine.dir/requires: CMakeFiles/GameEngine.dir/components/Player.cpp.o.requires
 CMakeFiles/GameEngine.dir/requires: CMakeFiles/GameEngine.dir/frame/Frame.cpp.o.requires
 CMakeFiles/GameEngine.dir/requires: CMakeFiles/GameEngine.dir/components/Item.cpp.o.requires
+CMakeFiles/GameEngine.dir/requires: CMakeFiles/GameEngine.dir/components/Button.cpp.o.requires
+CMakeFiles/GameEngine.dir/requires: CMakeFiles/GameEngine.dir/components/Label.cpp.o.requires
 
 .PHONY : CMakeFiles/GameEngine.dir/requires
 

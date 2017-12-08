@@ -8,8 +8,10 @@ set(SDL C:/Users/majal/Documents/Prog3/SDL2)
 include_directories(${SDL}/include)
 link_directories(${SDL}/lib)
 
-set(SOURCE_FILES main.cpp engine/GameEngine.cpp engine/GameEngine.h components/Sprite.cpp components/Sprite.h components/Player.cpp components/Player.h frame/Frame.cpp frame/Frame.h components/Item.cpp components/Item.h)
+set(SOURCE_FILES main.cpp engine/GameEngine.cpp engine/GameEngine.h components/Sprite.cpp components/Sprite.h components/Player.cpp components/Player.h frame/Frame.cpp frame/Frame.h components/Item.cpp components/Item.h components/Button.cpp components/Button.h components/Label.cpp components/Label.h)
 add_executable(GameEngine ${SOURCE_FILES})
 
 target_link_libraries(GameEngine SDL2main SDL2)
 target_link_libraries(GameEngine SDL2_image SDL2)
+target_link_libraries(GameEngine SDL2_mixer SDL2)
+target_link_libraries(GameEngine SDL2_ttf SDL2)

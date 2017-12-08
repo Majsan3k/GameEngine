@@ -123,6 +123,33 @@ GameEngine/fast:
 	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/build
 .PHONY : GameEngine/fast
 
+components/Button.o: components/Button.cpp.o
+
+.PHONY : components/Button.o
+
+# target to build an object file
+components/Button.cpp.o:
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/components/Button.cpp.o
+.PHONY : components/Button.cpp.o
+
+components/Button.i: components/Button.cpp.i
+
+.PHONY : components/Button.i
+
+# target to preprocess a source file
+components/Button.cpp.i:
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/components/Button.cpp.i
+.PHONY : components/Button.cpp.i
+
+components/Button.s: components/Button.cpp.s
+
+.PHONY : components/Button.s
+
+# target to generate assembly for a file
+components/Button.cpp.s:
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/components/Button.cpp.s
+.PHONY : components/Button.cpp.s
+
 components/Item.o: components/Item.cpp.o
 
 .PHONY : components/Item.o
@@ -149,6 +176,33 @@ components/Item.s: components/Item.cpp.s
 components/Item.cpp.s:
 	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/components/Item.cpp.s
 .PHONY : components/Item.cpp.s
+
+components/Label.o: components/Label.cpp.o
+
+.PHONY : components/Label.o
+
+# target to build an object file
+components/Label.cpp.o:
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/components/Label.cpp.o
+.PHONY : components/Label.cpp.o
+
+components/Label.i: components/Label.cpp.i
+
+.PHONY : components/Label.i
+
+# target to preprocess a source file
+components/Label.cpp.i:
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/components/Label.cpp.i
+.PHONY : components/Label.cpp.i
+
+components/Label.s: components/Label.cpp.s
+
+.PHONY : components/Label.s
+
+# target to generate assembly for a file
+components/Label.cpp.s:
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/components/Label.cpp.s
+.PHONY : components/Label.cpp.s
 
 components/Player.o: components/Player.cpp.o
 
@@ -294,9 +348,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... GameEngine"
+	@echo "... components/Button.o"
+	@echo "... components/Button.i"
+	@echo "... components/Button.s"
 	@echo "... components/Item.o"
 	@echo "... components/Item.i"
 	@echo "... components/Item.s"
+	@echo "... components/Label.o"
+	@echo "... components/Label.i"
+	@echo "... components/Label.s"
 	@echo "... components/Player.o"
 	@echo "... components/Player.i"
 	@echo "... components/Player.s"

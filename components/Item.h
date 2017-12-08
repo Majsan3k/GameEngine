@@ -1,6 +1,5 @@
 #ifndef GAMEENGINE_ITEM_H
 #define GAMEENGINE_ITEM_H
-#include <SDL2/SDL_quit.h>
 #include "../engine/GameEngine.h"
 #include "Sprite.h"
 
@@ -12,6 +11,8 @@ namespace game {
         bool collision(Sprite*);
         void draw();
         ~Item();
+
+
 
     protected:
         Item(SDL_Rect&);

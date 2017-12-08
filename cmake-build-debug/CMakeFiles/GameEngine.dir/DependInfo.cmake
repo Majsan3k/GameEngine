@@ -4,7 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Button.cpp" "/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/cmake-build-debug/CMakeFiles/GameEngine.dir/components/Button.cpp.o"
   "/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Item.cpp" "/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/cmake-build-debug/CMakeFiles/GameEngine.dir/components/Item.cpp.o"
+  "/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.cpp" "/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/cmake-build-debug/CMakeFiles/GameEngine.dir/components/Label.cpp.o"
   "/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Player.cpp" "/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/cmake-build-debug/CMakeFiles/GameEngine.dir/components/Player.cpp.o"
   "/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.cpp" "/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/cmake-build-debug/CMakeFiles/GameEngine.dir/components/Sprite.cpp.o"
   "/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.cpp" "/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/cmake-build-debug/CMakeFiles/GameEngine.dir/engine/GameEngine.cpp.o"

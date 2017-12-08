@@ -1,6 +1,9 @@
 #include <SDL2/SDL_image.h>
 #include "Item.h"
 #include "../frame/Frame.h"
+#include <iostream>
+
+using namespace std;
 
 namespace game{
 
@@ -16,16 +19,22 @@ namespace game{
         SDL_FreeSurface(surf);
     }
 
+    Item::~Item(){
+        SDL_DestroyTexture(itemTexture);
+    }
+
+    //TODO: För specifik för generella delen?
     void Item::tick(const Uint8* state, GameEngine& gameEngine){
-         std::vector<Sprite*> sprites = gameEngine.getSprites();
+        std::vector<Sprite*> sprites = gameEngine.getSprites();
         for(Sprite* sprite : sprites){
-            if(sprite != this && collision(sprite)){
-                gameEngine.remove(this);
-                return;
-            }
+//            if(sprite != this && collision(sprite)){
+//                gameEngine.remove(this);
+//                return;
+//            }
         }
         spriteRect.y++;
     }
+
 
     bool Item::collision(Sprite* otherSprite) {
         SDL_Rect otherRect = otherSprite->getSpriteRect();
@@ -51,9 +60,5 @@ namespace game{
 
     void Item::draw(){
         SDL_RenderCopy(frame.getRen(), itemTexture, NULL, &spriteRect);
-    }
-
-    Item::~Item(){
-        SDL_DestroyTexture(itemTexture);
     }
 }
