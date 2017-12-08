@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 
-namespace game {
+namespace gameEngine {
     Label* Label::getInstance(SDL_Rect rect, std::string txt) {
         return new Label(rect, txt);
     }

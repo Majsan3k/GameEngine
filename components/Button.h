@@ -2,7 +2,7 @@
 #define GAMEENGINE_BUTTON_H
 #include "../engine/GameEngine.h"
 
-namespace game {
+namespace gameEngine {
     class Button : public Sprite {
     public:
         static Button* getInstance(SDL_Rect);

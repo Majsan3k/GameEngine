@@ -5,7 +5,7 @@
 #include <SDL2/SDL_ttf.h>
 #include "Sprite.h"
 
-namespace game {
+namespace gameEngine {
     class Label : public Sprite {
 
     public:

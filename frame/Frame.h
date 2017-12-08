@@ -2,7 +2,7 @@
 #define GAMEENGINE_SYSTEM_H
 #include <SDL2/SDL_render.h>
 
-namespace game {
+namespace gameEngine {
 
     class Frame {
     public:

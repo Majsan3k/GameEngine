@@ -9,7 +9,7 @@
 
 using namespace std;
 
-namespace game {
+namespace gameEngine {
 
     void GameEngine::add(Sprite *sprite) {
         sprites.push_back(sprite);

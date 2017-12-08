@@ -4,7 +4,7 @@
 #include "Sprite.h"
 #include "Label.h"
 
-namespace game {
+namespace gameEngine {
     class Movable : public Sprite {
     public:
         static Movable* getInstance(SDL_Rect);

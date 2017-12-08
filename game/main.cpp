@@ -7,8 +7,8 @@
 #include "Player.cpp"
 
 using namespace std;
-using namespace game;
-using namespace gameImpl;
+using namespace gameEngine;
+using namespace myGame;
 
 class SoundBtn : public Button{
 public:
@@ -23,7 +23,7 @@ int main() {
     Label* points = Label::getInstance({450, 10, 40, 40}, "0");
 
     //TODO: Ska det vara getInstance på player? Fattar inte...
-    Movable* player = new Player({50, 250, 100, 100}, *points);
+    Movable* player = Player::getInstance({50, 250, 100, 100}, *points);
 
     Item* item = new Item({200, 1, 50, 50});
     Item* item1 = new Item({70, 10, 50, 50});

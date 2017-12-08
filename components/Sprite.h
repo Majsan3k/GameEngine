@@ -4,7 +4,7 @@
 #include <SDL2/SDL_events.h>
 #include <SDL2/SDL_render.h>
 
-namespace game{
+namespace gameEngine{
     class GameEngine;
     class Sprite {
     public:
@@ -15,7 +15,6 @@ namespace game{
         virtual void mouseButtonUp(SDL_Event&, GameEngine&);
         const SDL_Rect& getSpriteRect() const { return spriteRect; }
         virtual ~Sprite();
-
 
     protected:
         SDL_Rect spriteRect;

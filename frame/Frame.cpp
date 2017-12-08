@@ -4,7 +4,7 @@
 #include "Frame.h"
 using namespace std;
 
-namespace game {
+namespace gameEngine {
     Frame::Frame() {
 
         if (SDL_Init(SDL_INIT_EVERYTHING == -1)) {

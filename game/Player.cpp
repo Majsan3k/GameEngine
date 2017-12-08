@@ -2,13 +2,15 @@
 #include "../components/Movable.h"
 #include "Item.cpp"
 
-using namespace game;
+using namespace gameEngine;
 using namespace std;
 
-namespace gameImpl {
+namespace myGame {
     class Player : public Movable {
     public:
-        Player(SDL_Rect rect, Label& label) : Movable(rect), pointLabel(label) {}
+        static Player* getInstance(SDL_Rect picture, Label& lbl){
+            return new Player(picture, lbl);
+        }
 
         void changeState(const Uint8 *state, GameEngine &engine) override {
             if (state[SDL_SCANCODE_RIGHT]) {
@@ -26,14 +28,14 @@ namespace gameImpl {
         }
 
         void collisionOtherSprite(Sprite *otherSprite, GameEngine &engine) {
-
             if (otherSprite != this && dynamic_cast<Item *>(otherSprite)) {
                 point++;
                 pointLabel.setText(to_string(point));
                 engine.updateItemsToRemove(otherSprite);
             }
         }
-
+    protected:
+        Player(SDL_Rect picture, Label& lbl) : pointLabel(lbl), Movable(picture){}
     private:
         Label& pointLabel;
         int point;

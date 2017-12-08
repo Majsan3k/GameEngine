@@ -2,12 +2,11 @@
 #include "../frame/Frame.h"
 #include "../engine/GameEngine.h"
 #include "../components/Movable.h"
-#include <iostream>
 
-using namespace game;
+using namespace gameEngine;
 using namespace std;
 
-namespace gameImpl{
+namespace myGame{
     class Item : public Movable {
 
     public:

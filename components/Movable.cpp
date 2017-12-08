@@ -8,7 +8,7 @@
 
 using namespace std;
 
-namespace game {
+namespace gameEngine {
 
     Movable* Movable::getInstance(SDL_Rect picture) {
         return new Movable(picture);

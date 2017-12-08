@@ -4,7 +4,7 @@
 #include <SDL2/SDL_render.h>
 #include "../components/Sprite.h"
 
-namespace game {
+namespace gameEngine {
 
     class GameEngine {
 

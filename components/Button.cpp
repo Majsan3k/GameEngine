@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 
-namespace game{
+namespace gameEngine{
 
     Button* Button::getInstance(SDL_Rect rect){
         return new Button(rect);
