@@ -231,33 +231,6 @@ components/Movable.cpp.s:
 	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/components/Movable.cpp.s
 .PHONY : components/Movable.cpp.s
 
-components/Player.o: components/Player.cpp.o
-
-.PHONY : components/Player.o
-
-# target to build an object file
-components/Player.cpp.o:
-	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/components/Player.cpp.o
-.PHONY : components/Player.cpp.o
-
-components/Player.i: components/Player.cpp.i
-
-.PHONY : components/Player.i
-
-# target to preprocess a source file
-components/Player.cpp.i:
-	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/components/Player.cpp.i
-.PHONY : components/Player.cpp.i
-
-components/Player.s: components/Player.cpp.s
-
-.PHONY : components/Player.s
-
-# target to generate assembly for a file
-components/Player.cpp.s:
-	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/components/Player.cpp.s
-.PHONY : components/Player.cpp.s
-
 components/Sprite.o: components/Sprite.cpp.o
 
 .PHONY : components/Sprite.o
@@ -339,6 +312,33 @@ frame/Frame.cpp.s:
 	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/frame/Frame.cpp.s
 .PHONY : frame/Frame.cpp.s
 
+game/Player.o: game/Player.cpp.o
+
+.PHONY : game/Player.o
+
+# target to build an object file
+game/Player.cpp.o:
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/game/Player.cpp.o
+.PHONY : game/Player.cpp.o
+
+game/Player.i: game/Player.cpp.i
+
+.PHONY : game/Player.i
+
+# target to preprocess a source file
+game/Player.cpp.i:
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/game/Player.cpp.i
+.PHONY : game/Player.cpp.i
+
+game/Player.s: game/Player.cpp.s
+
+.PHONY : game/Player.s
+
+# target to generate assembly for a file
+game/Player.cpp.s:
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/game/Player.cpp.s
+.PHONY : game/Player.cpp.s
+
 game/main.o: game/main.cpp.o
 
 .PHONY : game/main.o
@@ -387,9 +387,6 @@ help:
 	@echo "... components/Movable.o"
 	@echo "... components/Movable.i"
 	@echo "... components/Movable.s"
-	@echo "... components/Player.o"
-	@echo "... components/Player.i"
-	@echo "... components/Player.s"
 	@echo "... components/Sprite.o"
 	@echo "... components/Sprite.i"
 	@echo "... components/Sprite.s"
@@ -399,6 +396,9 @@ help:
 	@echo "... frame/Frame.o"
 	@echo "... frame/Frame.i"
 	@echo "... frame/Frame.s"
+	@echo "... game/Player.o"
+	@echo "... game/Player.i"
+	@echo "... game/Player.s"
 	@echo "... game/main.o"
 	@echo "... game/main.i"
 	@echo "... game/main.s"

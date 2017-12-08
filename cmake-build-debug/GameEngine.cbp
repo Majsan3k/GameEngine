@@ -106,12 +106,6 @@
 		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Movable.h">
 			<Option target="GameEngine"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Player.cpp">
-			<Option target="GameEngine"/>
-		</Unit>
-		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Player.h">
-			<Option target="GameEngine"/>
-		</Unit>
 		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.cpp">
 			<Option target="GameEngine"/>
 		</Unit>
@@ -128,6 +122,9 @@
 			<Option target="GameEngine"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.h">
+			<Option target="GameEngine"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Player.cpp">
 			<Option target="GameEngine"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/main.cpp">

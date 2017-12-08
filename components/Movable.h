@@ -7,8 +7,9 @@
 namespace game {
     class Movable : public Sprite {
     public:
-        virtual void changeState(const Uint8*, GameEngine&) = 0;
-        virtual void collisionItem(Sprite&, GameEngine&) = 0;
+        static Movable* getInstance(SDL_Rect);
+        virtual void changeState(const Uint8*, GameEngine&){}
+        virtual void collisionOtherSprite(Sprite *, GameEngine &){}
         void tick(const Uint8*, GameEngine&);
         void draw();
         ~Movable();
@@ -17,8 +18,6 @@ namespace game {
         Movable(SDL_Rect&);
     private:
         SDL_Texture* texture;
-        Movable(const Movable&) = delete; //delete copy constructor
-        const Movable& operator=(const Movable&) = delete; //delete "tilldelningskonstruktor"
     };
 }
 #endif //GAMEENGINE_MOVABLE_H

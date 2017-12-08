@@ -1,13 +1,15 @@
 #define SDL_MAIN_HANDLED
 #include <iostream>
 #include "../engine/GameEngine.h"
-#include "../components/Player.h"
 #include "../components/Item.h"
 #include "../components/Button.h"
 #include "../components/Label.h"
+#include "../components/Movable.h"
+#include "Player.cpp"
 
 using namespace std;
 using namespace game;
+using namespace gameImpl;
 
 class SoundBtn : public Button{
 public:
@@ -20,7 +22,9 @@ public:
 int main() {
     GameEngine gameEngine;
     Label* points = Label::getInstance({450, 10, 40, 40}, "0");
-    Player* player = Player::getInstance({50, 250, 100, 100}, *points);
+
+    Movable* player = new Player({50, 250, 100, 100});
+
     Item* item = Item::getInstance({200, 1, 50, 50});
     Item* item1 = Item::getInstance({70, 10, 50, 50});
     Item* item2 = Item::getInstance({10 , 10, 50, 50});
