@@ -44,20 +44,19 @@ namespace gameEngine {
         }
     }
 
-    //TODO: Kan man lägga in tpy String music och String background som argument?
-    void GameEngine::run(int FPS) {
+    void GameEngine::run(int FPS, const char* musicSrc, const char* backgroundSrc) {
         bool musicPlay = true;
         playMusic(true);
 
         Mix_OpenAudio(22050, AUDIO_S16SYS, 2, 4096);
-        Mix_Chunk *music = Mix_LoadWAV("C:/Users/majal/Documents/Prog3/Inlupp/music.mp3");
+        Mix_Chunk *music = Mix_LoadWAV(musicSrc);
         Mix_PlayChannel(-1, music, -1);
 
         const int roundTime = 1000 / FPS;
         Uint32 frameStart;
         int frameTime;
 
-        SDL_Surface *backgroundPicture = IMG_Load("C:/Users/majal/Documents/Prog3/Inlupp/bg.jpg");
+        SDL_Surface *backgroundPicture = IMG_Load(backgroundSrc);
         background = SDL_CreateTextureFromSurface(frame.getRen(), backgroundPicture);
         SDL_FreeSurface(backgroundPicture);
 

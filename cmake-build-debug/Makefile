@@ -339,6 +339,33 @@ game/Player.cpp.s:
 	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/game/Player.cpp.s
 .PHONY : game/Player.cpp.s
 
+game/SoundButton.o: game/SoundButton.cpp.o
+
+.PHONY : game/SoundButton.o
+
+# target to build an object file
+game/SoundButton.cpp.o:
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o
+.PHONY : game/SoundButton.cpp.o
+
+game/SoundButton.i: game/SoundButton.cpp.i
+
+.PHONY : game/SoundButton.i
+
+# target to preprocess a source file
+game/SoundButton.cpp.i:
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/game/SoundButton.cpp.i
+.PHONY : game/SoundButton.cpp.i
+
+game/SoundButton.s: game/SoundButton.cpp.s
+
+.PHONY : game/SoundButton.s
+
+# target to generate assembly for a file
+game/SoundButton.cpp.s:
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/game/SoundButton.cpp.s
+.PHONY : game/SoundButton.cpp.s
+
 game/main.o: game/main.cpp.o
 
 .PHONY : game/main.o
@@ -399,6 +426,9 @@ help:
 	@echo "... game/Player.o"
 	@echo "... game/Player.i"
 	@echo "... game/Player.s"
+	@echo "... game/SoundButton.o"
+	@echo "... game/SoundButton.i"
+	@echo "... game/SoundButton.s"
 	@echo "... game/main.o"
 	@echo "... game/main.i"
 	@echo "... game/main.s"

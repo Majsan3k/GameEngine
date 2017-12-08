@@ -389,6 +389,36 @@ CMakeFiles/GameEngine.dir/game/Player.cpp.o
  C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_video.h
  C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/begin_code.h
  C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/close_code.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o
+ /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Button.h
+ /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
+ /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
+ /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/SoundButton.cpp
+ /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/SoundButton.h
+ C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_blendmode.h
+ C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_config.h
+ C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_endian.h
+ C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_error.h
+ C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_events.h
+ C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_gamecontroller.h
+ C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_gesture.h
+ C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_joystick.h
+ C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_keyboard.h
+ C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_keycode.h
+ C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_mouse.h
+ C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_pixels.h
+ C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_platform.h
+ C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_quit.h
+ C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_rect.h
+ C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_render.h
+ C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_rwops.h
+ C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_scancode.h
+ C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_stdinc.h
+ C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_surface.h
+ C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_touch.h
+ C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_video.h
+ C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/begin_code.h
+ C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/close_code.h
 CMakeFiles/GameEngine.dir/game/main.cpp.o
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Button.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.h

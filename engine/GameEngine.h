@@ -12,7 +12,7 @@ namespace gameEngine {
         void add(Sprite *sprite);
         void updateItemsToRemove(Sprite* sprite);
         void remove(Sprite*);
-        void run(int);
+        void run(int, const char*, const char*);
         void playMusic(bool);
         const std::vector<Sprite*> getSprites() const { return sprites; };
         ~GameEngine();

@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.cpp" "/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/cmake-build-debug/CMakeFiles/GameEngine.dir/frame/Frame.cpp.o"
   "/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Item.cpp" "/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/cmake-build-debug/CMakeFiles/GameEngine.dir/game/Item.cpp.o"
   "/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Player.cpp" "/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/cmake-build-debug/CMakeFiles/GameEngine.dir/game/Player.cpp.o"
+  "/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/SoundButton.cpp" "/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/cmake-build-debug/CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o"
   "/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/main.cpp" "/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/cmake-build-debug/CMakeFiles/GameEngine.dir/game/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

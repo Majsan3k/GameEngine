@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/GameEngine.dir/components/Movable.cpp.o"
   "CMakeFiles/GameEngine.dir/game/Player.cpp.o"
   "CMakeFiles/GameEngine.dir/game/Item.cpp.o"
+  "CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o"
   "GameEngine.pdb"
   "GameEngine.exe"
   "libGameEngine.dll.a"

@@ -146,6 +146,18 @@ Item.h
 ../components/Label.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.h
 
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/SoundButton.cpp
+SoundButton.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/SoundButton.h
+
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/SoundButton.h
+SDL2/SDL_rect.h
+-
+../engine/GameEngine.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
+../components/Button.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Button.h
+
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/main.cpp
 iostream
 -

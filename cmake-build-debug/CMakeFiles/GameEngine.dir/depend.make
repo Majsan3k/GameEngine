@@ -389,6 +389,36 @@ CMakeFiles/GameEngine.dir/game/Player.cpp.o: C:/Users/majal/Documents/Prog3/SDL2
 CMakeFiles/GameEngine.dir/game/Player.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/begin_code.h
 CMakeFiles/GameEngine.dir/game/Player.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/close_code.h
 
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: ../components/Button.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: ../components/Sprite.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: ../engine/GameEngine.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: ../game/SoundButton.cpp
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: ../game/SoundButton.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_blendmode.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_config.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_endian.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_error.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_events.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_gamecontroller.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_gesture.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_joystick.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_keyboard.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_keycode.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_mouse.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_pixels.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_platform.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_quit.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_rect.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_render.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_rwops.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_scancode.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_stdinc.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_surface.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_touch.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_video.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/begin_code.h
+CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/close_code.h
+
 CMakeFiles/GameEngine.dir/game/main.cpp.o: ../components/Button.h
 CMakeFiles/GameEngine.dir/game/main.cpp.o: ../components/Label.h
 CMakeFiles/GameEngine.dir/game/main.cpp.o: ../components/Movable.h

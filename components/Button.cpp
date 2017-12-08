@@ -7,12 +7,14 @@ using namespace std;
 
 namespace gameEngine{
 
-    Button* Button::getInstance(SDL_Rect rect){
-        return new Button(rect);
+    //TODO: Button ska inte ha getInstance, ska ligga i SoundButton
+
+    Button* Button::getInstance(SDL_Rect rect, const char* pictureSrc){
+        return new Button(rect, pictureSrc);
     }
 
-    Button::Button(SDL_Rect& button) : Sprite(button){
-        SDL_Surface* buttonSurf =  IMG_Load("C:/Users/majal/Documents/Prog3/Inlupp/soundOff.png");
+    Button::Button(SDL_Rect& button, const char* pictureSrc) : Sprite(button){
+        SDL_Surface* buttonSurf =  IMG_Load(pictureSrc);
         Uint32 white = SDL_MapRGB(buttonSurf->format, 255, 255, 255);
         SDL_SetColorKey(buttonSurf, SDL_ENABLE, white);
 
