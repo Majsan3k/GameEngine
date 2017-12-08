@@ -9,7 +9,7 @@ namespace game{
     public:
         virtual void draw() = 0;
         virtual void tick(const Uint8 *, GameEngine &) = 0;
-        virtual bool collision(Sprite*);
+        bool collision(Sprite*);
         virtual void mouseButtonDown(SDL_Event&);
         virtual void mouseButtonUp(SDL_Event&, GameEngine&);
         const SDL_Rect& getSpriteRect() const { return spriteRect; }

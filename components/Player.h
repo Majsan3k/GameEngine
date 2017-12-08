@@ -9,7 +9,6 @@ namespace game {
     public:
         static Player* getInstance(SDL_Rect, Label&);
         void tick(const Uint8*, GameEngine&);
-        bool collision(Sprite*);
         void draw();
         ~Player();
 
