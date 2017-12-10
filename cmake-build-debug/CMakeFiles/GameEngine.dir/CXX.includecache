@@ -173,6 +173,8 @@ Item.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Item.h
 Player.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Player.h
+SoundButton.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/SoundButton.h
 
 C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL.h
 SDL_main.h

@@ -5,18 +5,20 @@
 namespace gameEngine {
     class Button : public Sprite {
     public:
-        static Button* getInstance(SDL_Rect, const char*);
-        void tick(const Uint8*, GameEngine&);
+        virtual void perform(GameEngine&){}
+        void tick(const Uint8*, GameEngine&){}
         void draw();
         void mouseButtonUp(SDL_Event&, GameEngine&);
         void mouseButtonDown(SDL_Event&);
         ~Button();
     protected:
-        Button(SDL_Rect&, const char*);
+        Button(SDL_Rect&, const char*, const char*);
+        bool active = true;
     private:
         bool isDown = false;
-        bool soundOn = true;
-        SDL_Texture* soundOnIcon, *soundOffIcon;
+        SDL_Texture* frontIcon, *backIcon;
+        Button(const Button&) = delete;
+        const Button& operator=(const Button&) = delete;
     };
 }
 

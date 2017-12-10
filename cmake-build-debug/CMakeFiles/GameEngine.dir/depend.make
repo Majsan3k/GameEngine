@@ -426,6 +426,7 @@ CMakeFiles/GameEngine.dir/game/main.cpp.o: ../components/Sprite.h
 CMakeFiles/GameEngine.dir/game/main.cpp.o: ../engine/GameEngine.h
 CMakeFiles/GameEngine.dir/game/main.cpp.o: ../game/Item.h
 CMakeFiles/GameEngine.dir/game/main.cpp.o: ../game/Player.h
+CMakeFiles/GameEngine.dir/game/main.cpp.o: ../game/SoundButton.h
 CMakeFiles/GameEngine.dir/game/main.cpp.o: ../game/main.cpp
 CMakeFiles/GameEngine.dir/game/main.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL.h
 CMakeFiles/GameEngine.dir/game/main.cpp.o: C:/Users/majal/Documents/Prog3/SDL2/include/SDL2/SDL_assert.h

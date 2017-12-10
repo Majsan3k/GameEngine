@@ -17,6 +17,8 @@ namespace gameEngine {
         Movable(SDL_Rect&, const char*);
     private:
         SDL_Texture* texture;
+        Movable(const Movable&) = delete;
+        const Movable&operator=(const Movable&) = delete;
     };
 }
 #endif //GAMEENGINE_MOVABLE_H

@@ -1,4 +1,3 @@
-
 #include <SDL2/SDL_image.h>
 #include "Button.h"
 #include "../frame/Frame.h"
@@ -7,36 +6,32 @@ using namespace std;
 
 namespace gameEngine{
 
-    //TODO: Button ska inte ha getInstance, ska ligga i SoundButton
+    Button::Button(SDL_Rect& button, const char* frontPicSrc, const char* backPicSrc) : Sprite(button){
+        SDL_Surface* frontSurf =  IMG_Load(frontPicSrc);
+        SDL_Surface* backSurf =  IMG_Load(backPicSrc);
 
-    Button* Button::getInstance(SDL_Rect rect, const char* pictureSrc){
-        return new Button(rect, pictureSrc);
-    }
+        Uint32 white = SDL_MapRGB(frontSurf->format, 255, 255, 255);
 
-    Button::Button(SDL_Rect& button, const char* pictureSrc) : Sprite(button){
-        SDL_Surface* buttonSurf =  IMG_Load(pictureSrc);
-        Uint32 white = SDL_MapRGB(buttonSurf->format, 255, 255, 255);
-        SDL_SetColorKey(buttonSurf, SDL_ENABLE, white);
+        SDL_SetColorKey(frontSurf, SDL_ENABLE, white);
+        SDL_SetColorKey(backSurf, SDL_ENABLE, white);
 
-        soundOffIcon = SDL_CreateTextureFromSurface(frame.getRen(), buttonSurf);
-        SDL_FreeSurface(buttonSurf);
+        frontIcon = SDL_CreateTextureFromSurface(frame.getRen(), frontSurf);
+        backIcon = SDL_CreateTextureFromSurface(frame.getRen(), backSurf);
 
-        soundOnIcon = IMG_LoadTexture(frame.getRen(), "C:/Users/majal/Documents/Prog3/Inlupp/soundOn.png");
+        SDL_FreeSurface(frontSurf);
+        SDL_FreeSurface(backSurf);
     }
 
     Button::~Button() {
-        SDL_DestroyTexture(soundOnIcon);
-        SDL_DestroyTexture(soundOffIcon);
+        SDL_DestroyTexture(backIcon);
+        SDL_DestroyTexture(frontIcon);
     }
 
-
-    //TODO: Ta bort soundOn-variabeln och bara kolla om knappen är nedtryckt?
     void Button::mouseButtonUp(SDL_Event& event, GameEngine& gameEngine) {
         SDL_Point p = {event.button.x, event.button.y};
         if(isDown && SDL_PointInRect(&p, &spriteRect)){
-            soundOn = !soundOn;
+            perform(gameEngine);
             isDown = false;
-            gameEngine.playMusic(soundOn);
         }
     }
 
@@ -47,41 +42,11 @@ namespace gameEngine{
         }
     }
 
-    //TODO: Kolla på vad som egentligen ska göras här? När jag kollade om knappen var nedtryckt här kaosade det.
-    void Button::tick(const Uint8* state, GameEngine& gameEngine){
-
-
-
-//        if(SDL_GetMouseState(&x, &y) && SDL_BUTTON_LEFT){
-//            soundOn = !soundOn;
-//        }
-
-        /*static bool press = false;
-        SDL_Point point = {event.button.x, event.button.y};
-        switch(event.type){
-
-            case SDL_MOUSEBUTTONDOWN :
-                if(SDL_PointInRect(&point, &spriteRect)){
-                    soundOn = !soundOn;
-                    press = true;
-                }
-                break;
-            case SDL_MOUSEBUTTONUP :
-                if(press && SDL_PointInRect(&point, &spriteRect)){
-                    soundOn = !soundOn;
-                    gameEngine.playMusic(soundOn);
-                break;
-                }
-
-        }*/
-    }
-
-    //TODO: Ha detta i en subklass i min implementation?
     void Button::draw(){
-        if(soundOn) {
-            SDL_RenderCopy(frame.getRen(), soundOnIcon, NULL, &spriteRect);
+        if(active) {
+            SDL_RenderCopy(frame.getRen(), frontIcon, NULL, &spriteRect);
         }else{
-            SDL_RenderCopy(frame.getRen(), soundOffIcon, NULL, &spriteRect);
+            SDL_RenderCopy(frame.getRen(), backIcon, NULL, &spriteRect);
         }
     }
 }

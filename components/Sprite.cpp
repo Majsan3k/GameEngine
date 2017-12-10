@@ -2,9 +2,6 @@
 
 namespace gameEngine{
 
-//Alla sprites ska ju ha bild, borde texturen skapas och ligga här istället?
-
-
     Sprite::Sprite(SDL_Rect& spritePicture):spriteRect(spritePicture) {
     }
 

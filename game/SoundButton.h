@@ -11,10 +11,11 @@ namespace myGame {
     class SoundButton : public Button{
 
     public:
-        static SoundButton* getInstance(SDL_Rect, const char*);
+        static SoundButton* getInstance(SDL_Rect, const char*, const char*);
+        void perform(GameEngine&) override;
 
     protected:
-        SoundButton(SDL_Rect, const char*);
+        SoundButton(SDL_Rect, const char*, const char*);
 
     };
 }
