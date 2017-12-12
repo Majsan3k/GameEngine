@@ -10,7 +10,7 @@ namespace myGame{
     public:
         static Player* getInstance(SDL_Rect, Label&, const char*);
         void collisionOtherSprite(Sprite*, GameEngine&) override;
-        void changeState(const Uint8*, GameEngine&) override;
+        void move(const Uint8*, GameEngine&) override;
     protected:
         Player(SDL_Rect, Label&, const char*);
     private:

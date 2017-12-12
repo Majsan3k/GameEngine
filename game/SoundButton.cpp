@@ -2,8 +2,6 @@
 
 namespace myGame{
 
-    //TODO: Gör klart klassen
-
     SoundButton* SoundButton::getInstance(SDL_Rect rect, const char* frontIconSrc, const char* backIconSrc){
         return new SoundButton(rect, frontIconSrc, backIconSrc);
     }

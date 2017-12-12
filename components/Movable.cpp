@@ -20,7 +20,7 @@ namespace gameEngine {
     }
 
     void Movable::tick(const Uint8 *state, GameEngine &engine){
-        changeState(state, engine);
+        move(state, engine);
 
         std::vector<Sprite*> sprites = engine.getSprites();
         for(Sprite* sprite : sprites){

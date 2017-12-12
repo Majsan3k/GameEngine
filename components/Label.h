@@ -9,15 +9,15 @@ namespace gameEngine {
     class Label : public Sprite {
 
     public:
-        static Label* getInstance(SDL_Rect, std::string);
-        void tick(const Uint8*, GameEngine&);
+        static Label* getInstance(SDL_Rect, std::string, const char*);
+        void tick(const Uint8*, GameEngine&){}
         void draw();
         const std::string getText(){return text;}
         void setText(std::string);
         ~Label();
 
     protected:
-        Label(SDL_Rect&, std::string);
+        Label(SDL_Rect&, std::string, const char*);
     private:
         std::string text;
         TTF_Font* font;

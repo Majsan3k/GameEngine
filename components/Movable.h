@@ -7,7 +7,7 @@
 namespace gameEngine {
     class Movable : public Sprite {
     public:
-        virtual void changeState(const Uint8*, GameEngine&){}
+        virtual void move(const Uint8 *, GameEngine &) = 0;
         virtual void collisionOtherSprite(Sprite *, GameEngine &){}
         void tick(const Uint8*, GameEngine&);
         void draw();

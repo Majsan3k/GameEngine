@@ -11,6 +11,7 @@ namespace gameEngine {
             throw std::runtime_error(string("Unexpected problem with SDL init. ") + SDL_GetError());
         }
 
+        //TODO HANDLEDNING: Hur ska jag på smidigast sätt se till så användaren får ange storlek?
         window = SDL_CreateWindow("Game map", 100, 100, 500, 400, 0);
         if (window == nullptr) {
             throw std::runtime_error(string("Problem with SDL_Window. ") + SDL_GetError());
@@ -20,11 +21,6 @@ namespace gameEngine {
         if (ren == nullptr) {
             throw std::runtime_error(string("Problem with Renderer. ") + SDL_GetError());
         }
-
-        SDL_Surface *backgroundPicture = IMG_Load("C:/Users/majal/Documents/Prog3/Inlupp/background.jpg");
-        SDL_Texture* test = SDL_CreateTextureFromSurface(frame.getRen(), backgroundPicture);
-        SDL_FreeSurface(backgroundPicture);
-        SDL_RenderCopy(ren, test, NULL, NULL);
     }
 
     Frame::~Frame() {

@@ -8,6 +8,8 @@ namespace gameEngine {
     public:
         Frame();
         SDL_Renderer *getRen() { return ren; }
+        int getWidth(){ return SDL_GetWindowSurface(window)->w; }
+        int getHeight(){ return SDL_GetWindowSurface(window)->h; }
         ~Frame();
     private:
         SDL_Window *window;

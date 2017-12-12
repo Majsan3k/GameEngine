@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "Item.h"
 #include "../engine/GameEngine.h"
+#include "../frame/Frame.h"
 
 using namespace gameEngine;
 using namespace std;
@@ -15,7 +16,7 @@ namespace myGame {
 
     Player::Player(SDL_Rect picture, Label& lbl, const char* pictureSrc) : pointLabel(lbl), Movable(picture, pictureSrc){}
 
-    void Player::changeState(const Uint8 *state, GameEngine &engine) {
+    void Player::move(const Uint8 *state, GameEngine &engine) {
         if (state[SDL_SCANCODE_RIGHT]) {
             spriteRect.x += 5;
         }

@@ -11,7 +11,7 @@ namespace myGame{
     public:
         static Item* getInstance(SDL_Rect, const char*);
         void collisionOtherSprite(Sprite*, GameEngine&) override;
-        void changeState(const Uint8*, GameEngine&);
+        void move(const Uint8*, GameEngine&);
 
     protected:
         Item(SDL_Rect, const char*);

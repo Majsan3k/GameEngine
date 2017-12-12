@@ -21,14 +21,13 @@ int main() {
     const char* btnPicFront = "C:/Users/majal/Documents/Prog3/Inlupp/soundOn.png";
     const char* btnPicBack = "C:/Users/majal/Documents/Prog3/Inlupp/soundOff.png";
 
-    Label* points = Label::getInstance({450, 10, 40, 40}, "0");
+    Label* points = Label::getInstance({450, 10, 40, 40}, "0", "C:/Windows/Fonts/Arial.ttf");
     Movable* player = Player::getInstance({50, 250, 100, 100}, *points, playerPic);
     Item* item = Item::getInstance({200, 1, 50, 50}, elephant);
     Item* item1 = Item::getInstance({70, 10, 50, 50}, elephant);
     Item* item2 = Item::getInstance({10 , 10, 50, 50}, elephant);
     Item* item3 = Item::getInstance({317, 22, 50, 50}, elephant);
     Button* soundButton = SoundButton::getInstance({450, 60, 40, 40}, btnPicFront, btnPicBack);
-
 
     gameEngine.add(player);
     gameEngine.add(item);

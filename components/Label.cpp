@@ -5,24 +5,20 @@
 using namespace std;
 
 namespace gameEngine {
-    Label* Label::getInstance(SDL_Rect rect, std::string txt) {
-        return new Label(rect, txt);
+    Label* Label::getInstance(SDL_Rect rect, std::string txt, const char* fontSrc) {
+        return new Label(rect, txt, fontSrc);
     }
 
-    Label::Label(SDL_Rect& rect, std::string text) : Sprite(rect), text(text) {
+    Label::Label(SDL_Rect& rect, std::string text, const char* fontSrc) : Sprite(rect), text(text) {
 
         TTF_Init();
-        font = TTF_OpenFont("C:/Windows/Fonts/Arial.ttf", 15);
+        font = TTF_OpenFont(fontSrc, 15);
         if(font == NULL){
             cout << SDL_GetError() << endl;
         }
         SDL_Surface* surf = TTF_RenderText_Solid(font, text.c_str(), {0,0,0});
         labelTexture = SDL_CreateTextureFromSurface(frame.getRen(), surf);
         SDL_FreeSurface(surf);
-    }
-
-    void Label::tick(const Uint8 *, GameEngine &){
-
     }
 
     void Label::draw(){

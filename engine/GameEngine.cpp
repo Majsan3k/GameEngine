@@ -5,7 +5,6 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_mixer.h>
-//#define FPS 60
 
 using namespace std;
 
@@ -87,24 +86,24 @@ namespace gameEngine {
                 }
             }
 
-                frameTime = SDL_GetTicks() - frameStart;
-                if (roundTime > frameTime) {
-                    SDL_Delay(roundTime - frameTime);
-                }
-
-                const Uint8 *state = SDL_GetKeyboardState(NULL);
-                for (Sprite *sprite : sprites)
-                    sprite->tick(state, *this);
-
-                for (Sprite *sprite : itemsToRemove)
-                    remove(sprite);
-
-                SDL_SetRenderDrawColor(frame.getRen(), 255, 255, 255, 0);
-                SDL_RenderClear(frame.getRen());
-                SDL_RenderCopy(frame.getRen(), background, NULL, NULL);
-                for (Sprite *s : sprites)
-                    s->draw();
-                SDL_RenderPresent(frame.getRen());
+            frameTime = SDL_GetTicks() - frameStart;
+            if (roundTime > frameTime) {
+                SDL_Delay(roundTime - frameTime);
             }
+
+            const Uint8 *state = SDL_GetKeyboardState(NULL);
+            for (Sprite *sprite : sprites)
+                sprite->tick(state, *this);
+
+            for (Sprite *sprite : itemsToRemove)
+                remove(sprite);
+
+            SDL_SetRenderDrawColor(frame.getRen(), 255, 255, 255, 0);
+            SDL_RenderClear(frame.getRen());
+            SDL_RenderCopy(frame.getRen(), background, NULL, NULL);
+            for (Sprite *s : sprites)
+                s->draw();
+            SDL_RenderPresent(frame.getRen());
         }
     }
+}

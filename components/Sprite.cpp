@@ -7,7 +7,6 @@ namespace gameEngine{
 
     bool Sprite::collision(Sprite* otherSprite){
         SDL_Rect otherRect = otherSprite->getSpriteRect();
-
         int bottom = spriteRect.y + spriteRect.h;
         int top = spriteRect.y;
         int right = spriteRect.x + spriteRect.w;
