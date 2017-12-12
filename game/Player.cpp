@@ -35,7 +35,7 @@ namespace myGame {
         if (otherSprite != this && dynamic_cast<Item *>(otherSprite)) {
             point++;
             pointLabel.setText(to_string(point));
-            engine.updateItemsToRemove(otherSprite);
+            engine.remove(otherSprite);
         }
     }
 }

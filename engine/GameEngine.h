@@ -10,7 +10,6 @@ namespace gameEngine {
 
     public:
         void add(Sprite *sprite);
-        void updateItemsToRemove(Sprite* sprite);
         void remove(Sprite*);
         void run(int, const char*, const char*);
         void playMusic(bool);
@@ -20,7 +19,6 @@ namespace gameEngine {
     private:
         SDL_Texture* background;
         std::vector<Sprite*> sprites;
-        std::vector<Sprite*> itemsToRemove;
     };
 }
 #endif

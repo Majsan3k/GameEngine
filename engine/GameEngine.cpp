@@ -14,10 +14,6 @@ namespace gameEngine {
         sprites.push_back(sprite);
     }
 
-    void GameEngine::updateItemsToRemove(Sprite *sprite) {
-        itemsToRemove.push_back(sprite);
-    }
-
     void GameEngine::remove(Sprite *sprite) {
         for (vector<Sprite *>::iterator iter = sprites.begin();
              iter != sprites.end();)
@@ -94,9 +90,6 @@ namespace gameEngine {
             const Uint8 *state = SDL_GetKeyboardState(NULL);
             for (Sprite *sprite : sprites)
                 sprite->tick(state, *this);
-
-            for (Sprite *sprite : itemsToRemove)
-                remove(sprite);
 
             SDL_SetRenderDrawColor(frame.getRen(), 255, 255, 255, 0);
             SDL_RenderClear(frame.getRen());
