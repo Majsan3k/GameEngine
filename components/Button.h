@@ -7,7 +7,7 @@ namespace gameEngine {
     public:
         virtual void perform(GameEngine&){}
         void tick(const Uint8*, GameEngine&){}
-        void draw();
+        void draw(Uint32);
         void mouseButtonUp(SDL_Event&, GameEngine&);
         void mouseButtonDown(SDL_Event&);
         ~Button();

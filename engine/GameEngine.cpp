@@ -52,7 +52,16 @@ namespace gameEngine {
         int frameTime;
 
         SDL_Surface *backgroundPicture = IMG_Load(backgroundSrc);
+
+        if(backgroundPicture == nullptr){
+            throw std::runtime_error(string("Something went wrong while creating surface: ") + SDL_GetError());
+        }
+
         background = SDL_CreateTextureFromSurface(frame.getRen(), backgroundPicture);
+        if(background == nullptr){
+            throw std::runtime_error(string("Something went wrong while creating texture: ") + SDL_GetError());
+        }
+
         SDL_FreeSurface(backgroundPicture);
 
         bool goOn = true;
@@ -95,7 +104,7 @@ namespace gameEngine {
             SDL_RenderClear(frame.getRen());
             SDL_RenderCopy(frame.getRen(), background, NULL, NULL);
             for (Sprite *s : sprites)
-                s->draw();
+                s->draw(SDL_GetTicks());
             SDL_RenderPresent(frame.getRen());
         }
     }

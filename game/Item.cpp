@@ -11,7 +11,14 @@ namespace myGame{
     Item* Item::getInstance(SDL_Rect rect, const char* pictureSrc) {
         return new Item(rect, pictureSrc);
     }
+
     Item::Item(SDL_Rect rect, const char* pictureSrc) : Movable(rect, pictureSrc) {}
+
+    Item* Item::getAnimatedInstance(SDL_Rect rect, const char* pictureSrc, int frames, int speed) {
+        return new Item(rect, pictureSrc, frames, speed);
+    }
+
+    Item::Item(SDL_Rect rect, const char* pictureSrc, int frames, int speed) : Movable(rect, pictureSrc, frames, speed) {}
 
     void Item::move(const Uint8 *state, GameEngine &engine) {
         int rectBottom = spriteRect.y + spriteRect.h;

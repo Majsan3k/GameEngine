@@ -13,15 +13,26 @@ namespace gameEngine {
 
         TTF_Init();
         font = TTF_OpenFont(fontSrc, 15);
-        if(font == NULL){
-            cout << SDL_GetError() << endl;
+        if (font == nullptr) {
+            throw std::runtime_error(string("Something went wrong while creating TFF: ") + SDL_GetError());
         }
-        SDL_Surface* surf = TTF_RenderText_Solid(font, text.c_str(), {0,0,0});
+
+        SDL_Surface *surf = TTF_RenderText_Solid(font, text.c_str(), {0, 0, 0});
+
+        if (surf == nullptr){
+            throw std::runtime_error(string("Something went wrong while creating surface: ") + SDL_GetError());
+        }
+
         labelTexture = SDL_CreateTextureFromSurface(frame.getRen(), surf);
+
+        if(labelTexture == nullptr){
+            throw std::runtime_error(string("Something went wrong while creating texture: ") + SDL_GetError());
+        }
+
         SDL_FreeSurface(surf);
     }
 
-    void Label::draw(){
+    void Label::draw(Uint32){
         SDL_RenderCopy(frame.getRen(), labelTexture, NULL, &spriteRect);
     }
 

@@ -11,7 +11,7 @@ namespace gameEngine{
     class Sprite {
     public:
         bool collision(Sprite*);
-        virtual void draw() = 0;
+        virtual void draw(Uint32) = 0;
 //        virtual void tick(const Uint8 *, GameEngine &) = 0;
         virtual void tick(const Uint8 *, GameEngine &){}
         virtual void mouseButtonDown(SDL_Event&);

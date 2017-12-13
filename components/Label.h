@@ -11,7 +11,7 @@ namespace gameEngine {
     public:
         static Label* getInstance(SDL_Rect, std::string, const char*);
         void tick(const Uint8*, GameEngine&){}
-        void draw();
+        void draw(Uint32);
         const std::string getText(){return text;}
         void setText(std::string);
         ~Label();

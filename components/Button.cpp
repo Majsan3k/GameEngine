@@ -7,16 +7,23 @@ using namespace std;
 namespace gameEngine{
 
     Button::Button(SDL_Rect& button, const char* frontPicSrc, const char* backPicSrc) : Sprite(button){
-        SDL_Surface* frontSurf =  IMG_Load(frontPicSrc);
-        SDL_Surface* backSurf =  IMG_Load(backPicSrc);
+        SDL_Surface* frontSurf = IMG_Load(frontPicSrc);
+        SDL_Surface* backSurf = IMG_Load(backPicSrc);
+
+        if(frontSurf == nullptr || backSurf == nullptr){
+            throw std::runtime_error(string("Something went wrong while creating surface: ") + SDL_GetError());
+        }
 
         Uint32 white = SDL_MapRGB(frontSurf->format, 255, 255, 255);
-
         SDL_SetColorKey(frontSurf, SDL_ENABLE, white);
         SDL_SetColorKey(backSurf, SDL_ENABLE, white);
 
         frontIcon = SDL_CreateTextureFromSurface(frame.getRen(), frontSurf);
         backIcon = SDL_CreateTextureFromSurface(frame.getRen(), backSurf);
+
+        if(frontIcon == nullptr || backIcon == nullptr){
+            throw std::runtime_error(string("Something went wrong while creating texture: ") + SDL_GetError());
+        }
 
         SDL_FreeSurface(frontSurf);
         SDL_FreeSurface(backSurf);
@@ -42,7 +49,7 @@ namespace gameEngine{
         }
     }
 
-    void Button::draw(){
+    void Button::draw(Uint32){
         if(active) {
             SDL_RenderCopy(frame.getRen(), frontIcon, NULL, &spriteRect);
         }else{
