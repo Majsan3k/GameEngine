@@ -33,8 +33,8 @@ namespace myGame {
 
     void Player::collisionOtherSprite(Sprite *otherSprite, GameEngine &engine) {
         if (otherSprite != this && dynamic_cast<Item *>(otherSprite)) {
-            point++;
-            pointLabel.setText(to_string(point));
+            points += dynamic_cast<Item *>(otherSprite)->getPoints();
+            pointLabel.setText(to_string(points));
             engine.remove(otherSprite);
         }
     }

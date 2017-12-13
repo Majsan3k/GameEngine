@@ -15,8 +15,7 @@ namespace myGame{
         Player(SDL_Rect, Label&, const char*);
     private:
         Label& pointLabel;
-        int point;
-
+        int points;
     };
 
 }

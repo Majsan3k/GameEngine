@@ -40,7 +40,16 @@ namespace gameEngine {
         text = newText;
         SDL_DestroyTexture(labelTexture);
         SDL_Surface* surf = TTF_RenderText_Solid(font, text.c_str(), {0,0,0});
+
+        if(surf == nullptr){
+            throw std::runtime_error(string("Something went wrong while creating surface") + SDL_GetError());
+        }
         labelTexture = SDL_CreateTextureFromSurface(frame.getRen(), surf);
+
+        if(labelTexture == nullptr){
+            throw std::runtime_error(string("Something went wrong while creating texture") + SDL_GetError());
+        }
+
         SDL_FreeSurface(surf);
     }
 
