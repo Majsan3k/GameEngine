@@ -10,8 +10,8 @@ namespace gameEngine {
     class GameEngine {
     public:
         GameEngine(){};
-        //TODO: Hur ska jag lösa att shorcuts ska kunna hantera funktioner oavsett returtyp?
         GameEngine(std::unordered_map<unsigned, void (*)()> shortcuts) : shortcuts(shortcuts){};
+        void addShortcut(unsigned, void(*)());
         void add(Sprite *sprite);
         void remove(Sprite*);
         void run(int, const char*, const char*);
@@ -23,6 +23,7 @@ namespace gameEngine {
         SDL_Texture* background;
         std::vector<Sprite*> sprites;
         std::unordered_map<unsigned, void (*)()> shortcuts;
+        std::unordered_map<unsigned, void (*)()> memberShortcuts;
     };
 }
 #endif

@@ -10,7 +10,9 @@ namespace gameEngine{
     class GameEngine;
     class Sprite {
     public:
+        //TODO: Ta bort, bara test
         static void hej(){ std::cout << "hej" << std::endl; }
+
         bool collision(Sprite*);
         virtual void draw(Uint32) = 0;
         virtual void tick(const Uint8 *, GameEngine &) = 0;

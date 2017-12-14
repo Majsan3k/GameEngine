@@ -1,6 +1,5 @@
 #include <iostream>
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
 #include "Frame.h"
 using namespace std;
 
@@ -8,18 +7,18 @@ namespace gameEngine {
     Frame::Frame() {
 
         if (SDL_Init(SDL_INIT_EVERYTHING == -1)) {
-            throw std::runtime_error(string("Unexpected problem with SDL init. ") + SDL_GetError());
+            throw runtime_error(string("Unexpected problem with SDL init. ") + SDL_GetError());
         }
 
         //TODO HANDLEDNING: Hur ska jag på smidigast sätt se till så användaren får ange storlek?
         window = SDL_CreateWindow("Game map", 100, 100, 500, 400, 0);
         if (window == nullptr) {
-            throw std::runtime_error(string("Problem with SDL_Window. ") + SDL_GetError());
+            throw runtime_error(string("Problem with SDL_Window. ") + SDL_GetError());
         }
 
         ren = SDL_CreateRenderer(window, -1, 0);
         if (ren == nullptr) {
-            throw std::runtime_error(string("Problem with Renderer. ") + SDL_GetError());
+            throw runtime_error(string("Problem with Renderer. ") + SDL_GetError());
         }
     }
 

@@ -107,8 +107,6 @@ iostream
 -
 SDL2/SDL.h
 -
-SDL2/SDL_image.h
--
 Frame.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.h
 

@@ -10,6 +10,16 @@ using namespace std;
 
 namespace gameEngine {
 
+    void GameEngine::addShortcut(unsigned key, void (*keyFunction)()){
+        std::unordered_map<unsigned,void(*)()>::const_iterator contains = shortcuts.find (key);
+
+        if ( contains == shortcuts.end() ){
+            shortcuts.insert(make_pair(key, keyFunction));
+        }else {
+            shortcuts[key] = keyFunction;
+        }
+    }
+
     void GameEngine::add(Sprite *sprite) {
         sprites.push_back(sprite);
     }

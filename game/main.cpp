@@ -12,16 +12,8 @@ using namespace std;
 using namespace gameEngine;
 using namespace myGame;
 
-void hejsan(){
-    cout << "Hejsan" << endl;
-}
-
 int main() {
-//TODO: Hur ska jag lösa att shortcuts ska kunna hantera funktioner oavsett returtyp och argument?
-    unordered_map<unsigned, void (*)()> shortcuts;
-    shortcuts.insert(make_pair(SDLK_DOWN, &hejsan));
-
-    GameEngine gameEngine(shortcuts);
+    GameEngine gameEngine;
     const char* music = "C:/Users/majal/Documents/Prog3/Inlupp/music.mp3";
     const char* backgroundPic = "C:/Users/majal/Documents/Prog3/Inlupp/bg.jpg";
     const char* playerPic = "C:/Users/majal/Documents/Prog3/Inlupp/hat.png";
