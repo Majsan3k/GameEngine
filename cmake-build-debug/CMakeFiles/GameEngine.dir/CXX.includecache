@@ -20,6 +20,8 @@ iostream
 ../engine/GameEngine.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
 
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/FuncTemplate.h
+
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.cpp
 Label.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.h
@@ -99,8 +101,14 @@ unordered_map
 -
 SDL2/SDL_render.h
 -
+functional
+-
 ../components/Sprite.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
+../components/FuncTemplate.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/FuncTemplate.h
+../game/Item.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Item.h
 
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.cpp
 iostream
@@ -165,6 +173,8 @@ SDL2/SDL_rect.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/main.cpp
 iostream
 -
+functional
+-
 ../engine/GameEngine.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
 ../components/Button.h
@@ -179,4 +189,6 @@ Player.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Player.h
 SoundButton.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/SoundButton.h
+../components/FuncTemplate.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/FuncTemplate.h
 

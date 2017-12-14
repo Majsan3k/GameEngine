@@ -10,6 +10,9 @@ namespace myGame{
     class Item : public Movable{
         class Player;
     public:
+
+        void test(){std::cout << "Item" << std::endl; }
+
         static Item* getInstance(SDL_Rect, const char*, int);
         static Item* getAnimatedInstance(SDL_Rect, const char*, int, int, int);
         void collisionOtherSprite(Sprite*, GameEngine&) override;

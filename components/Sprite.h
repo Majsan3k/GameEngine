@@ -11,7 +11,7 @@ namespace gameEngine{
     class Sprite {
     public:
         //TODO: Ta bort, bara test
-        static void hej(){ std::cout << "hej" << std::endl; }
+        static void hej(){ std::cout << "Sprite" << std::endl; }
 
         bool collision(Sprite*);
         virtual void draw(Uint32) = 0;

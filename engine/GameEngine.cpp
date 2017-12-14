@@ -7,18 +7,20 @@
 #include <SDL2/SDL_mixer.h>
 
 using namespace std;
+//TODO: Lägg in lösning för att inte ta bort sprites under iteration igen
 
 namespace gameEngine {
 
-    void GameEngine::addShortcut(unsigned key, void (*keyFunction)()){
-        std::unordered_map<unsigned,void(*)()>::const_iterator contains = shortcuts.find (key);
-
-        if ( contains == shortcuts.end() ){
-            shortcuts.insert(make_pair(key, keyFunction));
-        }else {
-            shortcuts[key] = keyFunction;
-        }
-    }
+    //TODO: Fixa denna! Ta in en std::function som argument istället
+//    void GameEngine::addShortcut(unsigned key, void (*keyFunction)()){
+//        std::unordered_map<unsigned,void(*)()>::const_iterator contains = shortcuts.find (key);
+//
+//        if ( contains == shortcuts.end() ){
+//            shortcuts.insert(make_pair(key, keyFunction));
+//        }else {
+//            shortcuts[key] = keyFunction;
+//        }
+//    }
 
     void GameEngine::add(Sprite *sprite) {
         sprites.push_back(sprite);
@@ -85,6 +87,7 @@ namespace gameEngine {
                         goOn = false;
                         break;
                     case SDL_MOUSEBUTTONDOWN :
+                        //TODO: Flytta över dessa event till Button?
                         for (Sprite *s : sprites) {
                             if (dynamic_cast<Button *>(s)) {
                                 s->mouseButtonDown(event);

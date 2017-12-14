@@ -1,5 +1,6 @@
 #define SDL_MAIN_HANDLED
 #include <iostream>
+#include <functional>
 #include "../engine/GameEngine.h"
 #include "../components/Button.h"
 #include "../components/Label.h"
@@ -7,13 +8,18 @@
 #include "Item.h"
 #include "Player.h"
 #include "SoundButton.h"
+#include "../components/FuncTemplate.h"
 
 using namespace std;
 using namespace gameEngine;
 using namespace myGame;
 
+void hej(){
+    cout << "Hej" << endl;
+}
+
 int main() {
-    GameEngine gameEngine;
+
     const char* music = "C:/Users/majal/Documents/Prog3/Inlupp/music.mp3";
     const char* backgroundPic = "C:/Users/majal/Documents/Prog3/Inlupp/bg.jpg";
     const char* playerPic = "C:/Users/majal/Documents/Prog3/Inlupp/hat.png";
@@ -44,6 +50,15 @@ int main() {
         cerr << e.what() << endl;
     }
 
+    //Create function map and game engine
+    unordered_map<unsigned, std::function<void()>> funcs;
+    std::function<void()> test = hej;
+    funcs.insert(make_pair(SDLK_DOWN, test));
+    std::function<void()> test2 = std::bind(&Item::test, human);
+    funcs.insert(make_pair(SDLK_UP, test2));
+    GameEngine gameEngine(funcs);
+
+
     gameEngine.add(player);
     gameEngine.add(elephant);
 //    gameEngine.add(elephant1);
@@ -53,5 +68,7 @@ int main() {
     gameEngine.add(points);
     gameEngine.add(soundButton);
     gameEngine.run(60, music, backgroundPic);
+
+
     return 0;
 }

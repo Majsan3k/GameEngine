@@ -88,6 +88,9 @@
 		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Button.h">
 			<Option target="GameEngine"/>
 		</Unit>
+		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/FuncTemplate.h">
+			<Option target="GameEngine"/>
+		</Unit>
 		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.cpp">
 			<Option target="GameEngine"/>
 		</Unit>
