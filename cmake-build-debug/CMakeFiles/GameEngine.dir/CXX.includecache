@@ -73,6 +73,8 @@ SDL2/SDL_events.h
 -
 SDL2/SDL_render.h
 -
+iostream
+-
 
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.cpp
 iostream
@@ -92,6 +94,8 @@ SDL2/SDL_mixer.h
 
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
 vector
+-
+unordered_map
 -
 SDL2/SDL_render.h
 -

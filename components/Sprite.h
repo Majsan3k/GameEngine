@@ -4,16 +4,16 @@
 #include <SDL2/SDL_events.h>
 #include <SDL2/SDL_render.h>
 
-//TODO: Ska tick krävas som metod eller inte?
+#include <iostream>
 
 namespace gameEngine{
     class GameEngine;
     class Sprite {
     public:
+        static void hej(){ std::cout << "hej" << std::endl; }
         bool collision(Sprite*);
         virtual void draw(Uint32) = 0;
-//        virtual void tick(const Uint8 *, GameEngine &) = 0;
-        virtual void tick(const Uint8 *, GameEngine &){}
+        virtual void tick(const Uint8 *, GameEngine &) = 0;
         virtual void mouseButtonDown(SDL_Event&);
         virtual void mouseButtonUp(SDL_Event&, GameEngine&);
         const SDL_Rect& getSpriteRect() const { return spriteRect; }

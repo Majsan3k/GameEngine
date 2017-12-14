@@ -88,6 +88,10 @@ namespace gameEngine {
                             }
                         }
                         break;
+                    case SDL_KEYDOWN :
+                        if(shortcuts[event.key.keysym.sym]){
+                            shortcuts[event.key.keysym.sym]();
+                        }
                 }
             }
 

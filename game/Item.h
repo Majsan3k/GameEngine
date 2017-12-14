@@ -1,9 +1,10 @@
+//TODO: Lägg in i spelmotorn?
+
 #ifndef GAMEENGINE_ITEM_H
 #define GAMEENGINE_ITEM_H
 #include "../components/Movable.h"
 
 using namespace gameEngine;
-
 namespace myGame{
 
     class Item : public Movable{

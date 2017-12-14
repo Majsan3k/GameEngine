@@ -36,7 +36,7 @@ namespace myGame{
         }
     }
 
-    //TODO: Fixa så item tar bort sig själv. Nu tar Playern bort det
+    //TODO: HANDLEDNING: Fixa så item tar bort sig själv. Nu tar Playern bort det
     void Item::collisionOtherSprite(Sprite* otherSprite, GameEngine& engine){
 //            if(dynamic_cast<Player*>(otherSprite)){
 //                engine.updateItemsToRemove(this);
