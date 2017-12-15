@@ -2,12 +2,40 @@
 #include "GameEngine.h"
 #include "../frame/Frame.h"
 #include "../components/Button.h"
+#include "Level.h"
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_mixer.h>
 
 using namespace std;
 namespace gameEngine {
+
+    void GameEngine::updateBackground(const char* newBackgroundPic){
+        SDL_Surface *backgroundPicture = IMG_Load(newBackgroundPic);
+
+        if(backgroundPicture == nullptr){
+            throw std::runtime_error(string("Something went wrong while creating surface: ") + SDL_GetError());
+        }
+
+        background = SDL_CreateTextureFromSurface(frame.getRen(), backgroundPicture);
+        if(background == nullptr){
+            throw std::runtime_error(string("Something went wrong while creating texture: ") + SDL_GetError());
+        }
+
+        SDL_FreeSurface(backgroundPicture);
+    }
+
+    void GameEngine::changeLevel(int i){
+        const char* newBackground;
+        auto contains = levels.find(i);
+        if(contains != levels.end()){
+            sprites = contains->second.getSprites();
+            newBackground = contains->second.getBackground();
+            updateBackground(newBackground);
+        }else{
+            cout << "No such level" << endl;
+        }
+    }
 
     void GameEngine::addShortcut(unsigned key, std::function<void()> function){
         std::unordered_map<unsigned,std::function<void()>>::const_iterator contains = shortcuts.find (key);
@@ -48,6 +76,17 @@ namespace gameEngine {
         }
     }
 
+    void GameEngine::test(){
+        std::vector<Sprite*> newSprites;
+        const char* animated = "C:/Users/majal/Documents/Prog3/Inlupp/spritesheet.png";
+        Item* human = Item::getAnimatedInstance({150, 0, 128, 64}, animated, 4, 200,-1);
+        newSprites.push_back((Sprite*)human);
+        Level level123("C:/Users/majal/Documents/Prog3/Inlupp/elephant.jpg", newSprites);
+
+        levels.insert(make_pair(1, level123));
+        changeLevel(1);
+    }
+
     void GameEngine::run(int FPS, const char* musicSrc, const char* backgroundSrc) {
         playMusic(true);
 
@@ -59,18 +98,7 @@ namespace gameEngine {
         Uint32 frameStart;
         int frameTime;
 
-        SDL_Surface *backgroundPicture = IMG_Load(backgroundSrc);
-
-        if(backgroundPicture == nullptr){
-            throw std::runtime_error(string("Something went wrong while creating surface: ") + SDL_GetError());
-        }
-
-        background = SDL_CreateTextureFromSurface(frame.getRen(), backgroundPicture);
-        if(background == nullptr){
-            throw std::runtime_error(string("Something went wrong while creating texture: ") + SDL_GetError());
-        }
-
-        SDL_FreeSurface(backgroundPicture);
+        updateBackground(backgroundSrc);
 
         bool goOn = true;
         while (goOn) {

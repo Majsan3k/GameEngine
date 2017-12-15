@@ -9,6 +9,7 @@ CMakeFiles/GameEngine.dir/components/Button.cpp.o
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Movable.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
+ /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/Level.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Item.h
 CMakeFiles/GameEngine.dir/components/Label.cpp.o
@@ -23,6 +24,7 @@ CMakeFiles/GameEngine.dir/components/Movable.cpp.o
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Movable.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
+ /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/Level.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Item.h
 CMakeFiles/GameEngine.dir/components/Sprite.cpp.o
@@ -36,8 +38,13 @@ CMakeFiles/GameEngine.dir/engine/GameEngine.cpp.o
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.cpp
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
+ /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/Level.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Item.h
+CMakeFiles/GameEngine.dir/engine/Level.cpp.o
+ /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
+ /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/Level.cpp
+ /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/Level.h
 CMakeFiles/GameEngine.dir/frame/Frame.cpp.o
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.cpp
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.h
@@ -47,16 +54,18 @@ CMakeFiles/GameEngine.dir/game/Item.cpp.o
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Movable.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
+ /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/Level.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Item.cpp
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Item.h
+ /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Player.h
 CMakeFiles/GameEngine.dir/game/Player.cpp.o
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/FuncTemplate.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Movable.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
- /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.h
+ /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/Level.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Item.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Player.cpp
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Player.h
@@ -67,6 +76,7 @@ CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Movable.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
+ /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/Level.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Item.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/SoundButton.cpp
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/SoundButton.h
@@ -77,6 +87,7 @@ CMakeFiles/GameEngine.dir/game/main.cpp.o
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Movable.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
+ /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/Level.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Item.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Player.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/SoundButton.h

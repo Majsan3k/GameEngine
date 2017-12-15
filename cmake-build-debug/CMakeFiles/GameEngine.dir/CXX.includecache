@@ -87,6 +87,8 @@ GameEngine.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.h
 ../components/Button.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Button.h
+Level.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/Level.h
 SDL2/SDL.h
 -
 SDL2/SDL_image.h
@@ -103,12 +105,24 @@ SDL2/SDL_render.h
 -
 functional
 -
+Level.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/Level.h
 ../components/Sprite.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
 ../components/FuncTemplate.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/FuncTemplate.h
 ../game/Item.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Item.h
+
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/Level.cpp
+Level.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/Level.h
+
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/Level.h
+vector
+-
+../components/Sprite.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
 
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.cpp
 iostream
@@ -129,10 +143,8 @@ SDL2/SDL_image.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.h
 ../engine/GameEngine.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
-../components/Movable.h
-/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Movable.h
-Item.h
-/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Item.h
+Player.h
+/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Player.h
 
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Item.h
 ../components/Movable.h
@@ -149,8 +161,6 @@ Item.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Item.h
 ../engine/GameEngine.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
-../frame/Frame.h
-/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.h
 
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Player.h
 ../components/Movable.h

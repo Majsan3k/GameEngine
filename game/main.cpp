@@ -10,10 +10,17 @@
 #include "SoundButton.h"
 #include "../components/FuncTemplate.h"
 
+////Create function map and game engine
+//unordered_map<unsigned, std::function<void()>> funcs;
+//std::function<void()> test = hej;
+//funcs.insert(make_pair(SDLK_DOWN, test));
+//std::function<void()> test2 = std::bind(&Item::test, human);
+//funcs.insert(make_pair(SDLK_UP, test2));
+//GameEngine gameEngine(funcs);
+
 using namespace std;
 using namespace gameEngine;
 using namespace myGame;
-
 
 int main() {
 
@@ -25,6 +32,7 @@ int main() {
     const char* btnPicBack = "C:/Users/majal/Documents/Prog3/Inlupp/soundOff.png";
     const char* animated = "C:/Users/majal/Documents/Prog3/Inlupp/spritesheet.png";
 
+    GameEngine gameEngine;
     Label* points;
     Movable* player;
     Item* elephant;
@@ -47,7 +55,8 @@ int main() {
         cerr << e.what() << endl;
     }
 
-    GameEngine gameEngine;
+
+
 
     gameEngine.add(player);
 //    gameEngine.add(elephant);

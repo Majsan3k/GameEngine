@@ -6,9 +6,7 @@
 
 using namespace gameEngine;
 namespace myGame{
-
     class Item : public Movable{
-        class Player;
     public:
         static Item* getInstance(SDL_Rect, const char*, int);
         static Item* getAnimatedInstance(SDL_Rect, const char*, int, int, int);

@@ -3,7 +3,6 @@
 #include "Player.h"
 #include "Item.h"
 #include "../engine/GameEngine.h"
-#include "../frame/Frame.h"
 
 using namespace gameEngine;
 using namespace std;
@@ -32,12 +31,10 @@ namespace myGame {
     }
 
     void Player::collisionOtherSprite(Sprite *otherSprite, GameEngine &engine) {
-        if (otherSprite != this && dynamic_cast<Item *>(otherSprite)) {
-            points += dynamic_cast<Item *>(otherSprite)->getPoints();
+        if (dynamic_cast<Item *>(otherSprite)) {
+            points += ((Item*)otherSprite)->getPoints();
             pointLabel.setText(to_string(points));
-           Item* o = dynamic_cast<Item*>(otherSprite);
-                    o->collisionOtherSprite(this, engine);
-//            engine.remove(otherSprite);
+            otherSprite->setRemove(true);
         }
     }
 }

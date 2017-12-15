@@ -115,6 +115,12 @@
 		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h">
 			<Option target="GameEngine"/>
 		</Unit>
+		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/Level.cpp">
+			<Option target="GameEngine"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/Level.h">
+			<Option target="GameEngine"/>
+		</Unit>
 		<Unit filename="/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.cpp">
 			<Option target="GameEngine"/>
 		</Unit>

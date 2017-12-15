@@ -1,8 +1,7 @@
 #include <SDL2/SDL_image.h>
 #include "../frame/Frame.h"
 #include "../engine/GameEngine.h"
-#include "../components/Movable.h"
-#include "Item.h"
+#include "Player.h"
 
 using namespace gameEngine;
 using namespace std;
@@ -36,11 +35,12 @@ namespace myGame{
         }
     }
 
-    //TODO: HANDLEDNING: Hur ska jag fixa dynamic cast till Player?
+    //TODO: Funkar inte som den ska, gör enbart check i player nu, ändra?
+    //Bryta ut collisionschecken på något sätt? Eller inte ens göra den i Item?
     void Item::collisionOtherSprite(Sprite* otherSprite, GameEngine& engine){
-
 //        if(dynamic_cast<Player*>(otherSprite)){
-            shouldRemove = true;
+//            shouldRemove = true;
+//            ((Player*)otherSprite)->collisionOtherSprite(this, engine);
 //        }
     }
 }

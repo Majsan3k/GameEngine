@@ -15,7 +15,8 @@ namespace gameEngine{
         virtual void tick(const Uint8 *, GameEngine &) = 0;
         virtual void mouseButtonDown(SDL_Event&);
         virtual void mouseButtonUp(SDL_Event&, GameEngine&);
-        const bool getShouldRemove(){ return shouldRemove; };
+        const bool getShouldRemove(){ return shouldRemove; }
+        void setRemove(bool remove){shouldRemove = remove; }
         const SDL_Rect& getSpriteRect() const { return spriteRect; }
         virtual ~Sprite();
 

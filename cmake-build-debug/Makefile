@@ -258,6 +258,33 @@ engine/GameEngine.cpp.s:
 	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/engine/GameEngine.cpp.s
 .PHONY : engine/GameEngine.cpp.s
 
+engine/Level.o: engine/Level.cpp.o
+
+.PHONY : engine/Level.o
+
+# target to build an object file
+engine/Level.cpp.o:
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/engine/Level.cpp.o
+.PHONY : engine/Level.cpp.o
+
+engine/Level.i: engine/Level.cpp.i
+
+.PHONY : engine/Level.i
+
+# target to preprocess a source file
+engine/Level.cpp.i:
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/engine/Level.cpp.i
+.PHONY : engine/Level.cpp.i
+
+engine/Level.s: engine/Level.cpp.s
+
+.PHONY : engine/Level.s
+
+# target to generate assembly for a file
+engine/Level.cpp.s:
+	$(MAKE) -f CMakeFiles/GameEngine.dir/build.make CMakeFiles/GameEngine.dir/engine/Level.cpp.s
+.PHONY : engine/Level.cpp.s
+
 frame/Frame.o: frame/Frame.cpp.o
 
 .PHONY : frame/Frame.o
@@ -417,6 +444,9 @@ help:
 	@echo "... engine/GameEngine.o"
 	@echo "... engine/GameEngine.i"
 	@echo "... engine/GameEngine.s"
+	@echo "... engine/Level.o"
+	@echo "... engine/Level.i"
+	@echo "... engine/Level.s"
 	@echo "... frame/Frame.o"
 	@echo "... frame/Frame.i"
 	@echo "... frame/Frame.s"
