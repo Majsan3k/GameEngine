@@ -16,9 +16,9 @@ namespace gameEngine {
     public:
         GameEngine(){};
         GameEngine(std::unordered_map<unsigned, std::function<void()>> shortcuts) : shortcuts(shortcuts){};
-//        void addShortcut(unsigned, std::function);
+        void addShortcut(unsigned, std::function<void()>);
         void add(Sprite *sprite);
-        void remove(Sprite*);
+        void remove();
         void run(int, const char*, const char*);
         void playMusic(bool);
         const std::vector<Sprite*> getSprites() const { return sprites; };

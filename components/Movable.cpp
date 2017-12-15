@@ -41,14 +41,13 @@ namespace gameEngine {
 
         std::vector<Sprite*> sprites = engine.getSprites();
         for(Sprite* sprite : sprites){
-            if(collision(sprite)){
+            if(sprite != this && collision(sprite)){
                 collisionOtherSprite(sprite, engine);
             }
         }
     }
 
-    //TODO: Snyggare lösning med spriterect.w
-
+    //TODO: Snyggare lösning med spriteRect.w
     void Movable::draw(Uint32 ticks) {
         if(animated){
             spriteRect.w /= animatedFrames;

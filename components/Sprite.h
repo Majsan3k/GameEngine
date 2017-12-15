@@ -10,20 +10,19 @@ namespace gameEngine{
     class GameEngine;
     class Sprite {
     public:
-        //TODO: Ta bort, bara test
-        static void hej(){ std::cout << "Sprite" << std::endl; }
-
         bool collision(Sprite*);
         virtual void draw(Uint32) = 0;
         virtual void tick(const Uint8 *, GameEngine &) = 0;
         virtual void mouseButtonDown(SDL_Event&);
         virtual void mouseButtonUp(SDL_Event&, GameEngine&);
+        const bool getShouldRemove(){ return shouldRemove; };
         const SDL_Rect& getSpriteRect() const { return spriteRect; }
         virtual ~Sprite();
 
     protected:
         SDL_Rect spriteRect;
         Sprite(SDL_Rect& spritePicture);
+        bool shouldRemove = false;
 
     private:
         Sprite(const Sprite&) = delete; //delete copy constructor

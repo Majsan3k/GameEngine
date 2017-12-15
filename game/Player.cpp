@@ -35,7 +35,9 @@ namespace myGame {
         if (otherSprite != this && dynamic_cast<Item *>(otherSprite)) {
             points += dynamic_cast<Item *>(otherSprite)->getPoints();
             pointLabel.setText(to_string(points));
-            engine.remove(otherSprite);
+           Item* o = dynamic_cast<Item*>(otherSprite);
+                    o->collisionOtherSprite(this, engine);
+//            engine.remove(otherSprite);
         }
     }
 }

@@ -30,16 +30,17 @@ namespace myGame{
         int windowH = frame.getHeight();
 
         if(rectBottom < 0 || rectTop > windowH || rectRight < 0 || rectLeft > windowW){
-            engine.remove(this);
+            shouldRemove = true;
         }else {
             spriteRect.y++;
         }
     }
 
-    //TODO: HANDLEDNING: Fixa så item tar bort sig själv. Nu tar Playern bort det
+    //TODO: HANDLEDNING: Hur ska jag fixa dynamic cast till Player?
     void Item::collisionOtherSprite(Sprite* otherSprite, GameEngine& engine){
-//            if(dynamic_cast<Player*>(otherSprite)){
-//                engine.updateItemsToRemove(this);
-//            }
+
+//        if(dynamic_cast<Player*>(otherSprite)){
+            shouldRemove = true;
+//        }
     }
 }

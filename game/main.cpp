@@ -14,9 +14,6 @@ using namespace std;
 using namespace gameEngine;
 using namespace myGame;
 
-void hej(){
-    cout << "Hej" << endl;
-}
 
 int main() {
 
@@ -50,19 +47,12 @@ int main() {
         cerr << e.what() << endl;
     }
 
-    //Create function map and game engine
-    unordered_map<unsigned, std::function<void()>> funcs;
-    std::function<void()> test = hej;
-    funcs.insert(make_pair(SDLK_DOWN, test));
-    std::function<void()> test2 = std::bind(&Item::test, human);
-    funcs.insert(make_pair(SDLK_UP, test2));
-    GameEngine gameEngine(funcs);
-
+    GameEngine gameEngine;
 
     gameEngine.add(player);
-    gameEngine.add(elephant);
+//    gameEngine.add(elephant);
 //    gameEngine.add(elephant1);
-//    gameEngine.add(elephant2);
+    gameEngine.add(elephant2);
     gameEngine.add(elephant3);
     gameEngine.add(human);
     gameEngine.add(points);

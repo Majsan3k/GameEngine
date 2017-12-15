@@ -7,30 +7,27 @@
 #include <SDL2/SDL_mixer.h>
 
 using namespace std;
-//TODO: Lägg in lösning för att inte ta bort sprites under iteration igen
-
 namespace gameEngine {
 
-    //TODO: Fixa denna! Ta in en std::function som argument istället
-//    void GameEngine::addShortcut(unsigned key, void (*keyFunction)()){
-//        std::unordered_map<unsigned,void(*)()>::const_iterator contains = shortcuts.find (key);
-//
-//        if ( contains == shortcuts.end() ){
-//            shortcuts.insert(make_pair(key, keyFunction));
-//        }else {
-//            shortcuts[key] = keyFunction;
-//        }
-//    }
+    void GameEngine::addShortcut(unsigned key, std::function<void()> function){
+        std::unordered_map<unsigned,std::function<void()>>::const_iterator contains = shortcuts.find (key);
+
+        if ( contains == shortcuts.end() ){
+            shortcuts.insert(make_pair(key, function));
+        }else {
+            shortcuts[key] = function;
+        }
+    }
 
     void GameEngine::add(Sprite *sprite) {
         sprites.push_back(sprite);
     }
 
-    void GameEngine::remove(Sprite *sprite) {
+    void GameEngine::remove() {
         for (vector<Sprite *>::iterator iter = sprites.begin();
              iter != sprites.end();)
-            if (*iter == sprite) {
-                delete (sprite);
+            if ((*iter)->getShouldRemove()) {
+                delete (*iter);
                 iter = sprites.erase(iter);
             } else {
                 iter++;
@@ -52,7 +49,6 @@ namespace gameEngine {
     }
 
     void GameEngine::run(int FPS, const char* musicSrc, const char* backgroundSrc) {
-        bool musicPlay = true;
         playMusic(true);
 
         Mix_OpenAudio(22050, AUDIO_S16SYS, 2, 4096);
@@ -116,6 +112,8 @@ namespace gameEngine {
             const Uint8 *state = SDL_GetKeyboardState(NULL);
             for (Sprite *sprite : sprites)
                 sprite->tick(state, *this);
+
+            remove();
 
             SDL_SetRenderDrawColor(frame.getRen(), 255, 255, 255, 0);
             SDL_RenderClear(frame.getRen());

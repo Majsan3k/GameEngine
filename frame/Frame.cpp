@@ -10,7 +10,7 @@ namespace gameEngine {
             throw runtime_error(string("Unexpected problem with SDL init. ") + SDL_GetError());
         }
 
-        //TODO HANDLEDNING: Hur ska jag på smidigast sätt se till så användaren får ange storlek?
+        //Ska användaren få ange storlek?
         window = SDL_CreateWindow("Game map", 100, 100, 500, 400, 0);
         if (window == nullptr) {
             throw runtime_error(string("Problem with SDL_Window. ") + SDL_GetError());
