@@ -10,6 +10,12 @@
 using namespace std;
 namespace gameEngine {
 
+    GameEngine::~GameEngine() {
+        for (Sprite *sprite : sprites) {
+            delete sprite;
+        }
+    }
+
     void GameEngine::updateBackground(const char* newBackgroundPic){
         SDL_Surface *backgroundPicture = IMG_Load(newBackgroundPic);
 
@@ -62,12 +68,6 @@ namespace gameEngine {
             }
     }
 
-    GameEngine::~GameEngine() {
-        for (Sprite *sprite : sprites) {
-            delete sprite;
-        }
-    }
-
     void GameEngine::playMusic(bool play) {
         if (play) {
             Mix_Resume(-1);
@@ -87,18 +87,18 @@ namespace gameEngine {
         changeLevel(1);
     }
 
-    void GameEngine::run(int FPS, const char* musicSrc, const char* backgroundSrc) {
-        playMusic(true);
-
+    //TODO: Ta bort background härifrån ska fixas när gameEngine skapas med levels
+    void GameEngine::run(int FPS, const char* musicSrc, bool musicOn, int level) {
         Mix_OpenAudio(22050, AUDIO_S16SYS, 2, 4096);
         Mix_Chunk *music = Mix_LoadWAV(musicSrc);
         Mix_PlayChannel(-1, music, -1);
+        playMusic(musicOn);
 
         const int roundTime = 1000 / FPS;
         Uint32 frameStart;
         int frameTime;
 
-        updateBackground(backgroundSrc);
+        changeLevel(level);
 
         bool goOn = true;
         while (goOn) {

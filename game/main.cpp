@@ -24,6 +24,9 @@ using namespace myGame;
 
 int main() {
 
+    std::unordered_map<int, Level> levels;
+    std::vector<Sprite*> sprites;
+
     const char* music = "C:/Users/majal/Documents/Prog3/Inlupp/music.mp3";
     const char* backgroundPic = "C:/Users/majal/Documents/Prog3/Inlupp/bg.jpg";
     const char* playerPic = "C:/Users/majal/Documents/Prog3/Inlupp/hat.png";
@@ -32,7 +35,7 @@ int main() {
     const char* btnPicBack = "C:/Users/majal/Documents/Prog3/Inlupp/soundOff.png";
     const char* animated = "C:/Users/majal/Documents/Prog3/Inlupp/spritesheet.png";
 
-    GameEngine gameEngine;
+//    GameEngine gameEngine;
     Label* points;
     Movable* player;
     Item* elephant;
@@ -51,22 +54,33 @@ int main() {
         elephant3 = Item::getInstance({317, 22, 50, 50}, elephantPic,1);
         soundButton = SoundButton::getInstance({450, 60, 40, 40}, btnPicFront, btnPicBack);
         human = Item::getAnimatedInstance({150, 0, 128, 64}, animated, 4, 200,-1);
+
+        sprites.push_back((Sprite*)points);
+        sprites.push_back((Sprite*)player);
+        sprites.push_back((Sprite*)elephant);
+        sprites.push_back((Sprite*)elephant1);
+        sprites.push_back((Sprite*)elephant2);
+        sprites.push_back((Sprite*)elephant3);
+        sprites.push_back((Sprite*)soundButton);
+        sprites.push_back((Sprite*)human);
+
     }catch(runtime_error e){
         cerr << e.what() << endl;
     }
 
+    Level first(backgroundPic, sprites);
+    levels.insert(make_pair(1, first));
+    GameEngine gameEngine(levels);
 
-
-
-    gameEngine.add(player);
-//    gameEngine.add(elephant);
-//    gameEngine.add(elephant1);
-    gameEngine.add(elephant2);
-    gameEngine.add(elephant3);
-    gameEngine.add(human);
-    gameEngine.add(points);
-    gameEngine.add(soundButton);
-    gameEngine.run(60, music, backgroundPic);
+//    gameEngine.add(player);
+////    gameEngine.add(elephant);
+////    gameEngine.add(elephant1);
+//    gameEngine.add(elephant2);
+//    gameEngine.add(elephant3);
+//    gameEngine.add(human);
+//    gameEngine.add(points);
+//    gameEngine.add(soundButton);
+    gameEngine.run(60, music, true, 1);
 
 
     return 0;

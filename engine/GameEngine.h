@@ -13,10 +13,11 @@ using namespace myGame;
 
 namespace gameEngine {
 
+    //TODO: Konstruktor för att ta in levels
     class GameEngine {
     public:
-        GameEngine(){}
-        GameEngine(std::unordered_map<unsigned, std::function<void()>> shortcuts) : shortcuts(shortcuts){}
+        GameEngine(std::unordered_map<int, Level> levels) : levels(levels){}
+        GameEngine(std::unordered_map<int, Level> levels, std::unordered_map<unsigned, std::function<void()>> shortcuts) : levels (levels), shortcuts(shortcuts){}
 
         void test();
         void updateBackground(const char*);
@@ -24,9 +25,9 @@ namespace gameEngine {
         void addShortcut(unsigned, std::function<void()>);
         void add(Sprite *sprite);
         void remove();
-        void run(int, const char*, const char*);
+        void run(int, const char*, bool, int);
         void playMusic(bool);
-        const std::vector<Sprite*> getSprites() const { return sprites; };
+        const std::vector<Sprite*> getSprites() const { return sprites; }
         ~GameEngine();
 
     private:
