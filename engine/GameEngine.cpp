@@ -2,8 +2,6 @@
 #include "GameEngine.h"
 #include "../frame/Frame.h"
 #include "../components/Button.h"
-#include "Level.h"
-#include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_mixer.h>
 
@@ -11,6 +9,7 @@ using namespace std;
 namespace gameEngine {
 
     GameEngine::~GameEngine() {
+        SDL_DestroyTexture(background);
         for (Sprite *sprite : sprites) {
             delete sprite;
         }
@@ -31,7 +30,16 @@ namespace gameEngine {
         SDL_FreeSurface(backgroundPicture);
     }
 
+    void GameEngine::setLevel(int newLevel){
+        this->newLevel = newLevel;
+        levelChange = true;
+    }
+
     void GameEngine::changeLevel(int i){
+        for (Sprite *sprite : sprites) {
+            delete sprite;
+        }
+
         const char* newBackground;
         auto contains = levels.find(i);
         if(contains != levels.end()){
@@ -41,6 +49,7 @@ namespace gameEngine {
         }else{
             cout << "No such level" << endl;
         }
+        levelChange = false;
     }
 
     void GameEngine::addShortcut(unsigned key, std::function<void()> function){
@@ -76,18 +85,6 @@ namespace gameEngine {
         }
     }
 
-    void GameEngine::test(){
-        std::vector<Sprite*> newSprites;
-        const char* animated = "C:/Users/majal/Documents/Prog3/Inlupp/spritesheet.png";
-        Item* human = Item::getAnimatedInstance({150, 0, 128, 64}, animated, 4, 200,-1);
-        newSprites.push_back((Sprite*)human);
-        Level level123("C:/Users/majal/Documents/Prog3/Inlupp/elephant.jpg", newSprites);
-
-        levels.insert(make_pair(1, level123));
-        changeLevel(1);
-    }
-
-    //TODO: Ta bort background härifrån ska fixas när gameEngine skapas med levels
     void GameEngine::run(int FPS, const char* musicSrc, bool musicOn, int level) {
         Mix_OpenAudio(22050, AUDIO_S16SYS, 2, 4096);
         Mix_Chunk *music = Mix_LoadWAV(musicSrc);
@@ -138,10 +135,15 @@ namespace gameEngine {
             }
 
             const Uint8 *state = SDL_GetKeyboardState(NULL);
-            for (Sprite *sprite : sprites)
+            for (Sprite *sprite : sprites) {
                 sprite->tick(state, *this);
+            }
 
             remove();
+
+            if(levelChange){
+                changeLevel(newLevel);
+            }
 
             SDL_SetRenderDrawColor(frame.getRen(), 255, 255, 255, 0);
             SDL_RenderClear(frame.getRen());

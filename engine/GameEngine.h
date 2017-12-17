@@ -18,10 +18,8 @@ namespace gameEngine {
     public:
         GameEngine(std::unordered_map<int, Level> levels) : levels(levels){}
         GameEngine(std::unordered_map<int, Level> levels, std::unordered_map<unsigned, std::function<void()>> shortcuts) : levels (levels), shortcuts(shortcuts){}
-
-        void test();
+        void setLevel(int);
         void updateBackground(const char*);
-        void changeLevel(int);
         void addShortcut(unsigned, std::function<void()>);
         void add(Sprite *sprite);
         void remove();
@@ -30,8 +28,13 @@ namespace gameEngine {
         const std::vector<Sprite*> getSprites() const { return sprites; }
         ~GameEngine();
 
+
+
     private:
         SDL_Texture* background;
+        bool levelChange = false;
+        int newLevel;
+        void changeLevel(int);
         std::vector<Sprite*> sprites;
         std::unordered_map<unsigned, std::function<void()>> shortcuts;
         std::unordered_map<int, Level> levels;

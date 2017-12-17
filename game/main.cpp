@@ -25,7 +25,8 @@ using namespace myGame;
 int main() {
 
     std::unordered_map<int, Level> levels;
-    std::vector<Sprite*> sprites;
+    std::vector<Sprite*> sprites1;
+    std::vector<Sprite*> sprites2;
 
     const char* music = "C:/Users/majal/Documents/Prog3/Inlupp/music.mp3";
     const char* backgroundPic = "C:/Users/majal/Documents/Prog3/Inlupp/bg.jpg";
@@ -37,7 +38,9 @@ int main() {
 
 //    GameEngine gameEngine;
     Label* points;
+    Label* points2;
     Movable* player;
+    Movable* player2;
     Item* elephant;
     Item* elephant1;
     Item* elephant2;
@@ -47,7 +50,9 @@ int main() {
 
     try {
         points = Label::getInstance({450, 10, 40, 40}, "0", "C:/Windows/Fonts/Arial.ttf");
+        points2 = Label::getInstance({450, 10, 40, 40}, "0", "C:/Windows/Fonts/Arial.ttf");
         player = Player::getInstance({50, 250, 100, 100}, *points, playerPic);
+        player2 = Player::getInstance({50, 250, 100, 100}, *points2, playerPic);
         elephant = Item::getInstance({200, 1, 50, 50}, elephantPic, 1);
         elephant1 = Item::getInstance({70, 10, 50, 50}, elephantPic,1);
         elephant2 = Item::getInstance({10 , 10, 50, 50}, elephantPic,1);
@@ -55,31 +60,27 @@ int main() {
         soundButton = SoundButton::getInstance({450, 60, 40, 40}, btnPicFront, btnPicBack);
         human = Item::getAnimatedInstance({150, 0, 128, 64}, animated, 4, 200,-1);
 
-        sprites.push_back((Sprite*)points);
-        sprites.push_back((Sprite*)player);
-        sprites.push_back((Sprite*)elephant);
-        sprites.push_back((Sprite*)elephant1);
-        sprites.push_back((Sprite*)elephant2);
-        sprites.push_back((Sprite*)elephant3);
-        sprites.push_back((Sprite*)soundButton);
-        sprites.push_back((Sprite*)human);
+//        sprites1.push_back((Sprite*)points);
+        sprites2.push_back((Sprite*)points2);
+        sprites1.push_back((Sprite*)player);
+        sprites2.push_back((Sprite*)player2);
+        sprites1.push_back((Sprite*)elephant);
+        sprites1.push_back((Sprite*)elephant1);
+        sprites1.push_back((Sprite*)elephant2);
+        sprites2.push_back((Sprite*)elephant3);
+        sprites2.push_back((Sprite*)soundButton);
+        sprites2.push_back((Sprite*)human);
 
     }catch(runtime_error e){
         cerr << e.what() << endl;
     }
 
-    Level first(backgroundPic, sprites);
+    Level first(backgroundPic, sprites1);
+    Level second(elephantPic, sprites2);
     levels.insert(make_pair(1, first));
+    levels.insert(make_pair(2, second));
     GameEngine gameEngine(levels);
 
-//    gameEngine.add(player);
-////    gameEngine.add(elephant);
-////    gameEngine.add(elephant1);
-//    gameEngine.add(elephant2);
-//    gameEngine.add(elephant3);
-//    gameEngine.add(human);
-//    gameEngine.add(points);
-//    gameEngine.add(soundButton);
     gameEngine.run(60, music, true, 1);
 
 

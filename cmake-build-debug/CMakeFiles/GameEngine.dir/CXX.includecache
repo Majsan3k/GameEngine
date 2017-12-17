@@ -87,10 +87,6 @@ GameEngine.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.h
 ../components/Button.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Button.h
-Level.h
-/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/Level.h
-SDL2/SDL.h
--
 SDL2/SDL_image.h
 -
 SDL2/SDL_mixer.h
