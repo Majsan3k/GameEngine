@@ -96,11 +96,13 @@ namespace gameEngine {
         int frameTime;
 
         changeLevel(level);
-
+        std::string inputText = "";
+        SDL_StartTextInput();
         bool goOn = true;
         while (goOn) {
             frameStart = SDL_GetTicks();
             SDL_Event event;
+            bool textChanged = false;
 
             while (SDL_PollEvent(&event)) {
                 switch (event.type) {
@@ -119,13 +121,31 @@ namespace gameEngine {
                         for (Sprite *s : sprites) {
                             if (dynamic_cast<Button *>(s)) {
                                 s->mouseButtonUp(event, *this);
-                            }
+                            }  
                         }
                         break;
                     case SDL_KEYDOWN :
                         if(shortcuts[event.key.keysym.sym]){
                             shortcuts[event.key.keysym.sym]();
                         }
+                }
+
+                if(event.type == SDL_TEXTINPUT){
+                    if(inputText.length() < 5)  {
+                        inputText += event.text.text;
+                        textChanged = true;
+                    }
+                }
+            }
+            if(textChanged){
+                for (Sprite *s : sprites) {
+                    if (dynamic_cast<Label *>(s) && (((Label*)s)->getEditable())) {
+                        if (inputText != "") {
+                            ((Label*)s)->setText(inputText.c_str());
+                        } else {
+                            ((Label*)s)->setText("");
+                        }
+                    }
                 }
             }
 
@@ -152,5 +172,6 @@ namespace gameEngine {
                 s->draw(SDL_GetTicks());
             SDL_RenderPresent(frame.getRen());
         }
+        SDL_StopTextInput();
     }
 }

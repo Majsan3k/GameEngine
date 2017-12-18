@@ -36,9 +36,9 @@ namespace myGame {
             pointLabel.setText(to_string(points));
             otherSprite->setRemove(true);
         }
-        if(points == 2){
-            engine.setLevel(2);
-        }
+//        if(points == 2){
+//            engine.setLevel(2);
+//        }
     }
 }
 

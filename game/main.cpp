@@ -49,10 +49,10 @@ int main() {
     Button* soundButton;
 
     try {
-        points = Label::getInstance({450, 10, 40, 40}, "0", "C:/Windows/Fonts/Arial.ttf");
-        points2 = Label::getInstance({450, 10, 40, 40}, "0", "C:/Windows/Fonts/Arial.ttf");
+        points = Label::getInstance({450, 10, 40, 40}, "0", "C:/Windows/Fonts/Arial.ttf", false);
+        points2 = Label::getInstance({50, 10, 40, 40}, "0", "C:/Windows/Fonts/Arial.ttf", true);
         player = Player::getInstance({50, 250, 100, 100}, *points, playerPic);
-        player2 = Player::getInstance({50, 250, 100, 100}, *points2, playerPic);
+//        player2 = Player::getInstance({50, 250, 100, 100}, *points2, playerPic);
         elephant = Item::getInstance({200, 1, 50, 50}, elephantPic, 1);
         elephant1 = Item::getInstance({70, 10, 50, 50}, elephantPic,1);
         elephant2 = Item::getInstance({10 , 10, 50, 50}, elephantPic,1);
@@ -60,16 +60,16 @@ int main() {
         soundButton = SoundButton::getInstance({450, 60, 40, 40}, btnPicFront, btnPicBack);
         human = Item::getAnimatedInstance({150, 0, 128, 64}, animated, 4, 200,-1);
 
-//        sprites1.push_back((Sprite*)points);
-        sprites2.push_back((Sprite*)points2);
+        sprites1.push_back((Sprite*)points);
+        sprites1.push_back((Sprite*)points2);
         sprites1.push_back((Sprite*)player);
-        sprites2.push_back((Sprite*)player2);
+//        sprites1.push_back((Sprite*)player2);
         sprites1.push_back((Sprite*)elephant);
         sprites1.push_back((Sprite*)elephant1);
         sprites1.push_back((Sprite*)elephant2);
-        sprites2.push_back((Sprite*)elephant3);
-        sprites2.push_back((Sprite*)soundButton);
-        sprites2.push_back((Sprite*)human);
+        sprites1.push_back((Sprite*)elephant3);
+        sprites1.push_back((Sprite*)soundButton);
+        sprites1.push_back((Sprite*)human);
 
     }catch(runtime_error e){
         cerr << e.what() << endl;

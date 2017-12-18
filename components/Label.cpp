@@ -5,13 +5,16 @@
 using namespace std;
 
 namespace gameEngine {
-    Label* Label::getInstance(SDL_Rect rect, std::string txt, const char* fontSrc) {
-        return new Label(rect, txt, fontSrc);
+    Label* Label::getInstance(SDL_Rect rect, std::string txt, const char* fontSrc, bool editable) {
+        return new Label(rect, txt, fontSrc, editable);
     }
 
-    Label::Label(SDL_Rect& rect, std::string text, const char* fontSrc) : Sprite(rect), text(text) {
+    Label::Label(SDL_Rect& rect, std::string text, const char* fontSrc, bool editable) : Sprite(rect), text(text), editable(editable) {
 
-        TTF_Init();
+        if(TTF_Init() == -1){
+            throw runtime_error(string("Problem with TTF init: ") + SDL_GetError());
+        }
+
         font = TTF_OpenFont(fontSrc, 15);
         if (font == nullptr) {
             throw std::runtime_error(string("Something went wrong while creating TFF: ") + SDL_GetError());
