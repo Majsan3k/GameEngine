@@ -25,9 +25,6 @@ namespace gameEngine {
         void playMusic(bool);
         const std::vector<Sprite*> getSprites() const { return sprites; }
         ~GameEngine();
-
-
-
     private:
         SDL_Texture* background;
         bool levelChange = false;

@@ -5,7 +5,6 @@
 #include "../frame/Frame.h"
 #include "../engine/GameEngine.h"
 
-
 using namespace std;
 
 namespace gameEngine {
@@ -61,6 +60,6 @@ namespace gameEngine {
 
     Movable::~Movable(){
         SDL_DestroyTexture(texture);
-        delete srcrect;
+        delete &srcrect;
     }
 }

@@ -11,6 +11,7 @@ namespace myGame{
         static Player* getInstance(SDL_Rect, Label&, const char*);
         void collisionOtherSprite(Sprite&, GameEngine&) override;
         void move(const Uint8*, GameEngine&) override;
+        ~Player(){}
     protected:
         Player(SDL_Rect, Label&, const char*);
     private:

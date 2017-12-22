@@ -9,6 +9,7 @@ namespace gameEngine {
         Level(const char*, std::vector<Sprite*>);
         std::vector<Sprite*> getSprites(){ return sprites; }
         const char* getBackground(){ return background; }
+        ~Level(){} //TODO: HANDLEDNING, vill jag ens göra nåt här?
     private:
         const char* background;
         std::vector<Sprite*> sprites;

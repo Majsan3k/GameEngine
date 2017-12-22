@@ -57,7 +57,6 @@ namespace gameEngine {
     }
 
     Label::~Label(){
-        delete text;
         SDL_DestroyTexture(labelTexture);
         TTF_CloseFont(font);
         TTF_Quit();

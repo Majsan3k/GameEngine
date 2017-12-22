@@ -1,4 +1,6 @@
 #include <iostream>
+#include <algorithm>
+#include <vector>
 #include "GameEngine.h"
 #include "../frame/Frame.h"
 #include "../components/Button.h"
@@ -36,20 +38,31 @@ namespace gameEngine {
     }
 
     void GameEngine::changeLevel(int i){
-        for (Sprite *sprite : sprites) {
-            delete sprite;
-        }
+
+        vector<Sprite*> newSprites;
 
         const char* newBackground;
         auto contains = levels.find(i);
         if(contains != levels.end()){
-            sprites = contains->second.getSprites();
+            newSprites = contains->second.getSprites();
             newBackground = contains->second.getBackground();
             updateBackground(newBackground);
         }else{
             cout << "No such level" << endl;
         }
         levelChange = false;
+
+
+//        for (Sprite *sprite : sprites) {
+//
+//            std::vector<Sprite* >::iterator it;
+//            it = find(sprites.begin(), newSprites.end(), sprite);
+//            if(it == newSprites.end()){
+//                delete sprite;
+//            }
+//        }
+
+        sprites = newSprites;
     }
 
     void GameEngine::addShortcut(unsigned key, std::function<void()> function){

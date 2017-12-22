@@ -72,6 +72,11 @@ int main() {
         sprites1.push_back((Sprite*)soundButton);
         sprites1.push_back((Sprite*)human);
 
+        sprites2.push_back((Sprite*)player);
+        sprites2.push_back((Sprite*)points);
+
+
+
     }catch(runtime_error e){
         cerr << e.what() << endl;
     }
