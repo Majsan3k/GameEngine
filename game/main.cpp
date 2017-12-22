@@ -1,6 +1,5 @@
 //TODO: Se över minnesläckage i hela programmet!!!
 
-
 #define SDL_MAIN_HANDLED
 #include <iostream>
 #include <functional>
@@ -11,7 +10,6 @@
 #include "Item.h"
 #include "Player.h"
 #include "SoundButton.h"
-#include "../components/FuncTemplate.h"
 
 ////Create function map and game engine
 //unordered_map<unsigned, std::function<void()>> funcs;

@@ -61,5 +61,6 @@ namespace gameEngine {
 
     Movable::~Movable(){
         SDL_DestroyTexture(texture);
+        delete srcrect;
     }
 }

@@ -6,7 +6,6 @@
 #include <functional>
 #include "Level.h"
 #include "../components/Sprite.h"
-#include "../components/FuncTemplate.h"
 #include "../game/Item.h"
 
 using namespace myGame;

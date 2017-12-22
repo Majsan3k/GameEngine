@@ -20,8 +20,6 @@ iostream
 ../engine/GameEngine.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
 
-/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/FuncTemplate.h
-
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.cpp
 Label.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.h
@@ -105,8 +103,6 @@ Level.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/Level.h
 ../components/Sprite.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
-../components/FuncTemplate.h
-/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/FuncTemplate.h
 ../game/Item.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Item.h
 
@@ -195,6 +191,4 @@ Player.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Player.h
 SoundButton.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/SoundButton.h
-../components/FuncTemplate.h
-/cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/FuncTemplate.h
 

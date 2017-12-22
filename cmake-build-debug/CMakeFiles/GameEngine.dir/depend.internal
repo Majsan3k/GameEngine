@@ -4,7 +4,6 @@
 CMakeFiles/GameEngine.dir/components/Button.cpp.o
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Button.cpp
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Button.h
- /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/FuncTemplate.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Movable.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
@@ -18,7 +17,6 @@ CMakeFiles/GameEngine.dir/components/Label.cpp.o
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.h
 CMakeFiles/GameEngine.dir/components/Movable.cpp.o
- /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/FuncTemplate.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Movable.cpp
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Movable.h
@@ -32,7 +30,6 @@ CMakeFiles/GameEngine.dir/components/Sprite.cpp.o
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
 CMakeFiles/GameEngine.dir/engine/GameEngine.cpp.o
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Button.h
- /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/FuncTemplate.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Movable.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
@@ -49,7 +46,6 @@ CMakeFiles/GameEngine.dir/frame/Frame.cpp.o
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.cpp
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.h
 CMakeFiles/GameEngine.dir/game/Item.cpp.o
- /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/FuncTemplate.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Movable.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
@@ -60,7 +56,6 @@ CMakeFiles/GameEngine.dir/game/Item.cpp.o
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Item.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Player.h
 CMakeFiles/GameEngine.dir/game/Player.cpp.o
- /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/FuncTemplate.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Movable.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
@@ -71,7 +66,6 @@ CMakeFiles/GameEngine.dir/game/Player.cpp.o
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Player.h
 CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Button.h
- /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/FuncTemplate.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Movable.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
@@ -82,7 +76,6 @@ CMakeFiles/GameEngine.dir/game/SoundButton.cpp.o
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/SoundButton.h
 CMakeFiles/GameEngine.dir/game/main.cpp.o
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Button.h
- /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/FuncTemplate.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Movable.h
  /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Sprite.h
