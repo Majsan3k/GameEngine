@@ -5,8 +5,8 @@ namespace gameEngine{
     Sprite::Sprite(SDL_Rect& spritePicture):spriteRect(spritePicture) {
     }
 
-    bool Sprite::collision(Sprite* otherSprite){
-        SDL_Rect otherRect = otherSprite->getSpriteRect();
+    bool Sprite::collision(Sprite& otherSprite){
+        SDL_Rect otherRect = otherSprite.getSpriteRect();
         int bottom = spriteRect.y + spriteRect.h;
         int top = spriteRect.y;
         int right = spriteRect.x + spriteRect.w;
@@ -30,5 +30,7 @@ namespace gameEngine{
 
     void Sprite::mouseButtonDown(SDL_Event&){}
 
-    Sprite::~Sprite() {}
+    Sprite::~Sprite() {
+        delete(spriteRect);
+    }
 }

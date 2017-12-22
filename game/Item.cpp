@@ -37,7 +37,7 @@ namespace myGame{
 
     //TODO: Funkar inte som den ska, gör enbart check i player nu, ändra?
     //Bryta ut collisionschecken på något sätt? Eller inte ens göra den i Item?
-    void Item::collisionOtherSprite(Sprite* otherSprite, GameEngine& engine){
+    void Item::collisionOtherSprite(Sprite& otherSprite, GameEngine& engine){
 //        if(dynamic_cast<Player*>(otherSprite)){
 //            shouldRemove = true;
 //            ((Player*)otherSprite)->collisionOtherSprite(this, engine);

@@ -41,8 +41,8 @@ namespace gameEngine {
 
         std::vector<Sprite*> sprites = engine.getSprites();
         for(Sprite* sprite : sprites){
-            if(sprite != this && collision(sprite)){
-                collisionOtherSprite(sprite, engine);
+            if(sprite != this && collision(*sprite)){
+                collisionOtherSprite(*sprite, engine);
             }
         }
     }

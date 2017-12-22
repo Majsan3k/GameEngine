@@ -10,7 +10,7 @@ namespace myGame{
     public:
         static Item* getInstance(SDL_Rect, const char*, int);
         static Item* getAnimatedInstance(SDL_Rect, const char*, int, int, int);
-        void collisionOtherSprite(Sprite*, GameEngine&) override;
+        void collisionOtherSprite(Sprite&, GameEngine&) override;
         void move(const Uint8*, GameEngine&);
         int getPoints(){ return valuePoints; }
 

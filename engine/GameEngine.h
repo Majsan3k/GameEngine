@@ -13,7 +13,6 @@ using namespace myGame;
 
 namespace gameEngine {
 
-    //TODO: Konstruktor för att ta in levels
     class GameEngine {
     public:
         GameEngine(std::unordered_map<int, Level> levels) : levels(levels){}

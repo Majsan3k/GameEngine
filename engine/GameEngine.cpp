@@ -99,6 +99,8 @@ namespace gameEngine {
         std::string inputText = "";
         SDL_StartTextInput();
         bool goOn = true;
+        Label* labelChanged = NULL;
+
         while (goOn) {
             frameStart = SDL_GetTicks();
             SDL_Event event;
@@ -121,7 +123,15 @@ namespace gameEngine {
                         for (Sprite *s : sprites) {
                             if (dynamic_cast<Button *>(s)) {
                                 s->mouseButtonUp(event, *this);
-                            }  
+                            }
+
+                            //TODO: Se över upplägget på denna. Finns exakt samma point-check i Button-klassen på mouseButtonUp
+                            if (dynamic_cast<Label *>(s) && (((Label*)s)->getEditable())) {
+                                SDL_Point p = {event.button.x, event.button.y};
+                                if(SDL_PointInRect(&p, &s->getSpriteRect())){
+                                    labelChanged = (Label*)s;
+                                }
+                            }
                         }
                         break;
                     case SDL_KEYDOWN :
@@ -130,7 +140,7 @@ namespace gameEngine {
                         }
                 }
 
-                if(event.type == SDL_TEXTINPUT){
+                if(labelChanged != NULL && event.type == SDL_TEXTINPUT){
                     if(inputText.length() < 5)  {
                         inputText += event.text.text;
                         textChanged = true;
@@ -139,11 +149,15 @@ namespace gameEngine {
             }
             if(textChanged){
                 for (Sprite *s : sprites) {
-                    if (dynamic_cast<Label *>(s) && (((Label*)s)->getEditable())) {
+                    if(labelChanged != NULL) {
+//                    if (dynamic_cast<Label *>(s) && (((Label*)s)->getEditable())) {
                         if (inputText != "") {
-                            ((Label*)s)->setText(inputText.c_str());
-                        } else {
-                            ((Label*)s)->setText("");
+//                            ((Label*)s)->setText(inputText.c_str());
+                            labelChanged->setText(inputText.c_str());
+                        } else if (labelChanged != NULL) {
+//                            ((Label*)s)->setText("");
+                            labelChanged->setText("");
+//                        }
                         }
                     }
                 }

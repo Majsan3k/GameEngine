@@ -9,7 +9,7 @@ namespace myGame{
     class Player : public Movable{
     public:
         static Player* getInstance(SDL_Rect, Label&, const char*);
-        void collisionOtherSprite(Sprite*, GameEngine&) override;
+        void collisionOtherSprite(Sprite&, GameEngine&) override;
         void move(const Uint8*, GameEngine&) override;
     protected:
         Player(SDL_Rect, Label&, const char*);

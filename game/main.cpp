@@ -1,3 +1,6 @@
+//TODO: Se över minnesläckage i hela programmet!!!
+
+
 #define SDL_MAIN_HANDLED
 #include <iostream>
 #include <functional>

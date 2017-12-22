@@ -16,7 +16,6 @@ namespace myGame {
 
     protected:
         SoundButton(SDL_Rect, const char*, const char*);
-
     };
 }
 
