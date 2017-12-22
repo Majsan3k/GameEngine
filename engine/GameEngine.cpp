@@ -53,16 +53,17 @@ namespace gameEngine {
         levelChange = false;
 
 
-//        for (Sprite *sprite : sprites) {
-//
-//            std::vector<Sprite* >::iterator it;
-//            it = find(sprites.begin(), newSprites.end(), sprite);
-//            if(it == newSprites.end()){
-//                delete sprite;
-//            }
-//        }
+        for (Sprite *sprite : sprites) {
 
+            std::vector<Sprite* >::iterator iter = find(newSprites.begin(), newSprites.end(), sprite);
+            if(iter == newSprites.end()){
+                delete sprite; //TODO: HANDLEDNING: Ta bort från listan också? Hur kan de ligga kvar där fast de är borttagna?
+            }
+        }
+
+        cout << sprites.size() << endl;
         sprites = newSprites;
+        cout << sprites.size() << endl;
     }
 
     void GameEngine::addShortcut(unsigned key, std::function<void()> function){
