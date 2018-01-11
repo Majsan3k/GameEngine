@@ -12,7 +12,6 @@ namespace gameEngine {
         void tick(const Uint8*, GameEngine&);
         void draw(Uint32);
         ~Movable();
-
     protected:
         Movable(SDL_Rect&, const char*);
         Movable(SDL_Rect&, const char*, int, int);

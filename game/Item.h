@@ -12,7 +12,7 @@ namespace myGame{
         static Item* getAnimatedInstance(SDL_Rect, const char*, int, int, int);
         void collisionOtherSprite(Sprite&, GameEngine&) override;
         void move(const Uint8*, GameEngine&);
-        int getPoints(){ return valuePoints; }
+        int getPoints() const { return valuePoints; }
         ~Item(){}
     protected:
         Item(SDL_Rect, const char*, int);

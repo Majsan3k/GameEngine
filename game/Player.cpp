@@ -36,9 +36,11 @@ namespace myGame {
             points += ((Item*)&otherSprite)->getPoints();
             pointLabel.setText(to_string(points));
             otherSprite.setRemove(true);
-        }
-        if(points == 3){
-            engine.setLevel(2);
+
+            //TODO: Kolla på att ändra level om tid finns
+            if(points > 1){
+                engine.setLevel(2);
+            }
         }
     }
 }

@@ -12,9 +12,6 @@ namespace gameEngine {
 
     GameEngine::~GameEngine() {
         SDL_DestroyTexture(background);
-        for (Sprite *sprite : sprites) {
-            delete sprite;
-        }
     }
 
     void GameEngine::updateBackground(const char* newBackgroundPic){
@@ -33,36 +30,22 @@ namespace gameEngine {
     }
 
     void GameEngine::setLevel(int newLevel){
-        this->newLevel = newLevel;
+        this->level = newLevel;
         levelChange = true;
     }
 
-    void GameEngine::changeLevel(int i){
+    void GameEngine::updateLevel(){
 
-        vector<Sprite*> newSprites;
-
-        const char* newBackground;
-        auto contains = levels.find(i);
-        if(contains != levels.end()){
-            newSprites = contains->second.getSprites();
-            newBackground = contains->second.getBackground();
-            updateBackground(newBackground);
-        }else{
-            cout << "No such level" << endl;
-        }
         levelChange = false;
 
-
-        for (Sprite *sprite : sprites) {
-
-            std::vector<Sprite* >::iterator iter = find(newSprites.begin(), newSprites.end(), sprite);
-            if(iter == newSprites.end()){
-                delete sprite; //TODO: HANDLEDNING: Ta bort från listan också? Hur kan de ligga kvar där fast de är borttagna?
-            }
+        auto contains = levels.find(level);
+        if(contains != levels.end()){
+            sprites = (contains->second)->getSprites();
+            updateBackground((contains->second)->getBackground());
+        }else{
+            cout << "No such level" << endl;
+            return;
         }
-
-        cout << sprites.size() << endl;
-        sprites = newSprites;
         cout << sprites.size() << endl;
     }
 
@@ -84,7 +67,6 @@ namespace gameEngine {
         for (vector<Sprite *>::iterator iter = sprites.begin();
              iter != sprites.end();)
             if ((*iter)->getShouldRemove()) {
-                delete (*iter);
                 iter = sprites.erase(iter);
             } else {
                 iter++;
@@ -109,7 +91,8 @@ namespace gameEngine {
         Uint32 frameStart;
         int frameTime;
 
-        changeLevel(level);
+        this->level = level;
+        levelChange = true;
         std::string inputText = "";
         SDL_StartTextInput();
         bool goOn = true;
@@ -190,7 +173,7 @@ namespace gameEngine {
             remove();
 
             if(levelChange){
-                changeLevel(newLevel);
+                updateLevel();
             }
 
             SDL_SetRenderDrawColor(frame.getRen(), 255, 255, 255, 0);

@@ -6,10 +6,12 @@
 namespace gameEngine {
     class Level {
     public:
-        Level(const char*, std::vector<Sprite*>);
-        std::vector<Sprite*> getSprites(){ return sprites; }
+        static Level* getInstance(const char* background, std::vector<Sprite*> sprites);
+        std::vector<Sprite*> getSprites() { return sprites; }
         const char* getBackground(){ return background; }
-        ~Level(){} //TODO: HANDLEDNING, vill jag ens göra nåt här?
+        ~Level(){std::cout << "Delete level" << std::endl;}
+    protected:
+        Level(const char*, std::vector<Sprite*>);
     private:
         const char* background;
         std::vector<Sprite*> sprites;

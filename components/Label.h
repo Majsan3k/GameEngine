@@ -12,12 +12,11 @@ namespace gameEngine {
         static Label* getInstance(SDL_Rect, std::string, const char*, bool);
         void tick(const Uint8*, GameEngine&){}
         void draw(Uint32);
-        const std::string getText(){return text;}
-        const bool getEditable(){return editable;}
+        const std::string getText() const {return text;}
+        const bool getEditable() const {return editable;}
         void setText(std::string);
-        int getMaxLength(){return maxTextLength;}
+        int getMaxLength() const {return maxTextLength;}
         ~Label();
-
     protected:
         Label(SDL_Rect&, std::string, const char*, bool);
     private:
