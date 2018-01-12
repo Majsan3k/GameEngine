@@ -18,7 +18,7 @@ namespace gameEngine{
         const bool getShouldRemove() const { return shouldRemove; }
         void setRemove(bool remove){shouldRemove = remove; }
         const SDL_Rect& getSpriteRect() const { return spriteRect; }
-        virtual ~Sprite(){ delete &spriteRect; std::cout << "Delete sprite" << std::endl; }
+        virtual ~Sprite(){ std::cout << "Delete sprite" << std::endl; }
     protected:
         SDL_Rect spriteRect;
         Sprite(SDL_Rect& spritePicture);

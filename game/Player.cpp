@@ -38,9 +38,9 @@ namespace myGame {
             otherSprite.setRemove(true);
 
             //TODO: Kolla på att ändra level om tid finns
-            if(points > 1){
-                engine.setLevel(2);
-            }
+//            if(points > 1){
+//                engine.setLevel(2);
+//            }
         }
     }
 }

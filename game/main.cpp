@@ -12,27 +12,11 @@ using namespace gameEngine;
 using namespace myGame;
 
 
-//TODO: Kolla på template om tid finns
-void deleteSprites(vector<Sprite*> sprites){
-    for(Sprite* sprite : sprites){
-        delete sprite;
-    }
-}
-
-void deleteLevels(vector<Level*> levels){
-    for(Level* level : levels){
-        delete level;
-    }
-}
-
 void test(){
     cout << "test" << endl;
 }
 
 int main() {
-
-    vector<Sprite*> allSprites;
-    vector<Level*> allLevels;
     vector<char*> media;
 
     unordered_map<int, Level*> levels;
@@ -59,7 +43,7 @@ int main() {
 
     try {
         points = Label::getInstance({450, 10, 40, 40}, "0", "C:/Windows/Fonts/Arial.ttf", false);
-        points2 = Label::getInstance({50, 10, 40, 40}, "0", "C:/Windows/Fonts/Arial.ttf", true);
+        points2 = Label::getInstance({50, 10, 200, 40}, "0", "C:/Windows/Fonts/Arial.ttf", true);
         player = Player::getInstance({50, 250, 100, 100}, *points, playerPic);
         elephant = Item::getInstance({200, 1, 50, 50}, elephantPic, 1);
         elephant1 = Item::getInstance({70, 10, 50, 50}, elephantPic,1);
@@ -68,17 +52,7 @@ int main() {
         soundButton = SoundButton::getInstance({450, 60, 40, 40}, btnPicFront, btnPicBack);
         human = Item::getAnimatedInstance({150, 0, 128, 64}, animated, 4, 200,-1);
 
-        allSprites.push_back((Sprite*)points);
-        allSprites.push_back((Sprite*)points2);
-        allSprites.push_back((Sprite*)player);
-        allSprites.push_back((Sprite*)elephant);
-        allSprites.push_back((Sprite*)elephant1);
-        allSprites.push_back((Sprite*)elephant2);
-        allSprites.push_back((Sprite*)elephant3);
-        allSprites.push_back((Sprite*)soundButton);
-        allSprites.push_back((Sprite*)human);
-
-        /* Prepare sprites for level 1*/
+        /* Prepare activeSprites for level 1*/
         sprites1.push_back((Sprite*)points);
         sprites1.push_back((Sprite*)points2);
         sprites1.push_back((Sprite*)player);
@@ -89,7 +63,7 @@ int main() {
         sprites1.push_back((Sprite*)soundButton);
         sprites1.push_back((Sprite*)human);
 
-        /* Prepare sprites for level 2 */
+        /* Prepare activeSprites for level 2 */
         sprites2.push_back((Sprite*)player);
         sprites2.push_back((Sprite*)points);
 
@@ -100,8 +74,6 @@ int main() {
     /* Create levels */
     Level* first = Level::getInstance(backgroundPic, sprites1);
     Level* second = Level::getInstance(elephantPic, sprites2);
-    allLevels.push_back(first);
-    allLevels.push_back(second);
 
     /* Add levels to level map */
     levels.insert(make_pair(1, first));
@@ -111,23 +83,17 @@ int main() {
     unordered_map<unsigned, std::function<void()>> funcs;
     std::function<void()> testfunc = test;
     funcs.insert(make_pair(SDLK_DOWN, testfunc));
-//    std::function<void()> test2 = std::bind(&Item::test, human);
-//    funcs.insert(make_pair(SDLK_UP, test2));
-
 
 
     /* Create game engine and start it*/
     GameEngine gameEngine(levels, funcs);
-    std::function<void()> testfunc2  = Player::deleteFunc();
-    gameEngine.addShortcut(SDLK_DELETE, );
+    std::function<void()> test2 = std::bind(&Item::test, human); //add shortcut to member function
+//    std::function<void()> pause = std::bind(&GameEngine::setPaused, gameEngine);
+//    gameEngine.addShortcut(SDLK_SPACE, pause);
     gameEngine.run(60, music, true, 1);
 
 
-
-    /* Free memory for all sprites and levels */
-    deleteSprites(allSprites);
-    deleteLevels(allLevels);
-
+    //TODO: Ska detta göras i respektive klass istället?
     /* Remove all media */
     delete [] music;
     delete [] backgroundPic;

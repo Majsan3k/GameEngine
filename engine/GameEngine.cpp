@@ -14,6 +14,34 @@ namespace gameEngine {
         SDL_DestroyTexture(background);
     }
 
+    void GameEngine::addAllSprites(){
+        //TODO: Går det att använda unique_copy?
+
+        cout << "Före: " << allSprites.size() << endl;
+        for(auto level = levels.begin(); level != levels.end(); level++){
+
+            vector<Sprite*> newSprites = (level->second) -> getSprites();
+            for(Sprite* sprite : newSprites){
+                if (find(allSprites.begin(), allSprites.end(),sprite)== allSprites.end()){
+                    allSprites.push_back(sprite);
+                }
+            }
+        }
+        cout << "Efter: " << allSprites.size() << endl;
+    }
+
+    void GameEngine::clearSprites() const {
+        for(Sprite* sprite : allSprites){
+            delete sprite;
+        }
+    }
+
+    void GameEngine::clearLevels() const {
+        for(auto level = levels.begin(); level!= levels.end(); level++){
+            delete level->second;
+        }
+    }
+
     void GameEngine::updateBackground(const char* newBackgroundPic){
         SDL_Surface *backgroundPicture = IMG_Load(newBackgroundPic);
 
@@ -40,13 +68,13 @@ namespace gameEngine {
 
         auto contains = levels.find(level);
         if(contains != levels.end()){
-            sprites = (contains->second)->getSprites();
+            activeSprites = (contains->second)->getSprites();
             updateBackground((contains->second)->getBackground());
         }else{
             cout << "No such level" << endl;
             return;
         }
-        cout << sprites.size() << endl;
+        cout << activeSprites.size() << endl;
     }
 
     void GameEngine::addShortcut(unsigned key, std::function<void()> function){
@@ -60,14 +88,14 @@ namespace gameEngine {
     }
 
     void GameEngine::add(Sprite *sprite) {
-        sprites.push_back(sprite);
+        activeSprites.push_back(sprite);
     }
 
     void GameEngine::remove() {
-        for (vector<Sprite *>::iterator iter = sprites.begin();
-             iter != sprites.end();)
+        for (vector<Sprite *>::iterator iter = activeSprites.begin();
+             iter != activeSprites.end();)
             if ((*iter)->getShouldRemove()) {
-                iter = sprites.erase(iter);
+                iter = activeSprites.erase(iter);
             } else {
                 iter++;
             }
@@ -96,6 +124,7 @@ namespace gameEngine {
         std::string inputText = "";
         SDL_StartTextInput();
         bool goOn = true;
+        paused = false;
         Label* labelChanged = NULL;
 
         while (goOn) {
@@ -110,52 +139,54 @@ namespace gameEngine {
                         break;
                     case SDL_MOUSEBUTTONDOWN :
                         //TODO: Flytta över dessa event till Button?
-                        for (Sprite *s : sprites) {
+                        for (Sprite *s : activeSprites) {
                             if (dynamic_cast<Button *>(s)) {
                                 s->mouseButtonDown(event);
                             }
                         }
                         break;
                     case SDL_MOUSEBUTTONUP :
-                        for (Sprite *s : sprites) {
+                        for (Sprite *s : activeSprites) {
                             if (dynamic_cast<Button *>(s)) {
                                 s->mouseButtonUp(event, *this);
                             }
 
                             //TODO: Se över upplägget på denna. Finns exakt samma point-check i Button-klassen på mouseButtonUp
-                            if (dynamic_cast<Label *>(s) && (((Label*)s)->getEditable())) {
+                            if (dynamic_cast<Label *>(s) && (((Label *) s)->getEditable())) {
                                 SDL_Point p = {event.button.x, event.button.y};
-                                if(SDL_PointInRect(&p, &s->getSpriteRect())){
-                                    labelChanged = (Label*)s;
+                                if (SDL_PointInRect(&p, &s->getSpriteRect())) {
+                                    labelChanged = (Label *) s;
                                 }
                             }
                         }
                         break;
                     case SDL_KEYDOWN :
-                        if(shortcuts[event.key.keysym.sym]){
+                        if (shortcuts[event.key.keysym.sym]) {
                             shortcuts[event.key.keysym.sym]();
+                        }else if(event.key.keysym.sym == SDLK_BACKSPACE){
+                            if(inputText.size() > 0) {
+                                cout << "Kommer hit " << inputText.size() << endl;
+                                inputText.pop_back();
+                                textChanged = true;
+                            }
                         }
+
+                        break;
                 }
 
-                if(labelChanged != NULL && event.type == SDL_TEXTINPUT){
-                    if(inputText.length() < 5)  {
-                        inputText += event.text.text;
-                        textChanged = true;
+                if (labelChanged != NULL && event.type == SDL_TEXTINPUT) {
+                    if (inputText.length() < labelChanged->getMaxLength()) {
+                            inputText += event.text.text;
+                            textChanged = true;
                     }
                 }
             }
-            if(textChanged){
-                for (Sprite *s : sprites) {
-                    if(labelChanged != NULL) {
-//                    if (dynamic_cast<Label *>(s) && (((Label*)s)->getEditable())) {
-                        if (inputText != "") {
-//                            ((Label*)s)->setText(inputText.c_str());
-                            labelChanged->setText(inputText.c_str());
-                        } else if (labelChanged != NULL) {
-//                            ((Label*)s)->setText("");
-                            labelChanged->setText("");
-//                        }
-                        }
+            if (textChanged) {
+                if (labelChanged != NULL) {
+                    if (inputText.size() > 0) {
+                        labelChanged->setText(inputText.c_str());
+                    } else {
+                        labelChanged->setText(" ");
                     }
                 }
             }
@@ -165,24 +196,31 @@ namespace gameEngine {
                 SDL_Delay(roundTime - frameTime);
             }
 
-            const Uint8 *state = SDL_GetKeyboardState(NULL);
-            for (Sprite *sprite : sprites) {
-                sprite->tick(state, *this);
+            //TODO: HANDLEDNING: Varför funkar det inte? Paused är inte uppdaterad
+            if (!paused) {
+//                cout << "Går in " << paused << endl;
+                const Uint8 *state = SDL_GetKeyboardState(NULL);
+                for (Sprite *sprite : activeSprites) {
+                    sprite->tick(state, *this);
+                }
+
+                remove();
+
+                if (levelChange) {
+                    updateLevel();
+                }
+
+                SDL_SetRenderDrawColor(frame.getRen(), 255, 255, 255, 0);
+                SDL_RenderClear(frame.getRen());
+                SDL_RenderCopy(frame.getRen(), background, NULL, NULL);
+                for (Sprite *s : activeSprites)
+                    s->draw(SDL_GetTicks());
+                SDL_RenderPresent(frame.getRen());
             }
-
-            remove();
-
-            if(levelChange){
-                updateLevel();
-            }
-
-            SDL_SetRenderDrawColor(frame.getRen(), 255, 255, 255, 0);
-            SDL_RenderClear(frame.getRen());
-            SDL_RenderCopy(frame.getRen(), background, NULL, NULL);
-            for (Sprite *s : sprites)
-                s->draw(SDL_GetTicks());
-            SDL_RenderPresent(frame.getRen());
         }
         SDL_StopTextInput();
+
+        clearSprites();
+        clearLevels();
     }
 }

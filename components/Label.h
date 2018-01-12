@@ -23,8 +23,10 @@ namespace gameEngine {
         std::string text;
         TTF_Font* font;
         SDL_Texture* labelTexture;
-        bool editable = true;
-        int maxTextLength;
+        bool editable;
+
+        //TODO: ÄNDRA!
+        int maxTextLength = 5;
     };
 }
 

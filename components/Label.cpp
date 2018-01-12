@@ -45,6 +45,7 @@ namespace gameEngine {
         SDL_Surface* surf = TTF_RenderText_Solid(font, text.c_str(), {0,0,0});
 
         if(surf == nullptr){
+            cout << "problem " << SDL_GetError() << endl;
             throw std::runtime_error(string("Something went wrong while creating surface") + SDL_GetError());
         }
         labelTexture = SDL_CreateTextureFromSurface(frame.getRen(), surf);
@@ -53,6 +54,8 @@ namespace gameEngine {
             throw std::runtime_error(string("Something went wrong while creating texture") + SDL_GetError());
         }
 
+        spriteRect.w = surf->w;
+        spriteRect.h = surf->h;
         SDL_FreeSurface(surf);
     }
 

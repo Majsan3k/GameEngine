@@ -38,7 +38,7 @@ namespace gameEngine {
     void Movable::tick(const Uint8 *state, GameEngine &engine){
         move(state, engine);
 
-        std::vector<Sprite*> sprites = engine.getSprites();
+        std::vector<Sprite*> sprites = engine.getActiveSprites();
         for(Sprite* sprite : sprites){
             if(sprite != this && collision(*sprite)){
                 collisionOtherSprite(*sprite, engine);
