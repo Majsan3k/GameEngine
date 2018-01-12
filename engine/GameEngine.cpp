@@ -124,6 +124,7 @@ namespace gameEngine {
         std::string inputText = "";
         SDL_StartTextInput();
         bool goOn = true;
+        bool changeText;
         paused = false;
         Label* labelChanged = NULL;
 
@@ -146,9 +147,11 @@ namespace gameEngine {
                         }
                         break;
                     case SDL_MOUSEBUTTONUP :
+                        changeText = false;
                         for (Sprite *s : activeSprites) {
                             if (dynamic_cast<Button *>(s)) {
                                 s->mouseButtonUp(event, *this);
+                                break;
                             }
 
                             //TODO: Se över upplägget på denna. Finns exakt samma point-check i Button-klassen på mouseButtonUp
@@ -156,6 +159,8 @@ namespace gameEngine {
                                 SDL_Point p = {event.button.x, event.button.y};
                                 if (SDL_PointInRect(&p, &s->getSpriteRect())) {
                                     labelChanged = (Label *) s;
+                                    changeText = true;
+                                    break;
                                 }
                             }
                         }
@@ -163,22 +168,19 @@ namespace gameEngine {
                     case SDL_KEYDOWN :
                         if (shortcuts[event.key.keysym.sym]) {
                             shortcuts[event.key.keysym.sym]();
-                        }else if(event.key.keysym.sym == SDLK_BACKSPACE){
-                            if(inputText.size() > 0) {
-                                cout << "Kommer hit " << inputText.size() << endl;
+                        }else if(event.key.keysym.sym == SDLK_BACKSPACE && inputText.size() > 0){
                                 inputText.pop_back();
                                 textChanged = true;
-                            }
                         }
-
                         break;
                 }
 
-                if (labelChanged != NULL && event.type == SDL_TEXTINPUT) {
+                if (labelChanged != NULL && changeText == true && event.type == SDL_TEXTINPUT) {
                     if (inputText.length() < labelChanged->getMaxLength()) {
                             inputText += event.text.text;
                             textChanged = true;
                     }
+                    break;
                 }
             }
             if (textChanged) {
@@ -186,7 +188,7 @@ namespace gameEngine {
                     if (inputText.size() > 0) {
                         labelChanged->setText(inputText.c_str());
                     } else {
-                        labelChanged->setText(" ");
+                        labelChanged->setText("Write something!");
                     }
                 }
             }

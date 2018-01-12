@@ -32,7 +32,7 @@ int main() {
     const char* animated = "C:/Users/majal/Documents/Prog3/Inlupp/spritesheet.png";
 
     Label* points;
-    Label* points2;
+    Label* inputField;
     Movable* player;
     Item* elephant;
     Item* elephant1;
@@ -42,8 +42,8 @@ int main() {
     Button* soundButton;
 
     try {
-        points = Label::getInstance({450, 10, 40, 40}, "0", "C:/Windows/Fonts/Arial.ttf", false);
-        points2 = Label::getInstance({50, 10, 200, 40}, "0", "C:/Windows/Fonts/Arial.ttf", true);
+        points = Label::getInstance({450, 10, 40, 40}, "0", "C:/Windows/Fonts/Arial.ttf", false, 5);
+        inputField = Label::getInstance({50, 10, 200, 40}, "Write something", "C:/Windows/Fonts/Arial.ttf", true, 5);
         player = Player::getInstance({50, 250, 100, 100}, *points, playerPic);
         elephant = Item::getInstance({200, 1, 50, 50}, elephantPic, 1);
         elephant1 = Item::getInstance({70, 10, 50, 50}, elephantPic,1);
@@ -54,7 +54,7 @@ int main() {
 
         /* Prepare activeSprites for level 1*/
         sprites1.push_back((Sprite*)points);
-        sprites1.push_back((Sprite*)points2);
+        sprites1.push_back((Sprite*)inputField);
         sprites1.push_back((Sprite*)player);
         sprites1.push_back((Sprite*)elephant);
         sprites1.push_back((Sprite*)elephant1);

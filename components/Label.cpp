@@ -5,11 +5,11 @@
 using namespace std;
 
 namespace gameEngine {
-    Label* Label::getInstance(SDL_Rect rect, std::string txt, const char* fontSrc, bool editable) {
-        return new Label(rect, txt, fontSrc, editable);
+    Label* Label::getInstance(SDL_Rect rect, std::string txt, const char* fontSrc, bool editable, int maxLength) {
+        return new Label(rect, txt, fontSrc, editable, maxLength);
     }
 
-    Label::Label(SDL_Rect& rect, std::string text, const char* fontSrc, bool editable) : Sprite(rect), text(text), editable(editable) {
+    Label::Label(SDL_Rect& rect, std::string text, const char* fontSrc, bool editable, int maxLength) : Sprite(rect), editable(editable), maxTextLength(maxLength) {
 
         if(TTF_Init() == -1){
             throw runtime_error(string("Problem with TTF init: ") + SDL_GetError());
@@ -31,7 +31,7 @@ namespace gameEngine {
         if(labelTexture == nullptr){
             throw std::runtime_error(string("Something went wrong while creating texture: ") + SDL_GetError());
         }
-
+        setText(text);
         SDL_FreeSurface(surf);
     }
 
@@ -50,12 +50,13 @@ namespace gameEngine {
         }
         labelTexture = SDL_CreateTextureFromSurface(frame.getRen(), surf);
 
+        //TODO: HANDLEDNING: Varför används inte font efter detta?
+        spriteRect.w = surf->w;
+        spriteRect.h = surf->h;
+
         if(labelTexture == nullptr){
             throw std::runtime_error(string("Something went wrong while creating texture") + SDL_GetError());
         }
-
-        spriteRect.w = surf->w;
-        spriteRect.h = surf->h;
         SDL_FreeSurface(surf);
     }
 

@@ -9,7 +9,7 @@ namespace gameEngine {
     class Label : public Sprite {
 
     public:
-        static Label* getInstance(SDL_Rect, std::string, const char*, bool);
+        static Label* getInstance(SDL_Rect rect , std::string txt, const char* fontSrc, bool editable, int maxLength);
         void tick(const Uint8*, GameEngine&){}
         void draw(Uint32);
         const std::string getText() const {return text;}
@@ -18,15 +18,13 @@ namespace gameEngine {
         int getMaxLength() const {return maxTextLength;}
         ~Label();
     protected:
-        Label(SDL_Rect&, std::string, const char*, bool);
+        Label(SDL_Rect&, std::string, const char*, bool, int maxLength);
     private:
         std::string text;
         TTF_Font* font;
         SDL_Texture* labelTexture;
         bool editable;
-
-        //TODO: ÄNDRA!
-        int maxTextLength = 5;
+        int maxTextLength;
     };
 }
 
