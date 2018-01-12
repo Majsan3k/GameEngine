@@ -1,4 +1,5 @@
 //TODO: Se över minnesläckage i hela programmet!!!
+//TODO: Skriv README
 
 #define SDL_MAIN_HANDLED
 #include <iostream>
@@ -23,13 +24,13 @@ int main() {
     vector<Sprite*> sprites1;
     vector<Sprite*> sprites2;
 
-    const char* music = "C:/Users/majal/Documents/Prog3/Inlupp/music.mp3";
-    const char* backgroundPic = "C:/Users/majal/Documents/Prog3/Inlupp/bg.jpg";
-    const char* playerPic = "C:/Users/majal/Documents/Prog3/Inlupp/hat.png";
-    const char* elephantPic = "C:/Users/majal/Documents/Prog3/Inlupp/elephant.jpg";
-    const char* btnPicFront = "C:/Users/majal/Documents/Prog3/Inlupp/soundOn.png";
-    const char* btnPicBack = "C:/Users/majal/Documents/Prog3/Inlupp/soundOff.png";
-    const char* animated = "C:/Users/majal/Documents/Prog3/Inlupp/spritesheet.png";
+    const char* music = "C:/MediaProg3/music.mp3";
+    const char* backgroundPic = "C:/MediaProg3/bg.jpg";
+    const char* playerPic = "C:/MediaProg3/hat.png";
+    const char* elephantPic = "C:/MediaProg3/elephant.jpg";
+    const char* btnPicFront = "C:/MediaProg3/soundOn.png";
+    const char* btnPicBack = "C:/MediaProg3/soundOff.png";
+    const char* animated = "C:/MediaProg3/spritesheet.png";
 
     Label* points;
     Label* inputField;

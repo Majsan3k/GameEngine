@@ -163,7 +163,6 @@ namespace gameEngine {
                                 break;
                             }
 
-                            //TODO: Se över upplägget på denna. Finns exakt samma point-check i Button-klassen på mouseButtonUp
                             if (dynamic_cast<Label *>(s) && (((Label *) s)->getEditable())) {
                                 SDL_Point p = {event.button.x, event.button.y};
                                 if (SDL_PointInRect(&p, &s->getSpriteRect())) {
@@ -177,7 +176,7 @@ namespace gameEngine {
                     case SDL_KEYDOWN :
                         if (shortcuts[event.key.keysym.sym]) {
                             shortcuts[event.key.keysym.sym]();
-                        }else if(event.key.keysym.sym == SDLK_BACKSPACE && inputText.size() > 0 && !changeText){
+                        }else if(event.key.keysym.sym == SDLK_BACKSPACE && inputText.size() > 0 && changeText){
                             inputText.pop_back();
                             textChanged = true;
                         }
