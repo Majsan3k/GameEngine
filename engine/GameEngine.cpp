@@ -30,13 +30,13 @@ namespace gameEngine {
         cout << "Efter: " << allSprites.size() << endl;
     }
 
-    void GameEngine::clearSprites() const {
+    void GameEngine::clearSprites(){
         for(Sprite* sprite : allSprites){
             delete sprite;
         }
     }
 
-    void GameEngine::clearLevels() const {
+    void GameEngine::clearLevels(){
         for(auto level = levels.begin(); level!= levels.end(); level++){
             delete level->second;
         }
@@ -91,6 +91,16 @@ namespace gameEngine {
         activeSprites.push_back(sprite);
     }
 
+    void GameEngine::removeSprite(Sprite *sprite) {
+        for (vector<Sprite *>::iterator iter = activeSprites.begin();
+             iter != activeSprites.end();)
+            if (*iter == sprite) {
+                iter = activeSprites.erase(iter);
+            } else {
+                iter++;
+            }
+    }
+
     void GameEngine::remove() {
         for (vector<Sprite *>::iterator iter = activeSprites.begin();
              iter != activeSprites.end();)
@@ -139,7 +149,6 @@ namespace gameEngine {
                         goOn = false;
                         break;
                     case SDL_MOUSEBUTTONDOWN :
-                        //TODO: Flytta över dessa event till Button?
                         for (Sprite *s : activeSprites) {
                             if (dynamic_cast<Button *>(s)) {
                                 s->mouseButtonDown(event);
@@ -168,17 +177,17 @@ namespace gameEngine {
                     case SDL_KEYDOWN :
                         if (shortcuts[event.key.keysym.sym]) {
                             shortcuts[event.key.keysym.sym]();
-                        }else if(event.key.keysym.sym == SDLK_BACKSPACE && inputText.size() > 0){
-                                inputText.pop_back();
-                                textChanged = true;
+                        }else if(event.key.keysym.sym == SDLK_BACKSPACE && inputText.size() > 0 && !changeText){
+                            inputText.pop_back();
+                            textChanged = true;
                         }
                         break;
                 }
 
                 if (labelChanged != NULL && changeText == true && event.type == SDL_TEXTINPUT) {
                     if (inputText.length() < labelChanged->getMaxLength()) {
-                            inputText += event.text.text;
-                            textChanged = true;
+                        inputText += event.text.text;
+                        textChanged = true;
                     }
                     break;
                 }
@@ -198,13 +207,21 @@ namespace gameEngine {
                 SDL_Delay(roundTime - frameTime);
             }
 
-            //TODO: HANDLEDNING: Varför funkar det inte? Paused är inte uppdaterad
             if (!paused) {
-//                cout << "Går in " << paused << endl;
+
+                /* Move sprites */
                 const Uint8 *state = SDL_GetKeyboardState(NULL);
                 for (Sprite *sprite : activeSprites) {
                     sprite->tick(state, *this);
                 }
+
+                /*Handle collisions */
+                for (Sprite *sprite : activeSprites) {
+                    if (Movable *m = dynamic_cast<Movable *>(sprite)) {
+                        m->collisionOtherSprite(*this);
+                    }
+                }
+
 
                 remove();
 

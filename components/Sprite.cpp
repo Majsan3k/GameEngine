@@ -25,8 +25,4 @@ namespace gameEngine{
         }
         return true;
     }
-
-    void Sprite::mouseButtonUp(SDL_Event&, GameEngine& gameEngine){}
-
-    void Sprite::mouseButtonDown(SDL_Event&){}
 }

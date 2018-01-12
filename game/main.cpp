@@ -42,8 +42,8 @@ int main() {
     Button* soundButton;
 
     try {
-        points = Label::getInstance({450, 10, 40, 40}, "0", "C:/Windows/Fonts/Arial.ttf", false, 5);
-        inputField = Label::getInstance({50, 10, 200, 40}, "Write something", "C:/Windows/Fonts/Arial.ttf", true, 5);
+        points = Label::getInstance({455, 7, 40, 40}, "0", "C:/Windows/Fonts/Arial.ttf", 45, false, 1);
+        inputField = Label::getInstance({50, 10, 200, 40}, "Write something", "C:/Windows/Fonts/Arial.ttf", 30, true, 10);
         player = Player::getInstance({50, 250, 100, 100}, *points, playerPic);
         elephant = Item::getInstance({200, 1, 50, 50}, elephantPic, 1);
         elephant1 = Item::getInstance({70, 10, 50, 50}, elephantPic,1);
@@ -52,7 +52,7 @@ int main() {
         soundButton = SoundButton::getInstance({450, 60, 40, 40}, btnPicFront, btnPicBack);
         human = Item::getAnimatedInstance({150, 0, 128, 64}, animated, 4, 200,-1);
 
-        /* Prepare activeSprites for level 1*/
+        /* Prepare activeSprites for level 1 */
         sprites1.push_back((Sprite*)points);
         sprites1.push_back((Sprite*)inputField);
         sprites1.push_back((Sprite*)player);
@@ -88,20 +88,9 @@ int main() {
     /* Create game engine and start it*/
     GameEngine gameEngine(levels, funcs);
     std::function<void()> test2 = std::bind(&Item::test, human); //add shortcut to member function
-//    std::function<void()> pause = std::bind(&GameEngine::setPaused, gameEngine);
-//    gameEngine.addShortcut(SDLK_SPACE, pause);
+    std::function<void()> pause = std::bind(&GameEngine::setPaused, &gameEngine);
+    gameEngine.addShortcut(SDLK_SPACE, pause);
     gameEngine.run(60, music, true, 1);
-
-
-    //TODO: Ska detta göras i respektive klass istället?
-    /* Remove all media */
-    delete [] music;
-    delete [] backgroundPic;
-    delete [] playerPic;
-    delete [] elephantPic;
-    delete [] btnPicFront;
-    delete [] btnPicBack;
-    delete [] animated;
 
     return 0;
 }

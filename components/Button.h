@@ -12,7 +12,7 @@ namespace gameEngine {
         void mouseButtonDown(SDL_Event&);
         ~Button();
     protected:
-        Button(SDL_Rect&, const char*, const char*);
+        Button(SDL_Rect& rect, const char* frontPic, const char* backPic);
         bool active = true;
     private:
         bool isDown = false;

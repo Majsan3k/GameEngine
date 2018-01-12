@@ -5,17 +5,17 @@
 using namespace std;
 
 namespace gameEngine {
-    Label* Label::getInstance(SDL_Rect rect, std::string txt, const char* fontSrc, bool editable, int maxLength) {
-        return new Label(rect, txt, fontSrc, editable, maxLength);
+    Label* Label::getInstance(SDL_Rect rect, std::string txt, const char* fontSrc, int fontSize, bool editable, int maxLength) {
+        return new Label(rect, txt, fontSrc, fontSize, editable, maxLength);
     }
 
-    Label::Label(SDL_Rect& rect, std::string text, const char* fontSrc, bool editable, int maxLength) : Sprite(rect), editable(editable), maxTextLength(maxLength) {
+    Label::Label(SDL_Rect& rect, std::string text, const char* fontSrc, int fontSize, bool editable, int maxLength) : Sprite(rect), editable(editable), maxTextLength(maxLength) {
 
         if(TTF_Init() == -1){
             throw runtime_error(string("Problem with TTF init: ") + SDL_GetError());
         }
 
-        font = TTF_OpenFont(fontSrc, 15);
+        font = TTF_OpenFont(fontSrc, fontSize);
         if (font == nullptr) {
             throw std::runtime_error(string("Something went wrong while creating TFF: ") + SDL_GetError());
         }
@@ -50,7 +50,6 @@ namespace gameEngine {
         }
         labelTexture = SDL_CreateTextureFromSurface(frame.getRen(), surf);
 
-        //TODO: HANDLEDNING: Varför används inte font efter detta?
         spriteRect.w = surf->w;
         spriteRect.h = surf->h;
 

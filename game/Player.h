@@ -9,8 +9,9 @@ namespace myGame{
     class Player : public Movable{
     public:
         static Player* getInstance(SDL_Rect, Label&, const char*);
-        void collisionOtherSprite(Sprite&, GameEngine&) override;
+        void handleCollision(Sprite* otherSprite) override;
         void move(const Uint8*, GameEngine&) override;
+        void updatePoint(int newPoints){points += newPoints; }
         void deleteFunc(){ std::cout << "Delete" << std::endl; }
         ~Player(){}
     protected:

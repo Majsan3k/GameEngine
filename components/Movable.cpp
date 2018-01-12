@@ -37,13 +37,6 @@ namespace gameEngine {
 
     void Movable::tick(const Uint8 *state, GameEngine &engine){
         move(state, engine);
-
-        std::vector<Sprite*> sprites = engine.getActiveSprites();
-        for(Sprite* sprite : sprites){
-            if(sprite != this && collision(*sprite)){
-                collisionOtherSprite(*sprite, engine);
-            }
-        }
     }
 
     //TODO: Snyggare lösning med spriteRect.w
@@ -58,8 +51,18 @@ namespace gameEngine {
         }
     }
 
-    Movable::~Movable(){
-        SDL_DestroyTexture(texture);
-        delete &srcrect;
+    void Movable::collisionOtherSprite(GameEngine& engine){
+
+        std::vector<Sprite*> sprites = engine.getActiveSprites();
+        for(Sprite* sprite : sprites) {
+            if (sprite != this && collision(*sprite)) {
+                handleCollision(sprite);
+            }
+        }
     }
+
+}
+
+Movable::~Movable(){
+    SDL_DestroyTexture(texture);
 }

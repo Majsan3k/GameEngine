@@ -9,7 +9,7 @@ namespace gameEngine {
     class Label : public Sprite {
 
     public:
-        static Label* getInstance(SDL_Rect rect , std::string txt, const char* fontSrc, bool editable, int maxLength);
+        static Label* getInstance(SDL_Rect rect , std::string txt, const char* fontSrc, int fontSize, bool editable, int maxLength);
         void tick(const Uint8*, GameEngine&){}
         void draw(Uint32);
         const std::string getText() const {return text;}
@@ -18,7 +18,7 @@ namespace gameEngine {
         int getMaxLength() const {return maxTextLength;}
         ~Label();
     protected:
-        Label(SDL_Rect&, std::string, const char*, bool, int maxLength);
+        Label(SDL_Rect& rect, std::string txt, const char* fontSrc, int fontsize, bool editable, int maxLength);
     private:
         std::string text;
         TTF_Font* font;

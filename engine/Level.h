@@ -9,7 +9,7 @@ namespace gameEngine {
         static Level* getInstance(const char* background, std::vector<Sprite*> sprites);
         std::vector<Sprite*> getSprites() { return sprites; }
         const char* getBackground(){ return background; }
-        ~Level(){std::cout << "Delete level" << std::endl;}
+        ~Level();
     protected:
         Level(const char*, std::vector<Sprite*>);
     private:

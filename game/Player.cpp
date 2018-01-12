@@ -30,18 +30,17 @@ namespace myGame {
         }
     }
 
-    void Player::collisionOtherSprite(Sprite& otherSprite, GameEngine &engine) {
-
-        if (dynamic_cast<Item*>(&otherSprite)) {
-            points += ((Item*)&otherSprite)->getPoints();
+    void Player::handleCollision(Sprite *otherSprite) {
+        if (Item *item = dynamic_cast<Item *>(otherSprite)) {
+            points += item->getPoints();
             pointLabel.setText(to_string(points));
-            otherSprite.setRemove(true);
-
-            //TODO: Kolla på att ändra level om tid finns
-//            if(points > 1){
-//                engine.setLevel(2);
-//            }
         }
     }
+
+//            //TODO: Kolla på att ändra level om tid finns
+////            if(points > 1){
+////                engine.setLevel(2);
+////            }
+//        }
 }
 

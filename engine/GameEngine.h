@@ -19,12 +19,13 @@ namespace gameEngine {
         void updateBackground(const char* bgPic);
         void addShortcut(unsigned shortCutKey, std::function<void()> function);
         void add(Sprite *sprite);
+        void removeSprite(Sprite* sprite);
         void remove();
         void run(int FPS, const char* musicSrc, bool musicOn, int level);
         void playMusic(bool);
         const std::vector<Sprite*> getActiveSprites() const { return activeSprites; }
-        void clearSprites() const;
-        void clearLevels() const;
+        void clearSprites();
+        void clearLevels();
         void setPaused() {paused = !paused; std::cout << paused << std::endl; }
         ~GameEngine();
     private:
