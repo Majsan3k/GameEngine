@@ -8,8 +8,8 @@ namespace gameEngine {
         virtual void perform(GameEngine&){}
         void tick(const Uint8*, GameEngine&){}
         void draw(Uint32);
-        void mouseButtonUp(SDL_Event&, GameEngine&);
-        void mouseButtonDown(SDL_Event&);
+        void mouseButtonUp(GameEngine&);
+        void mouseButtonDown();
         ~Button();
     protected:
         Button(SDL_Rect& rect, const char* frontPic, const char* backPic, bool active);

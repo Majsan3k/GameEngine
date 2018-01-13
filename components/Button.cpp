@@ -34,19 +34,15 @@ namespace gameEngine{
         SDL_DestroyTexture(frontIcon);
     }
 
-    void Button::mouseButtonUp(SDL_Event& event, GameEngine& gameEngine) {
-        SDL_Point p = {event.button.x, event.button.y};
-        if(isDown && SDL_PointInRect(&p, &spriteRect)){
+    void Button::mouseButtonUp(GameEngine& gameEngine) {
+        if(isDown){
             perform(gameEngine);
             isDown = false;
         }
     }
 
-    void Button::mouseButtonDown(SDL_Event& event) {
-        SDL_Point p = {event.button.x, event.button.y};
-        if(SDL_PointInRect(&p, &spriteRect)){
+    void Button::mouseButtonDown() {
             isDown = true;
-        }
     }
 
     void Button::draw(Uint32){

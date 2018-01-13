@@ -23,7 +23,7 @@ Label* points2;
 Button* soundButton;
 
 void test(){
-    cout << "Fri funktion" << endl;
+    cout << "Free function" << endl;
 }
 
 void initialize(){
@@ -66,6 +66,7 @@ Level* setUpFirstLevel(){
         Item *human2 = Item::getAnimatedInstance({400, 10, 128, 64}, animated, 4, 200, -1, false);
         Item *human3 = Item::getAnimatedInstance({600, 0, 128, 64}, animated, 4, 200, -1, false);
 
+        sprites.push_back((Sprite *) soundButton);
         sprites.push_back((Sprite *) player1);
         sprites.push_back((Sprite *) points1);
         sprites.push_back((Sprite *) inputField1);
@@ -78,7 +79,6 @@ Level* setUpFirstLevel(){
         sprites.push_back((Sprite *) elephant3);
         sprites.push_back((Sprite *) elephant4);
         sprites.push_back((Sprite *) elephant5);
-        sprites.push_back((Sprite *) soundButton);
         sprites.push_back((Sprite *) human);
         sprites.push_back((Sprite *) human2);
         sprites.push_back((Sprite *) human3);
@@ -112,6 +112,7 @@ Level* setupSecondLevel(){
         Item *shark4 = Item::getInstance({80, 350, 128, 64}, sharkPic2, -3, true);
         Item *shark5 = Item::getAnimatedInstance({20, 80, 480, 100}, animatedShark, 4, 500, -4, true);
 
+        sprites.push_back((Sprite *) soundButton);
         sprites.push_back((Sprite*)player1);
         sprites.push_back((Sprite*)points1);
         sprites.push_back((Sprite*)inputField1);

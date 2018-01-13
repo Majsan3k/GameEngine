@@ -150,22 +150,23 @@ namespace gameEngine {
                         break;
                     case SDL_MOUSEBUTTONDOWN :
                         for (Sprite *s : activeSprites) {
-                            if (dynamic_cast<Button *>(s)) {
-                                s->mouseButtonDown(event);
+                            SDL_Point p = {event.button.x, event.button.y};
+                            if (SDL_PointInRect(&p, &s->getSpriteRect()) && dynamic_cast<Button *>(s)) {
+                                s->mouseButtonDown();
                             }
                         }
                         break;
                     case SDL_MOUSEBUTTONUP :
                         changeText = false;
-//                        paused = false;
                         for (Sprite *s : activeSprites) {
-                            if (dynamic_cast<Button *>(s)) {
-                                s->mouseButtonUp(event, *this);
-                                break;
-                            }
-                            if (dynamic_cast<Label *>(s) && (((Label *) s)->getEditable())) {
-                                SDL_Point p = {event.button.x, event.button.y};
-                                if (SDL_PointInRect(&p, &s->getSpriteRect())) {
+                            SDL_Point p = {event.button.x, event.button.y};
+                            if (SDL_PointInRect(&p, &s->getSpriteRect())) {
+
+                                if (dynamic_cast<Button *>(s)) {
+                                    s->mouseButtonUp(*this);
+                                    break;
+                                }
+                                if (dynamic_cast<Label *>(s) && (((Label *) s)->getEditable())) {
                                     if(labelChanged != (Label*) s){
                                         inputText = "";
                                     }

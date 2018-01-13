@@ -13,8 +13,8 @@ namespace gameEngine{
         bool collision(Sprite&);
         virtual void draw(Uint32) = 0;
         virtual void tick(const Uint8 *, GameEngine &) = 0;
-        virtual void mouseButtonDown(SDL_Event&){}
-        virtual void mouseButtonUp(SDL_Event&, GameEngine&){}
+        virtual void mouseButtonDown(){}
+        virtual void mouseButtonUp(GameEngine&){}
         const bool getShouldRemove() const { return shouldRemove; }
         void setRemove(bool remove){shouldRemove = remove; }
         const SDL_Rect& getSpriteRect() const { return spriteRect; }
