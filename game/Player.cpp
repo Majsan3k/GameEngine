@@ -18,27 +18,24 @@ namespace myGame {
 
     void Player::move(const Uint8 *state, GameEngine &engine) {
 
-        //TODO: Fixa så spelare inte kan röra sig utanför planen
-//        int rectBottom = spriteRect.y + spriteRect.h;
-//        int rectTop = spriteRect.y;
-//        int rectRight = spriteRect.x + spriteRect.w;
-//        int rectLeft = spriteRect.x;
-//
-//        int windowW = frame.getWidth();
-//        int windowH = frame.getHeight();
-//
-//        if (((rectBottom+10) < windowH) && ((rectTop-5) < windowH) && ((rectRight-5) > 0) && ((rectLeft+5) < windowW)) {
+        int rectBottom = spriteRect.y + spriteRect.h;
+        int rectTop = spriteRect.y;
+        int rectRight = spriteRect.x + spriteRect.w;
+        int rectLeft = spriteRect.x;
+        
+        int windowW = frame.getWidth();
+        int windowH = frame.getHeight();
 
-        if (state[SDL_SCANCODE_RIGHT]) {
-            spriteRect.x += 5;
+        if (state[SDL_SCANCODE_RIGHT] && rectRight < windowW) {
+                spriteRect.x += 5;
         }
-        if (state[SDL_SCANCODE_LEFT]) {
-            spriteRect.x -= 5;
+        if (state[SDL_SCANCODE_LEFT] && rectLeft > 0) {
+                spriteRect.x -= 5;
         }
-        if (state[SDL_SCANCODE_DOWN]) {
+        if (state[SDL_SCANCODE_DOWN] && rectBottom < windowH) {
             spriteRect.y += 5;
         }
-        if (state[SDL_SCANCODE_UP]) {
+        if (state[SDL_SCANCODE_UP] && rectTop > 0) {
             spriteRect.y -= 5;
         }
     }

@@ -45,7 +45,7 @@ int main() {
     try {
         points = Label::getInstance({455, 7, 40, 40}, "0", "C:/Windows/Fonts/Arial.ttf", 45, false, 1);
         inputField = Label::getInstance({50, 10, 200, 40}, "Write something", "C:/Windows/Fonts/Arial.ttf", 30, true, 10);
-        player = Player::getInstance({50, 250, 100, 100}, *points, playerPic);
+        player = Player::getInstance({50, 250, 80, 60}, *points, playerPic);
         elephant = Item::getInstance({200, 1, 50, 50}, elephantPic, 1);
         elephant1 = Item::getInstance({70, 10, 50, 50}, elephantPic,1);
         elephant2 = Item::getInstance({10 , 10, 50, 50}, elephantPic,1);
