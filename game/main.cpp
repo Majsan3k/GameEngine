@@ -32,9 +32,13 @@ int main() {
     const char* btnPicBack = "C:/MediaProg3/soundOff.png";
     const char* animated = "C:/MediaProg3/spritesheet.png";
 
-    Label* points;
-    Label* inputField;
-    Movable* player;
+    Movable* player1;
+    Label* inputField1;
+    Label* points1;
+
+    Movable* player2;
+    Label* inputField2;
+    Label* points2;
     Item* elephant;
     Item* elephant1;
     Item* elephant2;
@@ -43,20 +47,27 @@ int main() {
     Button* soundButton;
 
     try {
-        points = Label::getInstance({455, 7, 40, 40}, "0", "C:/Windows/Fonts/Arial.ttf", 45, false, 1);
-        inputField = Label::getInstance({50, 10, 200, 40}, "Write something", "C:/Windows/Fonts/Arial.ttf", 30, true, 10);
-        player = Player::getInstance({50, 250, 80, 60}, *points, playerPic);
+        inputField1 = Label::getInstance({5, 5, 100, 40}, "Player 1", "C:/Windows/Fonts/Arial.ttf", 20, true, 10);
+        points1 = Label::getInstance({5, 30, 40, 40}, "0", "C:/Windows/Fonts/Arial.ttf", 20, false, 1);
+        inputField2 = Label::getInstance({5, 60, 100, 40}, "Player 2", "C:/Windows/Fonts/Arial.ttf", 20, true, 10);
+        points2 = Label::getInstance({5, 85, 40, 40}, "0", "C:/Windows/Fonts/Arial.ttf", 20, false, 1);
+        player1 = Player::getInstance({50, 250, 80, 60}, *points1, playerPic, 5);
+        player2 = Player::getInstance({400, 250, 80, 60}, *points2, playerPic, 5,
+                                     SDL_SCANCODE_D, SDL_SCANCODE_A, SDL_SCANCODE_W, SDL_SCANCODE_S);
         elephant = Item::getInstance({200, 1, 50, 50}, elephantPic, 1);
         elephant1 = Item::getInstance({70, 10, 50, 50}, elephantPic,1);
         elephant2 = Item::getInstance({10 , 10, 50, 50}, elephantPic,1);
         elephant3 = Item::getInstance({317, 22, 50, 50}, elephantPic,1);
-        soundButton = SoundButton::getInstance({450, 60, 40, 40}, btnPicFront, btnPicBack);
+        soundButton = SoundButton::getInstance({650, 10, 40, 40}, btnPicFront, btnPicBack, false);
         human = Item::getAnimatedInstance({150, 0, 128, 64}, animated, 4, 200,-1);
 
         /* Prepare activeSprites for level 1 */
-        sprites1.push_back((Sprite*)points);
-        sprites1.push_back((Sprite*)inputField);
-        sprites1.push_back((Sprite*)player);
+        sprites1.push_back((Sprite*)player1);
+        sprites1.push_back((Sprite*)points1);
+        sprites1.push_back((Sprite*)inputField1);
+        sprites1.push_back((Sprite*)player2);
+        sprites1.push_back((Sprite*)points2);
+        sprites1.push_back((Sprite*)inputField2);
         sprites1.push_back((Sprite*)elephant);
         sprites1.push_back((Sprite*)elephant1);
         sprites1.push_back((Sprite*)elephant2);
@@ -65,8 +76,10 @@ int main() {
         sprites1.push_back((Sprite*)human);
 
         /* Prepare activeSprites for level 2 */
-        sprites2.push_back((Sprite*)player);
-        sprites2.push_back((Sprite*)points);
+        sprites2.push_back((Sprite*)player1);
+        sprites2.push_back((Sprite*)points1);
+        sprites2.push_back((Sprite*)player2);
+        sprites2.push_back((Sprite*)points2);
 
     }catch(runtime_error e){
         cerr << e.what() << endl;
@@ -91,7 +104,9 @@ int main() {
     std::function<void()> test2 = std::bind(&Item::test, human); //add shortcut to member function
     std::function<void()> pause = std::bind(&GameEngine::setPaused, &gameEngine);
     gameEngine.addShortcut(SDLK_SPACE, pause);
-    gameEngine.run(60, music, true, 1);
+//    gameEngine.run(60, music, true, 1);
+    //TODO: Ta bort denna, musiken ska vara på!
+    gameEngine.run(60, music, false, 1);
 
     return 0;
 }

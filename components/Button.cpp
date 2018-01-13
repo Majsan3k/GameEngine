@@ -6,7 +6,7 @@ using namespace std;
 
 namespace gameEngine{
 
-    Button::Button(SDL_Rect& button, const char* frontPicSrc, const char* backPicSrc) : Sprite(button){
+    Button::Button(SDL_Rect& button, const char* frontPicSrc, const char* backPicSrc, bool active) : Sprite(button), active(active){
         SDL_Surface* frontSurf = IMG_Load(frontPicSrc);
         SDL_Surface* backSurf = IMG_Load(backPicSrc);
 

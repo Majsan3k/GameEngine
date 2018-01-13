@@ -9,7 +9,8 @@ namespace gameEngine {
         return new Label(rect, txt, fontSrc, fontSize, editable, maxLength);
     }
 
-    Label::Label(SDL_Rect& rect, std::string text, const char* fontSrc, int fontSize, bool editable, int maxLength) : Sprite(rect), editable(editable), maxTextLength(maxLength) {
+    Label::Label(SDL_Rect& rect, std::string text, const char* fontSrc, int fontSize, bool editable, int maxLength) :
+                Sprite(rect), defaultText(text), editable(editable), maxTextLength(maxLength) {
 
         if(TTF_Init() == -1){
             throw runtime_error(string("Problem with TTF init: ") + SDL_GetError());
@@ -31,12 +32,16 @@ namespace gameEngine {
         if(labelTexture == nullptr){
             throw std::runtime_error(string("Something went wrong while creating texture: ") + SDL_GetError());
         }
-        setText(text);
+        setText(defaultText);
         SDL_FreeSurface(surf);
     }
 
     void Label::draw(Uint32){
         SDL_RenderCopy(frame.getRen(), labelTexture, NULL, &spriteRect);
+    }
+
+    void Label::setDefaultText() {
+        setText(defaultText);
     }
 
     void Label::setText(std::string newText){
@@ -45,7 +50,6 @@ namespace gameEngine {
         SDL_Surface* surf = TTF_RenderText_Solid(font, text.c_str(), {0,0,0});
 
         if(surf == nullptr){
-            cout << "problem " << SDL_GetError() << endl;
             throw std::runtime_error(string("Something went wrong while creating surface") + SDL_GetError());
         }
         labelTexture = SDL_CreateTextureFromSurface(frame.getRen(), surf);

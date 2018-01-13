@@ -9,7 +9,7 @@ namespace myGame{
         static Item* getInstance(SDL_Rect, const char*, int);
         static Item* getAnimatedInstance(SDL_Rect, const char*, int, int, int);
         void handleCollision(Sprite*) override;
-        void move(const Uint8*, GameEngine&);
+        void move(const Uint8*, GameEngine&) ;
         int getPoints() const { return valuePoints; }
         void test(){std::cout << "Item" << std::endl; }
         ~Item(){}

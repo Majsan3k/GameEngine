@@ -16,8 +16,6 @@ namespace gameEngine {
 
     void GameEngine::addAllSprites(){
         //TODO: Går det att använda unique_copy?
-
-        cout << "Före: " << allSprites.size() << endl;
         for(auto level = levels.begin(); level != levels.end(); level++){
 
             vector<Sprite*> newSprites = (level->second) -> getSprites();
@@ -27,7 +25,6 @@ namespace gameEngine {
                 }
             }
         }
-        cout << "Efter: " << allSprites.size() << endl;
     }
 
     void GameEngine::clearSprites(){
@@ -137,11 +134,11 @@ namespace gameEngine {
         bool changeText;
         paused = false;
         Label* labelChanged = NULL;
+        bool textChanged = false;
 
         while (goOn) {
             frameStart = SDL_GetTicks();
             SDL_Event event;
-            bool textChanged = false;
 
             while (SDL_PollEvent(&event)) {
                 switch (event.type) {
@@ -156,16 +153,17 @@ namespace gameEngine {
                         }
                         break;
                     case SDL_MOUSEBUTTONUP :
-                        changeText = false;
                         for (Sprite *s : activeSprites) {
                             if (dynamic_cast<Button *>(s)) {
                                 s->mouseButtonUp(event, *this);
                                 break;
                             }
-
                             if (dynamic_cast<Label *>(s) && (((Label *) s)->getEditable())) {
                                 SDL_Point p = {event.button.x, event.button.y};
                                 if (SDL_PointInRect(&p, &s->getSpriteRect())) {
+                                    if(labelChanged != (Label*) s){
+                                        inputText = "";
+                                    }
                                     labelChanged = (Label *) s;
                                     changeText = true;
                                     break;
@@ -176,14 +174,14 @@ namespace gameEngine {
                     case SDL_KEYDOWN :
                         if (shortcuts[event.key.keysym.sym]) {
                             shortcuts[event.key.keysym.sym]();
-                        }else if(event.key.keysym.sym == SDLK_BACKSPACE && inputText.size() > 0 && changeText){
+                        } else if (event.key.keysym.sym == SDLK_BACKSPACE && inputText.size() > 0 && changeText) {
                             inputText.pop_back();
                             textChanged = true;
                         }
                         break;
                 }
 
-                if (labelChanged != NULL && changeText == true && event.type == SDL_TEXTINPUT) {
+                if (labelChanged != NULL && changeText && event.type == SDL_TEXTINPUT) {
                     if (inputText.length() < labelChanged->getMaxLength()) {
                         inputText += event.text.text;
                         textChanged = true;
@@ -196,7 +194,7 @@ namespace gameEngine {
                     if (inputText.size() > 0) {
                         labelChanged->setText(inputText.c_str());
                     } else {
-                        labelChanged->setText("Write something!");
+                        labelChanged->setDefaultText();
                     }
                 }
             }
@@ -207,7 +205,6 @@ namespace gameEngine {
             }
 
             if (!paused) {
-
                 /* Move sprites */
                 const Uint8 *state = SDL_GetKeyboardState(NULL);
                 for (Sprite *sprite : activeSprites) {
@@ -221,20 +218,18 @@ namespace gameEngine {
                     }
                 }
 
-
                 remove();
-
                 if (levelChange) {
                     updateLevel();
                 }
-
-                SDL_SetRenderDrawColor(frame.getRen(), 255, 255, 255, 0);
-                SDL_RenderClear(frame.getRen());
-                SDL_RenderCopy(frame.getRen(), background, NULL, NULL);
-                for (Sprite *s : activeSprites)
-                    s->draw(SDL_GetTicks());
-                SDL_RenderPresent(frame.getRen());
             }
+
+            SDL_SetRenderDrawColor(frame.getRen(), 255, 255, 255, 0);
+            SDL_RenderClear(frame.getRen());
+            SDL_RenderCopy(frame.getRen(), background, NULL, NULL);
+            for (Sprite *s : activeSprites)
+                s->draw(SDL_GetTicks());
+            SDL_RenderPresent(frame.getRen());
         }
         SDL_StopTextInput();
 

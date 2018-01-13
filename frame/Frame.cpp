@@ -11,7 +11,7 @@ namespace gameEngine {
         }
 
         //Ska användaren få ange storlek?
-        window = SDL_CreateWindow("Game map", 100, 100, 500, 400, 0);
+        window = SDL_CreateWindow("Game map", 100, 100, 700, 600, 0);
         if (window == nullptr) {
             throw runtime_error(string("Problem with SDL_Window. ") + SDL_GetError());
         }

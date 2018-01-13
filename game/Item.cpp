@@ -17,9 +17,7 @@ namespace myGame {
         return new Item(rect, pictureSrc, frames, speed, points);
     }
 
-    Item::Item(SDL_Rect rect, const char *pictureSrc, int frames, int speed, int points) : valuePoints(points),
-                                                                                           Movable(rect, pictureSrc,
-                                                                                                   frames, speed) {}
+    Item::Item(SDL_Rect rect, const char *pictureSrc, int frames, int speed, int points) : valuePoints(points), Movable(rect, pictureSrc,frames, speed) {}
 
     void Item::move(const Uint8 *state, GameEngine &engine) {
         int rectBottom = spriteRect.y + spriteRect.h;

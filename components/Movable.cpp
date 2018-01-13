@@ -60,7 +60,6 @@ namespace gameEngine {
             }
         }
     }
-
 }
 
 Movable::~Movable(){

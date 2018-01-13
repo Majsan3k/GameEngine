@@ -26,7 +26,7 @@ namespace gameEngine {
         const std::vector<Sprite*> getActiveSprites() const { return activeSprites; }
         void clearSprites();
         void clearLevels();
-        void setPaused() {paused = !paused; std::cout << paused << std::endl; }
+        void setPaused() {paused = !paused; }
         ~GameEngine();
     private:
         void addAllSprites();
