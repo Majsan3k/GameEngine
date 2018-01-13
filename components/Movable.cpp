@@ -39,7 +39,6 @@ namespace gameEngine {
         move(state, engine);
     }
 
-    //TODO: Snyggare lösning med spriteRect.w
     void Movable::draw(Uint32 ticks) {
         if(animated){
             spriteRect.w /= animatedFrames;

@@ -1,4 +1,3 @@
-//TODO: Se över minnesläckage i hela programmet!!!
 //TODO: Skriv README
 
 #define SDL_MAIN_HANDLED
@@ -50,32 +49,42 @@ void initialize(){
 Level* setUpFirstLevel(){
     vector<Sprite*> sprites;
     const char* bg = "C:/MediaProg3/bg.jpg";
-    const char* elephantPic = "C:/MediaProg3/elephant.jpg";
+    const char* elephantPic1 = "C:/MediaProg3/elephant1.jpg";
+    const char* elephantPic2 = "C:/MediaProg3/elephant2.jpg";
     const char* animated = "C:/MediaProg3/spritesheet.png";
 
-    /* Initialize movable items level 1 */
-    Item* elephant = Item::getInstance({200, 1, 100, 100}, elephantPic, 1, false);
-    Item* elephant1 = Item::getInstance({70, 10, 50, 50}, elephantPic,1, false);
-    Item* elephant2 = Item::getInstance({10 , 10, 50, 50}, elephantPic,1, false);
-    Item* elephant3 = Item::getInstance({317, 22, 50, 50}, elephantPic,1, false);
-    Item* human = Item::getAnimatedInstance({150, 0, 128, 64}, animated, 4, 200,-1, false);
-    Item* human2 = Item::getAnimatedInstance({300, 10, 128, 64}, animated, 4, 200,-1, false);
-    Item* human3 = Item::getAnimatedInstance({600, 0, 128, 64}, animated, 4, 200,-1, false);
 
-    sprites.push_back((Sprite*)player1);
-    sprites.push_back((Sprite*)points1);
-    sprites.push_back((Sprite*)inputField1);
-    sprites.push_back((Sprite*)player2);
-    sprites.push_back((Sprite*)points2);
-    sprites.push_back((Sprite*)inputField2);
-    sprites.push_back((Sprite*)elephant);
-    sprites.push_back((Sprite*)elephant1);
-    sprites.push_back((Sprite*)elephant2);
-    sprites.push_back((Sprite*)elephant3);
-    sprites.push_back((Sprite*)soundButton);
-    sprites.push_back((Sprite*)human);
-    sprites.push_back((Sprite*)human2);
-    sprites.push_back((Sprite*)human3);
+    try {
+        /* Initialize movable items level 1 */
+        Item *elephant = Item::getInstance({200, 1, 100, 100}, elephantPic1, 2, false);
+        Item *elephant1 = Item::getInstance({70, 10, 50, 50}, elephantPic2, 1, false);
+        Item *elephant2 = Item::getInstance({10, 80, 50, 50}, elephantPic1, 1, false);
+        Item *elephant3 = Item::getInstance({500, 22, 50, 50}, elephantPic2, 1, false);
+        Item *elephant4 = Item::getInstance({450, 0, 50, 50}, elephantPic1, 1, false);
+        Item *elephant5 = Item::getInstance({300, 0, 50, 50}, elephantPic2, 1, false);
+        Item *human = Item::getAnimatedInstance({150, 0, 128, 64}, animated, 4, 200, -1, false);
+        Item *human2 = Item::getAnimatedInstance({400, 10, 128, 64}, animated, 4, 200, -1, false);
+        Item *human3 = Item::getAnimatedInstance({600, 0, 128, 64}, animated, 4, 200, -1, false);
+
+        sprites.push_back((Sprite *) player1);
+        sprites.push_back((Sprite *) points1);
+        sprites.push_back((Sprite *) inputField1);
+        sprites.push_back((Sprite *) player2);
+        sprites.push_back((Sprite *) points2);
+        sprites.push_back((Sprite *) inputField2);
+        sprites.push_back((Sprite *) elephant);
+        sprites.push_back((Sprite *) elephant1);
+        sprites.push_back((Sprite *) elephant2);
+        sprites.push_back((Sprite *) elephant3);
+        sprites.push_back((Sprite *) elephant4);
+        sprites.push_back((Sprite *) elephant5);
+        sprites.push_back((Sprite *) soundButton);
+        sprites.push_back((Sprite *) human);
+        sprites.push_back((Sprite *) human2);
+        sprites.push_back((Sprite *) human3);
+    }catch(runtime_error e){
+    cerr << e.what() << endl;
+    }
 
     return Level::getInstance(bg, sprites);
 }
@@ -83,18 +92,25 @@ Level* setUpFirstLevel(){
 Level* setupSecondLevel(){
     vector<Sprite*> sprites;
     const char* bg = "C:/MediaProg3/bg2.png";
-    const char* fish1Pic = "C:/MediaProg3/fish1.jpg";
-    const char* sharkPic = "C:/MediaProg3/shark.png";
+    const char* fishPic1 = "C:/MediaProg3/fish1.jpg";
+    const char* fishPic2 = "C:/MediaProg3/fish2.jpg";
+    const char* sharkPic = "C:/MediaProg3/shark1.png";
+    const char* sharkPic2 = "C:/MediaProg3/shark2.png";
+    const char* animatedShark = "C:/MediaProg3/sharkSprite.png";
 
     try {
-        Item *fish1 = Item::getInstance({650, 1, 80, 80}, fish1Pic, 1, true);
-        Item *shark1 = Item::getInstance({0, 30, 128, 64}, sharkPic, -3, true);
-        Item *fish2 = Item::getInstance({650, 250, 80, 80}, fish1Pic, 1, true);
-        Item *shark2 = Item::getInstance({20, 150, 128, 64}, sharkPic, -3, true);
-        Item *fish3 = Item::getInstance({400, 400, 80, 80}, fish1Pic, 1, true);
-        Item *shark3 = Item::getInstance({100, 250, 128, 64}, sharkPic, -3, true);
-        Item *fish4 = Item::getInstance({550, 40, 80, 80}, fish1Pic, 1, true);
-        Item *shark4 = Item::getInstance({20, 350, 128, 64}, sharkPic, -3, true);
+        Item *fish1 = Item::getInstance({650, 1, 80, 80}, fishPic1, 2, true);
+        Item *fish2 = Item::getInstance({0, 250, 80, 80}, fishPic2, 2, true);
+        Item *fish3 = Item::getInstance({400, 400, 80, 80}, fishPic1, 2, true);
+        Item *fish4 = Item::getInstance({200, 40, 80, 80}, fishPic2, 2, true);
+        Item *fish5 = Item::getInstance({300, 300, 80, 80}, fishPic1, 2, true);
+        Item *fish6 = Item::getInstance({300, 300, 80, 80}, fishPic2, 2, true);
+
+        Item *shark1 = Item::getInstance({50, 30, 128, 64}, sharkPic2, -3, true);
+        Item *shark2 = Item::getInstance({80, 150, 128, 64}, sharkPic, -3, true);
+        Item *shark3 = Item::getInstance({500, 250, 128, 64}, sharkPic2, -3, true);
+        Item *shark4 = Item::getInstance({80, 350, 128, 64}, sharkPic, -3, true);
+        Item *shark5 = Item::getAnimatedInstance({20, 80, 480, 100}, animatedShark, 4, 500, -4, true);
 
         sprites.push_back((Sprite*)player1);
         sprites.push_back((Sprite*)points1);
@@ -103,14 +119,16 @@ Level* setupSecondLevel(){
         sprites.push_back((Sprite*)points2);
         sprites.push_back((Sprite*)inputField2);
         sprites.push_back((Sprite*)fish1);
-        sprites.push_back((Sprite*)shark1);
         sprites.push_back((Sprite*)fish2);
-        sprites.push_back((Sprite*)shark2);
         sprites.push_back((Sprite*)fish3);
-        sprites.push_back((Sprite*)shark3);
         sprites.push_back((Sprite*)fish4);
+        sprites.push_back((Sprite*)fish5);
+        sprites.push_back((Sprite*)fish6);
+        sprites.push_back((Sprite*)shark1);
+        sprites.push_back((Sprite*)shark2);
+        sprites.push_back((Sprite*)shark3);
         sprites.push_back((Sprite*)shark4);
-
+        sprites.push_back((Sprite*)shark5);
     }catch(runtime_error e){
         cerr << e.what() << endl;
     }

@@ -55,11 +55,5 @@ namespace myGame {
             pointLabel.setText(to_string(points));
         }
     }
-
-//            //TODO: Kolla på att ändra level om tid finns
-////            if(points > 1){
-////                engine.setLevel(2);
-////            }
-//         }
 }
 
