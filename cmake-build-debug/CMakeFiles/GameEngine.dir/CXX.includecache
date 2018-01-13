@@ -135,6 +135,8 @@ SDL2/SDL_render.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/game/Item.cpp
 SDL2/SDL_image.h
 -
+algorithm
+-
 ../frame/Frame.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/frame/Frame.h
 ../engine/GameEngine.h

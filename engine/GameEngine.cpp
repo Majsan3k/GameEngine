@@ -153,6 +153,8 @@ namespace gameEngine {
                         }
                         break;
                     case SDL_MOUSEBUTTONUP :
+                        changeText = false;
+                        paused = false;
                         for (Sprite *s : activeSprites) {
                             if (dynamic_cast<Button *>(s)) {
                                 s->mouseButtonUp(event, *this);
@@ -166,6 +168,7 @@ namespace gameEngine {
                                     }
                                     labelChanged = (Label *) s;
                                     changeText = true;
+                                    paused = true;
                                     break;
                                 }
                             }
@@ -191,7 +194,7 @@ namespace gameEngine {
             }
             if (textChanged) {
                 if (labelChanged != NULL) {
-                    if (inputText.size() > 0) {
+                    if (!inputText.empty()) {
                         labelChanged->setText(inputText.c_str());
                     } else {
                         labelChanged->setDefaultText();
@@ -214,7 +217,7 @@ namespace gameEngine {
                 /*Handle collisions */
                 for (Sprite *sprite : activeSprites) {
                     if (Movable *m = dynamic_cast<Movable *>(sprite)) {
-                        m->collisionOtherSprite(*this);
+                        m->checkCollisionOtherSprite(*this);
                     }
                 }
 

@@ -15,6 +15,7 @@ namespace gameEngine {
         GameEngine(std::unordered_map<int, Level*> levels) : levels(levels){addAllSprites();}
         GameEngine(std::unordered_map<int, Level*> levels, std::unordered_map<unsigned, std::function<void()>> shortcuts) : levels (levels), shortcuts(shortcuts){addAllSprites();}
         void setLevel(int newLevel);
+        void levelUp(){setLevel(++level);}
         int getLevel() const { return level; }
         void updateBackground(const char* bgPic);
         void addShortcut(unsigned shortCutKey, std::function<void()> function);

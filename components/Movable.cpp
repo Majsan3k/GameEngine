@@ -51,12 +51,11 @@ namespace gameEngine {
         }
     }
 
-    void Movable::collisionOtherSprite(GameEngine& engine){
-
+    void Movable::checkCollisionOtherSprite(GameEngine &engine){
         std::vector<Sprite*> sprites = engine.getActiveSprites();
         for(Sprite* sprite : sprites) {
             if (sprite != this && collision(*sprite)) {
-                handleCollision(sprite);
+                handleCollision(sprite, engine);
             }
         }
     }

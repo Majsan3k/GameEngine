@@ -7,10 +7,10 @@
 namespace gameEngine {
     class Movable : public Sprite {
     public:
-        virtual void move(const Uint8 *, GameEngine &) = 0;
-        void collisionOtherSprite(GameEngine&);
-        virtual void handleCollision(Sprite* sprite){}
-        void tick(const Uint8*, GameEngine&);
+        virtual void move(const Uint8* state, GameEngine& engine) = 0;
+        void checkCollisionOtherSprite(GameEngine& engine);
+        virtual void handleCollision(Sprite* sprite, GameEngine& engine) = 0;
+        void tick(const Uint8* state, GameEngine& engine);
         void draw(Uint32);
         ~Movable();
     protected:

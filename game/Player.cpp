@@ -49,7 +49,7 @@ namespace myGame {
         }
     }
 
-    void Player::handleCollision(Sprite *otherSprite) {
+    void Player::handleCollision(Sprite *otherSprite, GameEngine& engine) {
         if (Item *item = dynamic_cast<Item *>(otherSprite)) {
             points += item->getPoints();
             pointLabel.setText(to_string(points));
@@ -60,6 +60,6 @@ namespace myGame {
 ////            if(points > 1){
 ////                engine.setLevel(2);
 ////            }
-//        }
+//         }
 }
 

@@ -6,20 +6,23 @@ using namespace gameEngine;
 namespace myGame{
     class Item : public Movable{
     public:
-        static Item* getInstance(SDL_Rect, const char*, int);
-        static Item* getAnimatedInstance(SDL_Rect, const char*, int, int, int);
-        void handleCollision(Sprite*) override;
+        static Item* getInstance(SDL_Rect rect, const char *pictureSrc, int points, bool moveHorizontal);
+        static Item* getAnimatedInstance(SDL_Rect rect, const char *pictureSrc, int frames, int speed, int points, bool moveHorizontal);
+        void handleCollision(Sprite*, GameEngine& engine) override;
         void move(const Uint8*, GameEngine&) ;
         int getPoints() const { return valuePoints; }
         void test(){std::cout << "Item" << std::endl; }
         ~Item(){}
     protected:
-        Item(SDL_Rect, const char*, int);
-        Item(SDL_Rect, const char*, int, int, int);
+        Item(SDL_Rect rect, const char *pictureSrc, int points, bool moveHorizontal);
+        Item(SDL_Rect rect, const char *pictureSrc, int frames, int speed, int points, bool moveHorizontal);
     private:
         int valuePoints;
+        bool moveHorizontal;
+        static bool moveRight;
+        bool direction;
+        bool checkLastItem(GameEngine& engine);
     };
-
 }
 
 

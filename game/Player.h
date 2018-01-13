@@ -11,7 +11,7 @@ namespace myGame{
         static Player* getInstance(SDL_Rect rect, Label& pointLabel, const char* picSrc, int speed);
         static Player* getInstance(SDL_Rect rect, Label& pointLabel, const char* picSrc, int speed,
                                    SDL_Keycode right, SDL_Keycode left, SDL_Keycode up, SDL_Keycode down);
-        void handleCollision(Sprite* otherSprite) override;
+        void handleCollision(Sprite* otherSprite, GameEngine& engine) override;
         void move(const Uint8* state, GameEngine& gameEngine) override;
         void setSpeed(int newSpeed){speed = newSpeed;}
         int getSpeed() const {return speed;}
