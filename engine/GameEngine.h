@@ -27,11 +27,12 @@ namespace gameEngine {
         const std::vector<Sprite*> getActiveSprites() const { return activeSprites; }
         void clearSprites();
         void clearLevels();
-        void setPaused() {paused = !paused; }
+        void setPaused();
         ~GameEngine();
     private:
         void addAllSprites();
         SDL_Texture* background;
+        Label* labelChanged = NULL;
         bool levelChange = false;
         bool paused = false;
         int level;

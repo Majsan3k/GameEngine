@@ -60,7 +60,6 @@ namespace gameEngine {
     }
 
     void GameEngine::updateLevel(){
-
         levelChange = false;
 
         auto contains = levels.find(level);
@@ -71,7 +70,6 @@ namespace gameEngine {
             cout << "No such level" << endl;
             return;
         }
-        cout << activeSprites.size() << endl;
     }
 
     void GameEngine::addShortcut(unsigned key, std::function<void()> function){
@@ -116,6 +114,11 @@ namespace gameEngine {
         }
     }
 
+    void GameEngine::setPaused(){
+        paused = !paused;
+        labelChanged = NULL;
+    }
+
     void GameEngine::run(int FPS, const char* musicSrc, bool musicOn, int level) {
         Mix_OpenAudio(22050, AUDIO_S16SYS, 2, 4096);
         Mix_Chunk *music = Mix_LoadWAV(musicSrc);
@@ -133,7 +136,7 @@ namespace gameEngine {
         bool goOn = true;
         bool changeText;
         paused = false;
-        Label* labelChanged = NULL;
+
         bool textChanged = false;
 
         while (goOn) {
@@ -154,7 +157,7 @@ namespace gameEngine {
                         break;
                     case SDL_MOUSEBUTTONUP :
                         changeText = false;
-                        paused = false;
+//                        paused = false;
                         for (Sprite *s : activeSprites) {
                             if (dynamic_cast<Button *>(s)) {
                                 s->mouseButtonUp(event, *this);

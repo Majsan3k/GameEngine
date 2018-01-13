@@ -23,7 +23,7 @@ Label* points2;
 Button* soundButton;
 
 void test(){
-    cout << "test" << endl;
+    cout << "Fri funktion" << endl;
 }
 
 void initialize(){
@@ -48,7 +48,7 @@ void initialize(){
 
 Level* setUpFirstLevel(){
     vector<Sprite*> sprites;
-    const char* bg = "C:/MediaProg3/bg.jpg";
+    const char* bg = "C:/MediaProg3/bg1.jpg";
     const char* elephantPic1 = "C:/MediaProg3/elephant1.jpg";
     const char* elephantPic2 = "C:/MediaProg3/elephant2.jpg";
     const char* animated = "C:/MediaProg3/spritesheet.png";
@@ -96,7 +96,7 @@ Level* setupSecondLevel(){
     const char* fishPic2 = "C:/MediaProg3/fish2.jpg";
     const char* sharkPic = "C:/MediaProg3/shark1.png";
     const char* sharkPic2 = "C:/MediaProg3/shark2.png";
-    const char* animatedShark = "C:/MediaProg3/sharkSprite.png";
+    const char* animatedShark = "C:/MediaProg3/sharkSpritesheet.png";
 
     try {
         Item *fish1 = Item::getInstance({650, 1, 80, 80}, fishPic1, 2, true);
@@ -106,10 +106,10 @@ Level* setupSecondLevel(){
         Item *fish5 = Item::getInstance({300, 300, 80, 80}, fishPic1, 2, true);
         Item *fish6 = Item::getInstance({300, 300, 80, 80}, fishPic2, 2, true);
 
-        Item *shark1 = Item::getInstance({50, 30, 128, 64}, sharkPic2, -3, true);
-        Item *shark2 = Item::getInstance({80, 150, 128, 64}, sharkPic, -3, true);
-        Item *shark3 = Item::getInstance({500, 250, 128, 64}, sharkPic2, -3, true);
-        Item *shark4 = Item::getInstance({80, 350, 128, 64}, sharkPic, -3, true);
+        Item *shark1 = Item::getInstance({50, 30, 128, 64}, sharkPic, -3, true);
+        Item *shark2 = Item::getInstance({80, 150, 128, 64}, sharkPic2, -3, true);
+        Item *shark3 = Item::getInstance({500, 250, 128, 64}, sharkPic, -3, true);
+        Item *shark4 = Item::getInstance({80, 350, 128, 64}, sharkPic2, -3, true);
         Item *shark5 = Item::getAnimatedInstance({20, 80, 480, 100}, animatedShark, 4, 500, -4, true);
 
         sprites.push_back((Sprite*)player1);
@@ -150,7 +150,8 @@ int main() {
     levels.insert(make_pair(1, first));
     levels.insert(make_pair(2, second));
 
-    /* Create function map and game engine */
+    /* Create function map. Added test function just to see so it works
+     * to use free functions in the game*/
     unordered_map<unsigned, std::function<void()>> funcs;
     std::function<void()> testfunc = test;
     funcs.insert(make_pair(SDLK_DOWN, testfunc));

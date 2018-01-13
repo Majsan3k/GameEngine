@@ -11,7 +11,6 @@ namespace myGame{
         void handleCollision(Sprite*, GameEngine& engine) override;
         void move(const Uint8*, GameEngine&) ;
         int getPoints() const { return valuePoints; }
-        void test(){std::cout << "Item" << std::endl; }
         ~Item(){}
     protected:
         Item(SDL_Rect rect, const char *pictureSrc, int points, bool moveHorizontal);
