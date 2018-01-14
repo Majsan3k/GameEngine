@@ -65,7 +65,6 @@ namespace myGame {
                 if (!item->getShouldRemove()) {
                     items++;
                 }
-                cout << items << endl;
             }
         }
         if(items == 1){

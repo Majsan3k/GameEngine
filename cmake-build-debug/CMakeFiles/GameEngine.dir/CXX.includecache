@@ -19,6 +19,8 @@ Button.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.h
 
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.cpp
+stdexcept
+-
 Label.h
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/components/Label.h
 ../frame/Frame.h
@@ -60,8 +62,6 @@ Sprite.h
 SDL2/SDL_rect.h
 -
 SDL2/SDL_render.h
--
-iostream
 -
 
 /cygdrive/c/Users/majal/Documents/Prog3/Inlupp/GameEngine/engine/GameEngine.cpp

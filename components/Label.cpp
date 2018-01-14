@@ -1,3 +1,4 @@
+#include <stdexcept>
 #include "Label.h"
 #include "../frame/Frame.h"
 using namespace std;

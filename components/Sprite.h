@@ -3,9 +3,6 @@
 #include <SDL2/SDL_rect.h>
 #include <SDL2/SDL_render.h>
 
-//TODO: Ta bort denna och utskriften i destruktor
-#include <iostream>
-
 namespace gameEngine{
     class GameEngine;
     class Sprite {
@@ -18,7 +15,7 @@ namespace gameEngine{
         const bool getShouldRemove() const { return shouldRemove; }
         void setRemove(bool remove){shouldRemove = remove; }
         const SDL_Rect& getSpriteRect() const { return spriteRect; }
-        virtual ~Sprite(){ std::cout << "Delete sprite" << std::endl; }
+        virtual ~Sprite(){}
     protected:
         /* SpriteRect is protected since sub classes need to update the position of it */
         SDL_Rect spriteRect;

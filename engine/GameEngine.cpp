@@ -70,9 +70,6 @@ namespace gameEngine {
         if(contains != levels.end()){
             activeSprites = (contains->second)->getSprites();
             updateBackground((contains->second)->getBackground());
-        }else{
-            cout << "Level " << level << " does not exist"  << endl;
-            return;
         }
     }
 

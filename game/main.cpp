@@ -55,7 +55,7 @@ Level* setUpFirstLevel(){
         /* Initialize movable items level 1 */
         Item *elephant = Item::getInstance({200, 1, 100, 100}, elephantPic1, 2, false);
         Item *elephant1 = Item::getInstance({70, 10, 50, 50}, elephantPic2, 1, false);
-        Item *elephant2 = Item::getInstance({10, 80, 100, 100}, elephantPic1, 1, false);
+        Item *elephant2 = Item::getInstance({10, 80, 100, 100}, elephantPic1, 2, false);
         Item *elephant3 = Item::getInstance({500, 22, 50, 50}, elephantPic2, 1, false);
         Item *elephant4 = Item::getInstance({450, 0, 50, 50}, elephantPic1, 1, false);
         Item *elephant5 = Item::getInstance({300, 0, 50, 50}, elephantPic2, 1, false);
@@ -199,7 +199,7 @@ int main() {
      * to use free functions in the game*/
     unordered_map<unsigned, std::function<void()>> funcs;
     std::function<void()> testfunc = freeFunctionTest;
-    funcs.insert(make_pair(SDLK_DOWN, testfunc));
+    funcs.insert(make_pair(SDLK_ESCAPE, testfunc));
 
     /* Create game engine and start it*/
     GameEngine gameEngine(levels, funcs);
