@@ -9,6 +9,7 @@ using namespace std;
 
 namespace myGame {
 
+    int Item::speed = 1;
     bool Item::moveRight = true;
 
     Item *Item::getInstance(SDL_Rect rect, const char *pictureSrc, int points, bool moveHorizontal) {
@@ -18,7 +19,6 @@ namespace myGame {
     Item::Item(SDL_Rect rect, const char *pictureSrc, int points, bool moveHorizontal) : valuePoints(points), Movable(rect, pictureSrc), moveHorizontal(moveHorizontal){
         Item::moveRight = !moveRight;
         direction = !moveRight;
-
     }
 
     Item *Item::getAnimatedInstance(SDL_Rect rect, const char *pictureSrc, int frames, int speed, int points, bool moveHorizontal) {
@@ -44,16 +44,17 @@ namespace myGame {
             setRemove(true);
             if(checkLastItem(engine)){
                 engine.levelUp();
+                speed++;
             }
         } else {
             if(moveHorizontal){
                 if(direction){
-                    spriteRect.x++;
+                    spriteRect.x += speed;
                 }else{
-                    spriteRect.x--;
+                    spriteRect.x -= speed;
                 }
             }else{
-                spriteRect.y++;
+                spriteRect.y += speed;
             }
         }
     }
@@ -75,6 +76,7 @@ namespace myGame {
         }
         if(checkLastItem(engine)){
             engine.levelUp();
+            speed += 0,5;
         }
     }
 }

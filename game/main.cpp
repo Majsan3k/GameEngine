@@ -94,7 +94,7 @@ Level* setupSecondLevel(){
     const char* bg = "C:/MediaProg3/bg2.png";
     const char* fishPic1 = "C:/MediaProg3/fish1.jpg";
     const char* fishPic2 = "C:/MediaProg3/fish2.jpg";
-    const char* sharkPic = "C:/MediaProg3/shark1.png";
+    const char* sharkPic1 = "C:/MediaProg3/shark1.png";
     const char* sharkPic2 = "C:/MediaProg3/shark2.png";
     const char* animatedShark = "C:/MediaProg3/sharkSpritesheet.png";
 
@@ -106,9 +106,9 @@ Level* setupSecondLevel(){
         Item *fish5 = Item::getInstance({300, 300, 80, 80}, fishPic1, 2, true);
         Item *fish6 = Item::getInstance({300, 300, 80, 80}, fishPic2, 2, true);
 
-        Item *shark1 = Item::getInstance({50, 30, 128, 64}, sharkPic, -3, true);
+        Item *shark1 = Item::getInstance({50, 30, 128, 64}, sharkPic1, -3, true);
         Item *shark2 = Item::getInstance({80, 150, 128, 64}, sharkPic2, -3, true);
-        Item *shark3 = Item::getInstance({500, 250, 128, 64}, sharkPic, -3, true);
+        Item *shark3 = Item::getInstance({500, 250, 128, 64}, sharkPic1, -3, true);
         Item *shark4 = Item::getInstance({80, 350, 128, 64}, sharkPic2, -3, true);
         Item *shark5 = Item::getAnimatedInstance({20, 80, 480, 100}, animatedShark, 4, 500, -4, true);
 
@@ -150,6 +150,8 @@ int main() {
     /* Add levels to level map */
     levels.insert(make_pair(1, first));
     levels.insert(make_pair(2, second));
+    levels.insert(make_pair(3, first));
+    levels.insert(make_pair(4, second));
 
     /* Create function map. Added test function just to see so it works
      * to use free functions in the game*/
@@ -163,7 +165,7 @@ int main() {
     gameEngine.addShortcut(SDLK_RETURN, pause);
 //    gameEngine.run(60, music, true, 1);
     //TODO: Ta bort denna, musiken ska vara på!
-    gameEngine.run(60, music, false, 1);
+    gameEngine.run(100, music, false, 1);
 
     return 0;
 }

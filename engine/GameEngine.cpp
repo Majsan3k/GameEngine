@@ -20,7 +20,7 @@ namespace gameEngine {
 
             vector<Sprite*> newSprites = (level->second) -> getSprites();
             for(Sprite* sprite : newSprites){
-                if (find(allSprites.begin(), allSprites.end(),sprite)== allSprites.end()){
+                if (find(allSprites.begin(), allSprites.end(),sprite) == allSprites.end()){
                     allSprites.push_back(sprite);
                 }
             }
@@ -67,7 +67,7 @@ namespace gameEngine {
             activeSprites = (contains->second)->getSprites();
             updateBackground((contains->second)->getBackground());
         }else{
-            cout << "No such level" << endl;
+            cout << "Level " << level << " does not exist"  << endl;
             return;
         }
     }
@@ -90,6 +90,10 @@ namespace gameEngine {
         for (vector<Sprite *>::iterator iter = activeSprites.begin();
              iter != activeSprites.end();)
             if (*iter == sprite) {
+                sprite->setRemove(false);
+                if(Movable* m = dynamic_cast<Movable*>(*iter)){
+                    m->setDefaultPos();
+                }
                 iter = activeSprites.erase(iter);
             } else {
                 iter++;
@@ -100,6 +104,10 @@ namespace gameEngine {
         for (vector<Sprite *>::iterator iter = activeSprites.begin();
              iter != activeSprites.end();)
             if ((*iter)->getShouldRemove()) {
+                (*iter)->setRemove(false);
+                if(Movable* m = dynamic_cast<Movable*>(*iter)){
+                    m->setDefaultPos();
+                }
                 iter = activeSprites.erase(iter);
             } else {
                 iter++;

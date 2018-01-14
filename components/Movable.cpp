@@ -10,6 +10,8 @@ using namespace std;
 namespace gameEngine {
 
     Movable::Movable(SDL_Rect& spritePicture, const char* pictureSrc) : Sprite(spritePicture) {
+        defaultPosX = spritePicture.x;
+        defaultPosY = spritePicture.y;
         SDL_Surface* picture = IMG_Load(pictureSrc);
 
         if(picture == nullptr){
@@ -29,6 +31,8 @@ namespace gameEngine {
     }
 
     Movable::Movable(SDL_Rect& spritePicture, const char* pictureSrc, int frames, int speed) : Movable(spritePicture, pictureSrc){
+        defaultPosX = spritePicture.x;
+        defaultPosY = spritePicture.y;
         srcrect = {0, 0, (spritePicture.w)/frames, spritePicture.h};
         animated = true;
         animatedFrames = frames;
@@ -57,6 +61,11 @@ namespace gameEngine {
                 handleCollision(sprite, engine);
             }
         }
+    }
+
+    void Movable::setDefaultPos() {
+        spriteRect.x = defaultPosX;
+        spriteRect.y = defaultPosY;
     }
 }
 

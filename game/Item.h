@@ -20,6 +20,7 @@ namespace myGame{
         bool moveHorizontal;
         static bool moveRight;
         bool direction;
+        static int speed;
         bool checkLastItem(GameEngine& engine);
     };
 }

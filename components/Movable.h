@@ -10,6 +10,7 @@ namespace gameEngine {
         virtual void move(const Uint8* state, GameEngine& engine) = 0;
         void checkCollisionOtherSprite(GameEngine& engine);
         virtual void handleCollision(Sprite* sprite, GameEngine& engine) = 0;
+        void setDefaultPos();
         void tick(const Uint8* state, GameEngine& engine);
         void draw(Uint32);
         ~Movable();
@@ -24,6 +25,8 @@ namespace gameEngine {
         bool animated = false;
         int animatedFrames;
         int animatedSpeed;
+        int defaultPosX;
+        int defaultPosY;
     };
 }
 #endif //GAMEENGINE_MOVABLE_H
