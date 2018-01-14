@@ -10,9 +10,8 @@ namespace gameEngine {
         std::vector<Sprite*> getSprites() { return sprites; }
         const char* getBackground(){ return background; }
         ~Level();
-    protected:
-        Level(const char*, std::vector<Sprite*>);
     private:
+        Level(const char*, std::vector<Sprite*>);
         const char* background;
         std::vector<Sprite*> sprites;
     };

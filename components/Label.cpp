@@ -1,7 +1,5 @@
 #include "Label.h"
 #include "../frame/Frame.h"
-#include "SDL2/SDL_ttf.h"
-#include <iostream>
 using namespace std;
 
 namespace gameEngine {
@@ -18,20 +16,19 @@ namespace gameEngine {
 
         font = TTF_OpenFont(fontSrc, fontSize);
         if (font == nullptr) {
-            throw std::runtime_error(string("Something went wrong while creating TFF: ") + SDL_GetError());
+            throw std::runtime_error(string("Something went wrong while creating font: ") + SDL_GetError());
         }
 
         SDL_Surface *surf = TTF_RenderText_Solid(font, text.c_str(), {0, 0, 0});
-
         if (surf == nullptr){
             throw std::runtime_error(string("Something went wrong while creating surface: ") + SDL_GetError());
         }
 
         labelTexture = SDL_CreateTextureFromSurface(frame.getRen(), surf);
-
         if(labelTexture == nullptr){
             throw std::runtime_error(string("Something went wrong while creating texture: ") + SDL_GetError());
         }
+
         setText(defaultText);
         SDL_FreeSurface(surf);
     }

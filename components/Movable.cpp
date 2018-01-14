@@ -1,4 +1,3 @@
-#include <iostream>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include "Movable.h"
@@ -15,7 +14,7 @@ namespace gameEngine {
         SDL_Surface* picture = IMG_Load(pictureSrc);
 
         if(picture == nullptr){
-            throw std::runtime_error(string("Something went wrong while creating surface: ") + SDL_GetError());
+            throw runtime_error(string("Something went wrong while creating surface: ") + SDL_GetError());
         }
 
         Uint32 white = SDL_MapRGB(picture->format, 255, 255, 255);
@@ -24,7 +23,7 @@ namespace gameEngine {
         texture = SDL_CreateTextureFromSurface(frame.getRen(), picture);
 
         if(texture == nullptr){
-            throw std::runtime_error(string("Something went wrong while creating texture: ") + SDL_GetError());
+            throw runtime_error(string("Something went wrong while creating texture: ") + SDL_GetError());
         }
 
         SDL_FreeSurface(picture);
@@ -55,7 +54,7 @@ namespace gameEngine {
     }
 
     void Movable::checkCollisionOtherSprite(GameEngine &engine){
-        std::vector<Sprite*> sprites = engine.getActiveSprites();
+        vector<Sprite*> sprites = engine.getActiveSprites();
         for(Sprite* sprite : sprites) {
             if (sprite != this && collision(*sprite)) {
                 handleCollision(sprite, engine);
@@ -67,8 +66,8 @@ namespace gameEngine {
         spriteRect.x = defaultPosX;
         spriteRect.y = defaultPosY;
     }
-}
 
-Movable::~Movable(){
-    SDL_DestroyTexture(texture);
+    Movable::~Movable(){
+        SDL_DestroyTexture(texture);
+    }
 }

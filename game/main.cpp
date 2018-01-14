@@ -1,9 +1,5 @@
-//TODO: Skriv README
-
 #define SDL_MAIN_HANDLED
 #include <iostream>
-#include "../engine/GameEngine.h"
-#include "../components/Button.h"
 #include "Player.h"
 #include "SoundButton.h"
 
@@ -22,7 +18,8 @@ Label* inputField2;
 Label* points2;
 Button* soundButton;
 
-void test(){
+/* Function is just for testing so the game engine can handle free functions */
+void freeFunctionTest(){
     cout << "Free function" << endl;
 }
 
@@ -38,7 +35,7 @@ void initialize(){
     points1 = Label::getInstance({5, 30, 40, 40}, "0", "C:/Windows/Fonts/Arial.ttf", 20, false, 1);
     inputField2 = Label::getInstance({5, 60, 100, 40}, "Player 2", "C:/Windows/Fonts/Arial.ttf", 20, true, 10);
     points2 = Label::getInstance({5, 85, 40, 40}, "0", "C:/Windows/Fonts/Arial.ttf", 20, false, 1);
-    soundButton = SoundButton::getInstance({650, 10, 40, 40}, btnPicFront, btnPicBack, false);
+    soundButton = SoundButton::getInstance({650, 10, 40, 40}, btnPicFront, btnPicBack, true);
 
     /* Initialize players */
     player1 = Player::getInstance({50, 500, 80, 60}, *points1, playerPic, 5);
@@ -58,10 +55,11 @@ Level* setUpFirstLevel(){
         /* Initialize movable items level 1 */
         Item *elephant = Item::getInstance({200, 1, 100, 100}, elephantPic1, 2, false);
         Item *elephant1 = Item::getInstance({70, 10, 50, 50}, elephantPic2, 1, false);
-        Item *elephant2 = Item::getInstance({10, 80, 50, 50}, elephantPic1, 1, false);
+        Item *elephant2 = Item::getInstance({10, 80, 100, 100}, elephantPic1, 1, false);
         Item *elephant3 = Item::getInstance({500, 22, 50, 50}, elephantPic2, 1, false);
         Item *elephant4 = Item::getInstance({450, 0, 50, 50}, elephantPic1, 1, false);
         Item *elephant5 = Item::getInstance({300, 0, 50, 50}, elephantPic2, 1, false);
+
         Item *human = Item::getAnimatedInstance({150, 0, 128, 64}, animated, 4, 200, -1, false);
         Item *human2 = Item::getAnimatedInstance({400, 10, 128, 64}, animated, 4, 200, -1, false);
         Item *human3 = Item::getAnimatedInstance({600, 0, 128, 64}, animated, 4, 200, -1, false);
@@ -85,7 +83,6 @@ Level* setUpFirstLevel(){
     }catch(runtime_error e){
     cerr << e.what() << endl;
     }
-
     return Level::getInstance(bg, sprites);
 }
 
@@ -99,17 +96,17 @@ Level* setupSecondLevel(){
     const char* animatedShark = "C:/MediaProg3/sharkSpritesheet.png";
 
     try {
-        Item *fish1 = Item::getInstance({650, 1, 80, 80}, fishPic1, 2, true);
-        Item *fish2 = Item::getInstance({0, 250, 80, 80}, fishPic2, 2, true);
+        Item *fish1 = Item::getInstance({650, 1, 50, 50}, fishPic1, 1, true);
+        Item *fish2 = Item::getInstance({0, 250, 50, 50}, fishPic2, 1, true);
         Item *fish3 = Item::getInstance({400, 400, 80, 80}, fishPic1, 2, true);
-        Item *fish4 = Item::getInstance({200, 40, 80, 80}, fishPic2, 2, true);
+        Item *fish4 = Item::getInstance({200, 40, 50, 50}, fishPic2, 1, true);
         Item *fish5 = Item::getInstance({300, 300, 80, 80}, fishPic1, 2, true);
         Item *fish6 = Item::getInstance({300, 300, 80, 80}, fishPic2, 2, true);
 
-        Item *shark1 = Item::getInstance({50, 30, 128, 64}, sharkPic1, -3, true);
-        Item *shark2 = Item::getInstance({80, 150, 128, 64}, sharkPic2, -3, true);
-        Item *shark3 = Item::getInstance({500, 250, 128, 64}, sharkPic1, -3, true);
-        Item *shark4 = Item::getInstance({80, 350, 128, 64}, sharkPic2, -3, true);
+        Item *shark1 = Item::getInstance({50, 30, 128, 64}, sharkPic1, -2, true);
+        Item *shark2 = Item::getInstance({80, 150, 180, 90}, sharkPic2, -3, true);
+        Item *shark3 = Item::getInstance({500, 250, 128, 64}, sharkPic1, -2, true);
+        Item *shark4 = Item::getInstance({80, 350, 180, 90}, sharkPic2, -3, true);
         Item *shark5 = Item::getAnimatedInstance({20, 80, 480, 100}, animatedShark, 4, 500, -4, true);
 
         sprites.push_back((Sprite *) soundButton);
@@ -133,9 +130,54 @@ Level* setupSecondLevel(){
     }catch(runtime_error e){
         cerr << e.what() << endl;
     }
-
     return Level::getInstance(bg, sprites);
+}
 
+Level* setUpThirdLevel(){
+    vector<Sprite*> sprites;
+    const char* bg = "C:/MediaProg3/bg3.jpg";
+    const char* birdPic1 = "C:/MediaProg3/bird1.png";
+    const char* birdPic2 = "C:/MediaProg3/bird2.png";
+    const char* birdPic3 = "C:/MediaProg3/bird3.png";
+    const char* eaglePic1 = "C:/MediaProg3/eagle1.png";
+    const char* eaglePic2 = "C:/MediaProg3/eagle2.png";
+
+    try {
+        Item *bird1 = Item::getInstance({0, 250, 80, 80}, birdPic2, 2, true);
+        Item *bird2 = Item::getInstance({650, 1, 50, 50}, birdPic1, 1, true);
+        Item *bird3 = Item::getInstance({20, 400, 80, 80}, birdPic2, 2, true);
+        Item *bird4 = Item::getInstance({200, 40, 50, 50}, birdPic1, 1, true);
+        Item *bird5 = Item::getInstance({80, 100, 80, 80}, birdPic2, 2, true);
+        Item *bird6 = Item::getInstance({300, 300, 100, 100}, birdPic3, 3, false);
+        Item *bird7 = Item::getInstance({500, 0, 100, 100}, birdPic3, 3, false);
+
+        Item *eagle1 = Item::getInstance({550, 80, 100, 100}, eaglePic1, -3, true);
+        Item *eagle2 = Item::getInstance({20, 400, 100, 100}, eaglePic2, -3, true);
+        Item *eagle3 = Item::getInstance({350, 20, 100, 100}, eaglePic1, -3, false);
+        Item *eagle4 = Item::getInstance({70, 20, 100, 100}, eaglePic2, -3, false);
+
+        sprites.push_back((Sprite *) soundButton);
+        sprites.push_back((Sprite*)player1);
+        sprites.push_back((Sprite*)points1);
+        sprites.push_back((Sprite*)inputField1);
+        sprites.push_back((Sprite*)player2);
+        sprites.push_back((Sprite*)points2);
+        sprites.push_back((Sprite*)inputField2);
+        sprites.push_back((Sprite*)bird1);
+        sprites.push_back((Sprite*)bird2);
+        sprites.push_back((Sprite*)bird3);
+        sprites.push_back((Sprite*)bird4);
+        sprites.push_back((Sprite*)bird5);
+        sprites.push_back((Sprite*)bird6);
+        sprites.push_back((Sprite*)bird7);
+        sprites.push_back((Sprite*)eagle1);
+        sprites.push_back((Sprite*)eagle2);
+        sprites.push_back((Sprite*)eagle3);
+        sprites.push_back((Sprite*)eagle4);
+    }catch(runtime_error e){
+        cerr << e.what() << endl;
+    }
+    return Level::getInstance(bg, sprites);
 }
 
 int main() {
@@ -146,26 +188,24 @@ int main() {
     /* Create levels */
     Level* first = setUpFirstLevel();
     Level* second = setupSecondLevel();
+    Level* third = setUpThirdLevel();
 
     /* Add levels to level map */
     levels.insert(make_pair(1, first));
     levels.insert(make_pair(2, second));
-    levels.insert(make_pair(3, first));
-    levels.insert(make_pair(4, second));
+    levels.insert(make_pair(3, third));
 
-    /* Create function map. Added test function just to see so it works
+    /* Create function map. Added freeFunctionTest just to see so it works
      * to use free functions in the game*/
     unordered_map<unsigned, std::function<void()>> funcs;
-    std::function<void()> testfunc = test;
+    std::function<void()> testfunc = freeFunctionTest;
     funcs.insert(make_pair(SDLK_DOWN, testfunc));
 
     /* Create game engine and start it*/
     GameEngine gameEngine(levels, funcs);
     std::function<void()> pause = std::bind(&GameEngine::setPaused, &gameEngine);
     gameEngine.addShortcut(SDLK_RETURN, pause);
-//    gameEngine.run(60, music, true, 1);
-    //TODO: Ta bort denna, musiken ska vara på!
-    gameEngine.run(100, music, false, 1);
+    gameEngine.run(60, music, true, 1);
 
     return 0;
 }

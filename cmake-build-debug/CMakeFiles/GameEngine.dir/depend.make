@@ -58,8 +58,6 @@ CMakeFiles/GameEngine.dir/game/Item.cpp.o: ../game/Player.h
 CMakeFiles/GameEngine.dir/game/Player.cpp.o: ../components/Label.h
 CMakeFiles/GameEngine.dir/game/Player.cpp.o: ../components/Movable.h
 CMakeFiles/GameEngine.dir/game/Player.cpp.o: ../components/Sprite.h
-CMakeFiles/GameEngine.dir/game/Player.cpp.o: ../engine/GameEngine.h
-CMakeFiles/GameEngine.dir/game/Player.cpp.o: ../engine/Level.h
 CMakeFiles/GameEngine.dir/game/Player.cpp.o: ../frame/Frame.h
 CMakeFiles/GameEngine.dir/game/Player.cpp.o: ../game/Item.h
 CMakeFiles/GameEngine.dir/game/Player.cpp.o: ../game/Player.cpp

@@ -1,9 +1,6 @@
-#include <iostream>
-#include "../components/Movable.h"
-#include "Player.h"
-#include "Item.h"
-#include "../engine/GameEngine.h"
 #include "../frame/Frame.h"
+#include "Item.h"
+#include "Player.h"
 
 using namespace gameEngine;
 using namespace std;
@@ -27,7 +24,6 @@ namespace myGame {
             pointLabel(lbl), Movable(rect, pictureSrc), speed(speed), right(right), left(left), up(up), down(down){}
 
     void Player::move(const Uint8 *state, GameEngine &engine) {
-
         int rectBottom = spriteRect.y + spriteRect.h;
         int rectTop = spriteRect.y;
         int rectRight = spriteRect.x + spriteRect.w;

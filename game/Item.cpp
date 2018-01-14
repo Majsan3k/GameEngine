@@ -9,14 +9,15 @@ using namespace std;
 
 namespace myGame {
 
-    int Item::speed = 1;
+    double Item::speed = 1;
     bool Item::moveRight = true;
 
     Item *Item::getInstance(SDL_Rect rect, const char *pictureSrc, int points, bool moveHorizontal) {
         return new Item(rect, pictureSrc, points, moveHorizontal);
     }
 
-    Item::Item(SDL_Rect rect, const char *pictureSrc, int points, bool moveHorizontal) : valuePoints(points), Movable(rect, pictureSrc), moveHorizontal(moveHorizontal){
+    Item::Item(SDL_Rect rect, const char *pictureSrc, int points, bool moveHorizontal) :
+            valuePoints(points), Movable(rect, pictureSrc), moveHorizontal(moveHorizontal){
         Item::moveRight = !moveRight;
         direction = !moveRight;
     }
@@ -42,10 +43,7 @@ namespace myGame {
 
         if (rectBottom < 0 || rectTop > windowH || rectRight < 0 || rectLeft > windowW) {
             setRemove(true);
-            if(checkLastItem(engine)){
-                engine.levelUp();
-                speed++;
-            }
+            tryLevelUp(engine);
         } else {
             if(moveHorizontal){
                 if(direction){
@@ -59,24 +57,27 @@ namespace myGame {
         }
     }
 
-    bool Item::checkLastItem(GameEngine& engine){
+    void Item::tryLevelUp(GameEngine &engine){
         int items = 0;
         vector<Sprite*> activeSprites = engine.getActiveSprites();
         for(Sprite* sprite : activeSprites){
-            if(dynamic_cast<Item*>(sprite)){
-                items++;
+            if(Item* item = dynamic_cast<Item*>(sprite)) {
+                if (!item->getShouldRemove()) {
+                    items++;
+                }
+                cout << items << endl;
             }
         }
-        return items == 1 ? true : false;
+        if(items == 1){
+            engine.levelUp();
+            speed += 0.5;
+        }
     }
 
     void Item::handleCollision(Sprite* otherSprite, GameEngine& engine) {
         if (dynamic_cast<Player*>(otherSprite)) {
             setRemove(true);
         }
-        if(checkLastItem(engine)){
-            engine.levelUp();
-            speed += 0,5;
-        }
+        tryLevelUp(engine);
     }
 }

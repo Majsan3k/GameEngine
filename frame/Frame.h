@@ -3,7 +3,6 @@
 #include <SDL2/SDL_render.h>
 
 namespace gameEngine {
-
     class Frame {
     public:
         Frame();

@@ -1,7 +1,6 @@
 #ifndef GAMEENGINE_LABEL_H
 #define GAMEENGINE_LABEL_H
 #include <string>
-#include <SDL2/SDL_render.h>
 #include <SDL2/SDL_ttf.h>
 #include "Sprite.h"
 
@@ -29,6 +28,4 @@ namespace gameEngine {
         int maxTextLength;
     };
 }
-
-
 #endif //GAMEENGINE_LABEL_H

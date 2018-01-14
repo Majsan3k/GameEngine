@@ -1,11 +1,11 @@
+#include <SDL2/SDL_image.h>
+#include <SDL2/SDL_mixer.h>
 #include <iostream>
 #include <algorithm>
 #include <vector>
 #include "GameEngine.h"
 #include "../frame/Frame.h"
 #include "../components/Button.h"
-#include <SDL2/SDL_image.h>
-#include <SDL2/SDL_mixer.h>
 
 using namespace std;
 namespace gameEngine {
@@ -14,10 +14,9 @@ namespace gameEngine {
         SDL_DestroyTexture(background);
     }
 
+    /* Add sprites from all levels to vector with all sprites */
     void GameEngine::addAllSprites(){
-        //TODO: Går det att använda unique_copy?
         for(auto level = levels.begin(); level != levels.end(); level++){
-
             vector<Sprite*> newSprites = (level->second) -> getSprites();
             for(Sprite* sprite : newSprites){
                 if (find(allSprites.begin(), allSprites.end(),sprite) == allSprites.end()){
@@ -27,38 +26,43 @@ namespace gameEngine {
         }
     }
 
+    /* Delete all sprites */
     void GameEngine::clearSprites(){
         for(Sprite* sprite : allSprites){
             delete sprite;
         }
     }
 
+    /* Delete all levels */
     void GameEngine::clearLevels(){
         for(auto level = levels.begin(); level!= levels.end(); level++){
             delete level->second;
         }
     }
 
+    /* Update background */
     void GameEngine::updateBackground(const char* newBackgroundPic){
         SDL_Surface *backgroundPicture = IMG_Load(newBackgroundPic);
 
         if(backgroundPicture == nullptr){
-            throw std::runtime_error(string("Something went wrong while creating surface: ") + SDL_GetError());
+            throw runtime_error(string("Something went wrong while creating surface: ") + SDL_GetError());
         }
 
         background = SDL_CreateTextureFromSurface(frame.getRen(), backgroundPicture);
         if(background == nullptr){
-            throw std::runtime_error(string("Something went wrong while creating texture: ") + SDL_GetError());
+            throw runtime_error(string("Something went wrong while creating texture: ") + SDL_GetError());
         }
 
         SDL_FreeSurface(backgroundPicture);
     }
 
+    /* Set level */
     void GameEngine::setLevel(int newLevel){
         this->level = newLevel;
         levelChange = true;
     }
 
+    /* Change level and update active sprite vector and background */
     void GameEngine::updateLevel(){
         levelChange = false;
 
@@ -72,6 +76,7 @@ namespace gameEngine {
         }
     }
 
+    /* Add new shortcut */
     void GameEngine::addShortcut(unsigned key, std::function<void()> function){
         std::unordered_map<unsigned,std::function<void()>>::const_iterator contains = shortcuts.find (key);
 
@@ -82,10 +87,12 @@ namespace gameEngine {
         }
     }
 
-    void GameEngine::add(Sprite *sprite) {
+    /* Add new sprite to active sprite vector */
+    void GameEngine::addSprite(Sprite *sprite) {
         activeSprites.push_back(sprite);
     }
 
+    /* Remove sprite from active sprite vector */
     void GameEngine::removeSprite(Sprite *sprite) {
         for (vector<Sprite *>::iterator iter = activeSprites.begin();
              iter != activeSprites.end();)
@@ -100,7 +107,8 @@ namespace gameEngine {
             }
     }
 
-    void GameEngine::remove() {
+    /* Remove all sprites that should be inactive */
+    void GameEngine::removeInactiveSprites() {
         for (vector<Sprite *>::iterator iter = activeSprites.begin();
              iter != activeSprites.end();)
             if ((*iter)->getShouldRemove()) {
@@ -114,6 +122,7 @@ namespace gameEngine {
             }
     }
 
+    /* Stop or start music */
     void GameEngine::playMusic(bool play) {
         if (play) {
             Mix_Resume(-1);
@@ -122,6 +131,7 @@ namespace gameEngine {
         }
     }
 
+    /* Paus the game */
     void GameEngine::setPaused(){
         paused = !paused;
         labelChanged = NULL;
@@ -139,13 +149,12 @@ namespace gameEngine {
 
         this->level = level;
         levelChange = true;
-        std::string inputText = "";
+        string inputText = "";
         SDL_StartTextInput();
         bool goOn = true;
+        bool textChanged = false;
         bool changeText;
         paused = false;
-
-        bool textChanged = false;
 
         while (goOn) {
             frameStart = SDL_GetTicks();
@@ -166,10 +175,11 @@ namespace gameEngine {
                         break;
                     case SDL_MOUSEBUTTONUP :
                         changeText = false;
+
+                        /* Check all active sprites to see if a button or editable label has been pressed */
                         for (Sprite *s : activeSprites) {
                             SDL_Point p = {event.button.x, event.button.y};
                             if (SDL_PointInRect(&p, &s->getSpriteRect())) {
-
                                 if (dynamic_cast<Button *>(s)) {
                                     s->mouseButtonUp(*this);
                                     break;
@@ -187,6 +197,9 @@ namespace gameEngine {
                         }
                         break;
                     case SDL_KEYDOWN :
+                        /* Control if there is any shortcuts for the specific key. If not, check if the key is
+                         * backspace and if any editable label should be changed
+                         */
                         if (shortcuts[event.key.keysym.sym]) {
                             shortcuts[event.key.keysym.sym]();
                         } else if (event.key.keysym.sym == SDLK_BACKSPACE && inputText.size() > 0 && changeText) {
@@ -196,6 +209,7 @@ namespace gameEngine {
                         break;
                 }
 
+                /* Update text to editable label */
                 if (labelChanged != NULL && changeText && event.type == SDL_TEXTINPUT) {
                     if (inputText.length() < labelChanged->getMaxLength()) {
                         inputText += event.text.text;
@@ -204,6 +218,8 @@ namespace gameEngine {
                     break;
                 }
             }
+
+            /* Update editable label */
             if (textChanged) {
                 if (labelChanged != NULL) {
                     if (!inputText.empty()) {
@@ -214,11 +230,6 @@ namespace gameEngine {
                 }
             }
 
-            frameTime = SDL_GetTicks() - frameStart;
-            if (roundTime > frameTime) {
-                SDL_Delay(roundTime - frameTime);
-            }
-
             if (!paused) {
                 /* Move sprites */
                 const Uint8 *state = SDL_GetKeyboardState(NULL);
@@ -226,14 +237,15 @@ namespace gameEngine {
                     sprite->tick(state, *this);
                 }
 
-                /*Handle collisions */
+                /* Handle collisions */
                 for (Sprite *sprite : activeSprites) {
                     if (Movable *m = dynamic_cast<Movable *>(sprite)) {
                         m->checkCollisionOtherSprite(*this);
                     }
                 }
 
-                remove();
+                removeInactiveSprites();
+
                 if (levelChange) {
                     updateLevel();
                 }
@@ -245,6 +257,12 @@ namespace gameEngine {
             for (Sprite *s : activeSprites)
                 s->draw(SDL_GetTicks());
             SDL_RenderPresent(frame.getRen());
+
+            frameTime = SDL_GetTicks() - frameStart;
+            if (roundTime > frameTime) {
+                SDL_Delay(roundTime - frameTime);
+            }
+
         }
         SDL_StopTextInput();
 

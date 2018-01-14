@@ -1,7 +1,7 @@
 #include <SDL2/SDL_image.h>
 #include "Button.h"
 #include "../frame/Frame.h"
-#include <iostream>
+
 using namespace std;
 
 namespace gameEngine{

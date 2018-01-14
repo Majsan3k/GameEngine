@@ -12,24 +12,33 @@ namespace gameEngine {
 
     class GameEngine {
     public:
+        /* Create a game engine without levels and sprites.
+         * Can add sprites manually later with the method addSprite and
+         * create a background with the method updateBackground */
+        GameEngine(){}
+
+        /* Create game engine with levels */
         GameEngine(std::unordered_map<int, Level*> levels) : levels(levels){addAllSprites();}
+
+        /* Create game engine with both levels and shortcuts */
         GameEngine(std::unordered_map<int, Level*> levels, std::unordered_map<unsigned, std::function<void()>> shortcuts) : levels (levels), shortcuts(shortcuts){addAllSprites();}
+
         void setLevel(int newLevel);
-        void levelUp(){setLevel(++level);}
         int getLevel() const { return level; }
+        void levelUp(){setLevel(++level);}
         void updateBackground(const char* bgPic);
-        void addShortcut(unsigned shortCutKey, std::function<void()> function);
-        void add(Sprite *sprite);
+        void addShortcut(unsigned shortcutKey, std::function<void()> function);
+        void addSprite(Sprite *newSprite);
         void removeSprite(Sprite* sprite);
-        void remove();
         void run(int FPS, const char* musicSrc, bool musicOn, int level);
         void playMusic(bool);
         const std::vector<Sprite*> getActiveSprites() const { return activeSprites; }
-        void clearSprites();
-        void clearLevels();
         void setPaused();
         ~GameEngine();
     private:
+        void clearSprites();
+        void clearLevels();
+        void removeInactiveSprites();
         void addAllSprites();
         SDL_Texture* background;
         Label* labelChanged = NULL;
